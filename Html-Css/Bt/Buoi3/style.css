@@ -1,0 +1,73 @@
+p{
+    text-align:center;
+    font-size:18px;
+}
+#MauDo{
+    background-color:red;
+    height: 200px;
+    width: 60%;
+}
+
+#Xanhla{
+    background-color:green;
+    height: 100px;
+}
+
+#XanhDuong{
+    background-color:blue;
+    height: 100px;
+}
+
+#XanhDo{
+    width:40%;
+}
+
+/* Hinh 1 */
+.BaiDau{
+    display: flex;
+}
+
+/* Hinh 2 */
+.BaiHai{
+    display: flex;
+}
+.Do2{
+    margin-right:15px
+}
+
+/* Hinh 3 */
+#MauDo2{
+    height: 200px;
+    width: 32.5%;
+    background-color: red;
+}
+
+#XanhLa2{
+    height: 200px;
+    width: 32.5%;
+    background-color: green;
+}
+
+#XanhDuong2{
+    height: 200px;
+    width: 32.5%;
+    background-color:blue;
+}
+
+.BaiBa{
+    display: flex;
+}
+
+/* Hinh 4 */
+.BaiBon{
+    display: flex;
+    justify-content: space-between; 
+}
+
+/* .Do3{
+    margin-right: 15px;
+}
+
+.XanhLa3{
+    margin-right: 15px;
+} */
