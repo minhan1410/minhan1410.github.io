@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+        font:https://fonts.google.com/specimen/Ballet?subset=vietnamese#standard-styles
+        icon:https://fontawesome.com/
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout, Nhúng font</title>
+
+    <!-- Nhung font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        .retangle {
+            width: 30px;
+            height: 40px;
+            background-color: blue;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 25px;
+            position: fixed;
+            top: 100px;
+            left: 100px;
+            /* hiển thị hình tròn lên trc chữ */
+            z-index: -1;
+        }
+
+        .para1 {
+            font-size: 50px;
+            text-align: center;
+            /* goi font */
+            font-family: 'Ballet', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Layout</h2>
+    <div class="retangle"></div>
+    <div class="circle"></div>
+
+    <h2>Nhúng font</h2>
+    <p class="para1">Bầu trời trong xanh thăm thẳm, không một gợn mây.</p>
+    <i class="fab fa-facebook-messenger" style="font-size:56px;color:blue"></i>
+</body>
+
+</html>

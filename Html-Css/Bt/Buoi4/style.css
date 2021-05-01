@@ -1,0 +1,377 @@
+* {
+  margin: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+
+#navigation {
+  width: 100%;
+  height: 60px;
+  background-color: #34465c;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.Logo {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logo img {
+  width: 100%;
+}
+
+.Menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-left: 60px;
+}
+
+.MenuList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.MenuList li {
+  /* loại bỏ chấm ở đầu của ul */
+  list-style-type: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MenuList li a {
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  /* Loai bo gach chan trong the a */
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 12px;
+}
+
+.MenuList li a i {
+  color: white;
+  margin-left: 1px;
+}
+
+.MenuList li a:hover {
+  color: rgb(177, 177, 177);
+}
+
+.GioHang {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GioHang a i {
+  color: white;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+.Avatar {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  /* Nếu chúng ta sử dụng object-fit: cover;, hình ảnh sẽ giữ nguyên tỷ lệ co và lấp đầy kích thước đã cho. Hình ảnh sẽ được cắt bớt để vừa với: */
+  object-fit: cover;
+}
+
+#GioiThieu {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#Than {
+  color: #464646;
+  padding: 48px 15px 0px;
+  background-color: white;
+}
+
+.AnhQuangCao a img {
+  width: 803px;
+  height: 482px;
+}
+
+.AnhMinhHoa img {
+  width: 105px;
+  height: 104px;
+  border-radius: 4px;
+  /* Nếu chúng ta sử dụng object-fit: cover;, hình ảnh sẽ giữ nguyên tỷ lệ co và lấp đầy kích thước đã cho. Hình ảnh sẽ được cắt bớt để vừa với: */
+  object-fit: cover;
+}
+
+.Chu {
+  /* Loại bỏ gach chân thẻ a */
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
+.NguoiViet .Chu {
+  color: gray;
+}
+
+.NoiDung {
+  padding: 10px;
+}
+
+.NguoiViet {
+  padding-left: 10px;
+}
+
+.BaiViet {
+  width: 277px;
+  height: 104px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Blog {
+  display: flex;
+  margin-bottom: 14px;
+  /* Kẻ viền */
+  border: 1px solid #afa9a9;
+}
+
+.ListBlog {
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+}
+
+#GioiThieu {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ChuongTrinhDaoTao {
+  padding: 0px 15px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.ChuongTrinhDaoTao a {
+  width: 1250px;
+  height: 187px;
+  padding: 25px 55px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ChuongTrinhDaoTao a .TenKhoa {
+  padding-bottom: 10px;
+  margin-top: 15px;
+  color: #464646;
+  font-size: 1rem;
+}
+
+.Chu .MoTa {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
+  width: 80%;
+  margin: auto;
+}
+
+.CacKhoaHocChinh h2 {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.CacKhoaHocChinh {
+  background-color: #e4f2fd;
+}
+
+.KhoaHoc {
+  width: 387px;
+  height: 231+182px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+  /* Kẻ viền */
+  /* border: 1px solid #ff0000; */
+  border-radius: 5px;
+
+  padding: 15px;
+}
+
+.Anh {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  /* Nếu chúng ta sử dụng object-fit: cover;, hình ảnh sẽ giữ nguyên tỷ lệ co và lấp đầy kích thước đã cho. Hình ảnh sẽ được cắt bớt để vừa với: */
+  object-fit: cover;
+}
+
+.NoiDungKhoaHoc {
+  background-color: white;
+  padding: 1.4rem;
+}
+
+.NoiDungKhoaHoc .Ten {
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.NoiDungKhoaHoc .GioiThieu {
+  font-weight: 300;
+  font-size: 16px;
+  color: #464646;
+  margin-bottom: 10px;
+}
+
+.NoiDungKhoaHoc .LoTrinh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  color: #757575;
+}
+
+.ListKhoaHoc {
+  margin-right: 100px;
+  margin-left: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Icons {
+  color: #757575;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px solid #2196f3;
+  font-size: 18px;
+}
+
+.SanPhamHocVien {
+  padding: 80px 0;
+}
+
+.NutBam p {
+  font-size: 1.5rem;
+}
+
+.NutBam {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.Video {
+  width: 1445px;
+  height: 860px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 22px;
+}
+
+#Cuoi {
+  width: 100%;
+  height: 400px;
+  background-color: #464646;
+  padding-top: 50px;
+}
+
+.ListThongTin {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 97.6px;
+  margin-left: 97.6px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.ThongTin {
+  padding-bottom: 16px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 282.5px;
+  height: 320.8px;
+}
+
+.ThongTin h4 {
+  color: white;
+  margin: 0px 0px 8px;
+  width: 282.5 21.6px;
+  font: 18px Roboto, sans-serif;
+}
+
+.Ul {
+  color: #6b6c6d;
+  list-style-type: none;
+  font: 16px Roboto, sans-serif;
+  padding: 0px;
+}
+
+.Ul li {
+  padding: 8px 0px;
+}
+
+.Ul li a {
+  /* Loai bo gach chan trong the a */
+  text-decoration: none;
+  color: #6b6c6d;
+}
+
+.IconMangXaHoi {
+  height: 50px;
+  margin: auto;
+  display: flex;
+  padding: 0px 8px;
+}
+
+.facebook, .youtube, .github{
+  padding:0px 12px;
+}
