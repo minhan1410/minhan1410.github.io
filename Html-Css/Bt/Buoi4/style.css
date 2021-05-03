@@ -378,3 +378,26 @@
 .facebook, .youtube, .github{
   padding:0px 12px;
 }
+
+.VienTron{
+  background-color: rgb(0, 132, 255);
+  width: 60px;
+  height: 60px;
+  border-radius:50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.VienTron i{
+  color: white;
+  font-size: 40px;
+}
+
+#Messages{
+  position: fixed;
+  bottom: 50px;
+  right: 25px;
+  bottom:30px;
+}
