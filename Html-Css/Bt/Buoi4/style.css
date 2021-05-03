@@ -124,6 +124,9 @@
   border-radius: 4px;
   /* Nếu chúng ta sử dụng object-fit: cover;, hình ảnh sẽ giữ nguyên tỷ lệ co và lấp đầy kích thước đã cho. Hình ảnh sẽ được cắt bớt để vừa với: */
   object-fit: cover;
+
+  /* Xử lý khoảng trong ảnh*/
+  display: block;
 }
 
 .Chu {
