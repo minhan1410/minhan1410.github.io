@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html {
+            /* cuộn chậm lại */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 300px;
+        }
+
+        .top {
+            width: 100%;
+            height: 100px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #back-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: cornsilk;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #zalo {
+            width: 300px;
+            height: 300px;
+            font-size: 50px;
+            background-color: wheat;
+            /* transition: điều chinhr độ trễ */
+            transition: all 1.5s;
+        }
+
+        #zalo:hover {
+            border-radius: 25px;
+            color: cadetblue;
+            background-color: burlywood;
+            text-transform: uppercase;
+        }
+
+        /* Pseudo element */
+
+        /* Bôi đen có màu đỏ */
+        p a::selection {
+            background-color: red;
+        }
+
+        #zalo {
+            /* infinite chạy vô hạn */
+            animation: colorBackground 0.1s infinite;
+            -webkit-animation: colorBackground 5s infinite;
+            -moz-animation: colorBackground 5s infinite;
+            -o-animation: colorBackground 0.5s infinite
+        }
+
+        @keyframes colorBackground {
+            0% {
+                background-color: yellowgreen;
+                color: white;
+            }
+
+            50% {
+                background-color: red;
+                color: yellow;
+            }
+        }
+
+        #Icons{
+            animation: rotate 0.5s infinite;
+        }
+
+        @keyframes rotate{
+            /* Xoay */
+            10%{
+                transform: rotate(15deg);
+            }
+
+            20%{
+                transform: rotate(30deg);
+            }
+            
+        }
+
+        .tym{
+            text-align:center;
+            font-size:50px;
+            animation:change-size 1s infinite;
+        }
+
+        @keyframes change-size{
+            from{
+                /* transform xác định một chuyển đổi 2 chiều, 3 chiều, có thể là xoay, tỷ lệ, di chuyển, nghiêng, ... */
+                /* scale phóng to ảnh so vs ảnh gốc */
+                transform: scale(1);
+            }
+
+            to{
+                transform: scale(1.5)
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <p><a href="about.html">About</a></p>
+    <p><a href="product.html">Product</a></p>
+    <p><a href="#zalo">ZALO</a></p>
+    <div class="top">
+        <p><a id=zalo href="https://chat.zalo.me/">Zalo</a></p>
+    </div>
+    <div id="back-to-top">
+        <a href="about.html">up</a>
+    </div>
+
+    <p class="tym">🥰</p>
+
+    <p><img id="Icons" src="https://image.flaticon.com/icons/png/128/4561/4561062.png" alt="" title="animation"></p>
+</body>
+
+</html>

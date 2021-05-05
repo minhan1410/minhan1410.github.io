@@ -1,0 +1,128 @@
+* {
+  margin: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+
+#navigation {
+  width: 100%;
+  height: 60px;
+  background-color: #34465c;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.Logo {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logo img {
+  width: 100%;
+}
+
+.Menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-left: 60px;
+}
+
+.MenuList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.MenuList li {
+  /* loại bỏ chấm ở đầu của ul */
+  list-style-type: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MenuList li a {
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  /* Loai bo gach chan trong the a */
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 12px;
+}
+
+.MenuList li a i {
+  color: white;
+  margin-left: 1px;
+}
+
+.MenuList li a:hover {
+  color: rgb(177, 177, 177);
+}
+
+.GioHang {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GioHang a i {
+  color: white;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+.Avatar {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  /* Nếu chúng ta sử dụng object-fit: cover;, hình ảnh sẽ giữ nguyên tỷ lệ co và lấp đầy kích thước đã cho. Hình ảnh sẽ được cắt bớt để vừa với: */
+  object-fit: cover;
+}
+
+.MenuList{
+    /*position:relative; Dùng để thiết lập một phần tử sử dụng các thuộc tính position (xem ở dưới) mà không làm ảnh hưởng đến việc hiển thị ban đầu. */
+    position:relative;
+}
+
+.sub-menu{
+    /*position:absolute Dùng để thiết lập vị trí của một phần tử nhưng nó sẽ luôn nằm trong một phần tử cha đang là relative. */
+    position:absolute;
+    padding-top: 150px;
+
+    /* Làm cho 1 đối tượng biến mất display: none lm 1 đối tượng biến mất trên web và k chiếm k gian 
+                                    visibility:hidden lm 1 đối tượng ẩn đi nhưng vẫn chiếm k gian*/
+    display:none;
+}
+
+.sub-menu li{
+    background-color:gray;
+    padding:5px 10px 5px 0
+}
+
+.MenuList li:hover .sub-menu{
+    display:block;
+}
+
+.sub-menu li:hover a{
+    color:red;
+}
