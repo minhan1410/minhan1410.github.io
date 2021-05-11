@@ -1,136 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Image gallery</title>
     <style>
-        p {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
+        *{
+            margin:0;
+            border:0;
+            box-sizing: border-box;
         }
 
-        a {
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-
-        }
-
-        img {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .Anh:hover{
-            transform:scale(4.2);
-            object-fit: cover;
-        }
-
-        .Chu:hover {
-            color: blue;
-            padding-top:5px;
-            transform:scale(1.2);
+        #container{
+            font-size: 16px;
         }
 
         .Hang{
-            display:flex;
-            flex-direction:row;
-            justify-content: space-around;
+            display: flex;
+            justify-content:center;
+        }
+
+        .SanPham{
+            width:300px;
+            height: 330px;
+            box-shadow: 0 0 2px 0 rgb(0 0 0 / 25%);
+            opacity: 1;
+
+            margin: 30px;
+        }
+
+        .SanPham:hover{
+            opacity: 0.7;
+        }
+
+        .SanPham>a{
+            text-decoration: none;
+            color: black;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content:center;
+        }
+
+        .Ten{
+            font-size:18px;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        .Ten:hover{
+            color:blue;
+        }
+
+        .Gia{
+            display: inline;
+            color:red;
+            font-size: 20px;
+        }
+
+        .SanPham>a>img{
+            width:280px;
+            height:233px;
+            padding:5px;
+            /* k vo anh */
+            object-fit: contain;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        hr{
+            width:300px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid #dadde1;
+            margin: 0px 16px 20px ;
         }
     </style>
-
 </head>
-
 <body>
+    <h1>Điện thoại</h1>
     <div id="container">
-        <div id="TrangChu">
-            <h1>Ảnh môi trường</h1>
-            <div class="Hang">
-                <p>
-                    <a class="Anh" href="https://bigfarm.vn/the-gioi-se-ra-sao-neu-khong-co-cay-xanh/" target="_blank" >
-                        <img src="http://sohanews.sohacdn.com/k:2016/1-1461663977760/trai-dat-se-nhu-the-nao-neu-khong-co-cay-coi-thuc-vat.jpg"
-                        alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="https://bigfarm.vn/the-gioi-se-ra-sao-neu-khong-co-cay-xanh/">Ảnh cây</a>
-                </p>
 
-                <p>
-                    <a class="Anh" target="_blank" href="http://caycongtrinhgiare.com/tam-quan-trong-cua-cay-xanh">
-                        <img src="http://phuclocvienjsc.com/uploads/image/images/1892173_71a51088.jpg"
-                            alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="http://caycongtrinhgiare.com/tam-quan-trong-cua-cay-xanh">Ảnh cây</a>
-                </p>
+        <div class="Hang">
+            <div class="SanPham">
+                <a href="FileChiTiet/SamsungGalaxyZFlip.html">
+                    <img src="Anh/anh1.jpg" alt="Samsung Galaxy Z Flip 5G" title="Điện thoại Samsung Galaxy Z Flip 5G">
+                    
+                    <hr>
 
-                <p>
-                    <a class="Anh" target="_blank" href="https://truyenhinhdulich.vn/tin-tuc/nuoc-anh-chi-10-trieu-bang-trong-130-000-cay-xanh-chong-bien-doi-khi-hau-5817.html">
-                        <img src="https://media.truyenhinhdulich.vn/upload/news/5817_anh_chinh_phu_mo_quy_10_trieu_bang_de_trong_cay_xa_11175620052019.jpg"
-                        alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="https://truyenhinhdulich.vn/tin-tuc/nuoc-anh-chi-10-trieu-bang-trong-130-000-cay-xanh-chong-bien-doi-khi-hau-5817.html">Ảnh cây</a>
-                </p>
+                    <p class="Ten">
+                        Điện thoại Samsung Galaxy Z Flip 5G
+                    </p>
+
+                    <br/>
+
+                    <p class="Gia">Giá: <strong>20.990.000đ</strong></p>
+                </a>
             </div>
 
-            <div class="Hang">
-                <p>
-                    <a class="Anh" href="https://bigfarm.vn/the-gioi-se-ra-sao-neu-khong-co-cay-xanh/" target="_blank" >
-                        <img src="http://sohanews.sohacdn.com/k:2016/1-1461663977760/trai-dat-se-nhu-the-nao-neu-khong-co-cay-coi-thuc-vat.jpg"
-                        alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="https://bigfarm.vn/the-gioi-se-ra-sao-neu-khong-co-cay-xanh/">Ảnh cây</a>
-                </p>
+            <div class="SanPham">
+                <a href="FileChiTiet/OPPOReno5.html">
+                    <img src="Anh/anh2.jpg" alt="OPPO Reno5" title="Điện thoại OPPO Reno5">
+                    
+                    <hr>
 
-                <p>
-                    <a class="Anh" target="_blank" href="http://caycongtrinhgiare.com/tam-quan-trong-cua-cay-xanh">
-                        <img src="http://phuclocvienjsc.com/uploads/image/images/1892173_71a51088.jpg"
-                            alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="http://caycongtrinhgiare.com/tam-quan-trong-cua-cay-xanh">Ảnh cây</a>
-                </p>
+                    <p class="Ten">
+                        Điện thoại OPPO Reno5
+                    </p>
 
-                <p>
-                    <a class="Anh" target="_blank" href="https://truyenhinhdulich.vn/tin-tuc/nuoc-anh-chi-10-trieu-bang-trong-130-000-cay-xanh-chong-bien-doi-khi-hau-5817.html">
-                        <img src="https://media.truyenhinhdulich.vn/upload/news/5817_anh_chinh_phu_mo_quy_10_trieu_bang_de_trong_cay_xa_11175620052019.jpg"
-                        alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="https://truyenhinhdulich.vn/tin-tuc/nuoc-anh-chi-10-trieu-bang-trong-130-000-cay-xanh-chong-bien-doi-khi-hau-5817.html">Ảnh cây</a>
-                </p>
+                    <br/>
+
+                    <p class="Gia">Giá: <strong>8.690.000đ</strong></p>
+                </a>
             </div>
 
-            <div class="Hang">
-                <p>
-                    <a class="Anh" href="https://bigfarm.vn/the-gioi-se-ra-sao-neu-khong-co-cay-xanh/" target="_blank" >
-                        <img src="http://sohanews.sohacdn.com/k:2016/1-1461663977760/trai-dat-se-nhu-the-nao-neu-khong-co-cay-coi-thuc-vat.jpg"
-                        alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="https://bigfarm.vn/the-gioi-se-ra-sao-neu-khong-co-cay-xanh/">Ảnh cây</a>
-                </p>
+            <div class="SanPham">
+                <a href="FileChiTiet/SamsungGalaxyA32.html">
+                    <img src="Anh/anh3.jpg" alt="Samsung Galaxy A32" title="Điện thoại Samsung Galaxy A32">
+                    
+                    <hr>
 
-                <p>
-                    <a class="Anh" target="_blank" href="http://caycongtrinhgiare.com/tam-quan-trong-cua-cay-xanh">
-                        <img src="http://phuclocvienjsc.com/uploads/image/images/1892173_71a51088.jpg"
-                            alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="http://caycongtrinhgiare.com/tam-quan-trong-cua-cay-xanh">Ảnh cây</a>
-                </p>
+                    <p class="Ten">
+                        Điện thoại Samsung Galaxy A32
+                    </p>
 
-                <p>
-                    <a class="Anh" target="_blank" href="https://truyenhinhdulich.vn/tin-tuc/nuoc-anh-chi-10-trieu-bang-trong-130-000-cay-xanh-chong-bien-doi-khi-hau-5817.html">
-                        <img src="https://media.truyenhinhdulich.vn/upload/news/5817_anh_chinh_phu_mo_quy_10_trieu_bang_de_trong_cay_xa_11175620052019.jpg"
-                        alt="cay" title="Cây xanh">
-                    </a>
-                    <a class="Chu" target="_blank" href="https://truyenhinhdulich.vn/tin-tuc/nuoc-anh-chi-10-trieu-bang-trong-130-000-cay-xanh-chong-bien-doi-khi-hau-5817.html">Ảnh cây</a>
-                </p>
+                    <br/>
+
+                    <p class="Gia">Giá: <strong>6.490.000đ</strong></p>
+                </a>
+            </div>
+        </div>
+
+        <div class="Hang">
+            <div class="SanPham">
+                <a href="#">
+                    <img src="Anh/anh4.jpg" alt="Xiaomi Mi 11 Lite" title="Điện thoại Xiaomi Mi 11 Lite">
+                    
+                    <hr>
+
+                    <p class="Ten">
+                        Điện thoại Xiaomi Mi 11 Lite
+                    </p>
+
+                    <br/>
+
+                    <p class="Gia">Giá: <strong>7.990.000đ</strong></p>
+                </a>
             </div>
 
+            <div class="SanPham">
+                <a href="#">
+                    <img src="Anh/anh5.jpg" alt="Samsung Galaxy S21 5G" title="Điện thoại Samsung Galaxy S21 5G">
+                    
+                    <hr>
+
+                    <p class="Ten">
+                        Điện thoại Samsung Galaxy S21 5G
+                    </p>
+
+                    <br/>
+
+                    <p class="Gia">Giá: <strong>20.990.000đ</strong></p>
+                </a>
+            </div>
+
+            <div class="SanPham">
+                <a href="#">
+                    <img src="Anh/anh6.jpg" alt="Samsung Galaxy A52" title="Điện thoại Samsung Galaxy A52">
+                    
+                    <hr>
+
+                    <p class="Ten">
+                        Điện thoại Samsung Galaxy A52
+                    </p>
+
+                    <br/>
+
+                    <p class="Gia">Giá: <strong>10.090.000đ</strong></p>
+                </a>
+            </div>
         </div>
     </div>
 </body>
-
 </html>
