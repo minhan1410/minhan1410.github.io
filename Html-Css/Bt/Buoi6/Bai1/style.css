@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    border: 0;
+    box-sizing:border-box;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+.Hang{
+    display:flex;
+    flex-direction:row;
+}
+
+img{
+    width:200px;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+img:hover{
+    /* width:500px;
+    height: 500px; */
+    transform:scale(1.2);
+}

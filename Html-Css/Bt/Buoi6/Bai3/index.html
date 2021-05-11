@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Đăng nhập hoặc đăng ký</title>
+    <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico">
+    <style>
+        *{
+            margin:0;
+            border:0;
+            box-sizing: border-box;
+        }
+
+        #container{
+            width: auto;
+            margin:100px 0;
+            display: flex;
+            justify-content:center;
+            flex-wrap: wrap;
+        }
+
+        #header{
+            margin-right: 65px;
+            width: 500px;
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: flex-start;
+            align-self:auto;
+            flex-wrap: wrap;
+        }
+
+        h2{
+            margin-top: 20px;
+            font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 32px;
+            width: auto;
+            padding-bottom: 20px;
+        }
+
+        #form{
+            display: flex;
+            flex-direction:column;
+            justify-content:center;
+            
+            /* width: 396px; */
+        }
+
+        form{
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            box-sizing: border-box;
+            margin: 40px 0 0;
+            padding: 20px 0 28px;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+        }
+
+        #username,#password{
+            border-radius: 6px;
+            font-size: 17px;
+            padding: 14px 16px;
+            width: 330px;
+            border: 1px solid #dddfe2;
+
+        }
+
+        #DangNhap{
+            width:328px;
+            height: 48px;
+            border-radius: 6px;
+            background-color:#1877f2;
+            font-size: 20px;
+            font-weight: lighter;
+            color:white;
+        }
+        
+        #QuenPass{
+            font-size: 17px;
+            margin-left: 110px;
+            text-decoration: none;
+            color:#1877f2;
+        }
+
+        hr{
+            align-items: center;
+            border-bottom: 1px solid #dadde1;
+            display: flex;
+            margin: 0px 16px 20px ;
+            text-align: center;
+        }
+
+        #DangKy{
+            width: 179px;
+            height: 48px;
+            border-radius: 6px;
+            background-color:#42B72A;
+            font-weight: lighter;
+            color:white;
+            font-size: 18px;
+            padding:0 8px;
+        }
+
+        img{
+            display:block;
+            height: 106px;
+            margin: -28px;
+        }
+
+        #DoanhNghiep{
+            margin-top:15px;
+        }
+
+        #DoanhNghiep>a{
+            text-decoration: none;
+            color: #1c1e21;
+            font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+        }
+
+        #DoanhNghiep>a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="">
+            <h2>Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.</h2>
+        </div>
+
+        <div id="form">
+            <form action="#" method="POST">
+                <div class="DangNhap">
+                    <input id="username" type="text" name="username" placeholder="Email hoặc số điện thoại"><br/><br/>
+                    <input id="password" type="password" placeholder="Mật khẩu"><br/><br/>
+                    <button id="DangNhap" type="submit">Đăng nhập</button><br/><br/>
+                    <a target="_blank" id="QuenPass" href="https://www.facebook.com/recover/initiate/?ars=facebook_login&privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjIwNzEzMDk5LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D">Quên mật khẩu?</a><br/><br/>
+                    <hr/>
+                </div>
+    
+                <div class="DangKy">
+                    <button id="DangKy" type="submit">Tạo tài khoản mới</button>
+                </div>
+            </form>
+            <div id="DoanhNghiep">
+                <a href="https://www.facebook.com/pages/create/?ref_type=registration_form"> <b> Tạo Trang</b> </a> 
+             dành cho người nổi tiếng, nhãn hiệu hoặc doanh nghiệp.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <!-- FORM -->
+    <!-- method="POST" ẩn thông tin -->
+    <form action="#" method="POST">
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" placeholder="text here ..." />
+        <br />
+        <br />
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" />
+        <br />
+        <br />
+        <label for="">Gender:</label>
+        <input id="male" type="radio" name="gender" value="male" /><label for="male"
+          >Male</label
+        >
+        <input id="female" type="radio" name="gender" value="female" /><label for="female"
+          >Female</label
+        >
+        <input id="other" type="radio" name="gender" value="other" /><label for="other"
+          >Other</label
+        >
+        <br />
+        <br />
+        <label for="">Favorites:</label><br />
+        <input id="read" type="checkbox" name="favorite" value="readbook" /><label for="read"
+          >Read book</label
+        >
+        <input id="listen" type="checkbox" name="favorite" value="listenmusic" /><label for="listen"
+          >Listen to music</label
+        >
+        <input id="swim" type="checkbox" name="favorite" value="swimming" /><label for="swim"
+          >Swimming</label
+        >
+        <br />
+        <br />
+        <label for="">City:</label>
+        <select name="city" id="city">
+          <option value="ha-noi">Hà Nội</option>
+          <option value="hue">Huế</option>
+          <option value="tphcm">Tp. Hồ Chí Minh</option>
+          <option value="ca-mau">Cà Mau</option>
+        </select>
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+</body>
+</html>

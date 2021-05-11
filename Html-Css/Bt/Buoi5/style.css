@@ -62,6 +62,10 @@ li:hover{
     color: orange;
     background-color:#ECEFF1
 }
+li:hover>a{
+    color: orange;
+    background-color:#ECEFF1
+}
 
 /* li:hover{
     color: orange;
