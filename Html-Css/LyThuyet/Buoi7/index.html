@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        th,td{
+            margin: 10px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Stt</th>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Giới tính</th>
+        </tr>
+
+        <tr>
+            <!-- tr: dòng th: cột -->
+            <td>1</td>
+            <td>01</td>
+            <td rowspan="2">Nguyễn Minh An</td>
+            <td>20</td>
+            <td>Nam</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>02</td>
+            <!-- <td>An</td> -->
+            <td>20</td>
+            <td>Nam</td>
+        </tr>
+    </table>
+</body>
+</html>

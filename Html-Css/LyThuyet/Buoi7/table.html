@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập table</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,td {
+            padding: 10px;
+        }
+
+        .TrangThai>p{
+            color: white;
+            width:72px;
+            height: 22px;
+            text-align: center;
+            padding: 1px;
+            background-color:rgb(12, 161, 12)
+        }
+
+        .TTCaNhan{
+            color:blue;
+        }
+
+        /* 
+            :nth-child(n) trong CSS đây được xem là một bộ chọn trong CSS. 
+            Cho phép chúng ta lựa chọn bất kỳ hoặc nhóm các phần tử con trong một phần tử cha. Trong đó (n) có thể là số, 
+            từ khóa hay một công thức mang ý nghĩa vị trí của phần tử con.
+        */
+
+        tr:nth-child(even){
+            /* even: chan */
+            background-color:#d6d2d2;
+        }
+
+        tr:nth-child(odd){
+            /* odd: le */
+            background-color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Stt</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Điện thoại</th>
+            <th>Trạng thái</th>
+            <th>Nhập học</th>
+            <th>Kết thúc</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td class="TTCaNhan">Lê Văn Phú</td>
+            <td class="TTCaNhan">levanphu5555@gmail.com</td>
+            <td class="TTCaNhan">0388327229</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>22-03-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="TTCaNhan">Lê Văn Tốt</td>
+            <td class="TTCaNhan">totlv99@gmail.com</td>
+            <td class="TTCaNhan">0336288445</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>14-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="TTCaNhan">Nguyễn Công Khanh</td>
+            <td class="TTCaNhan">khanhnc45@gmail.com</td>
+            <td class="TTCaNhan">0978941770</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>14-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td class="TTCaNhan">Chử Văn Long</td>
+            <td class="TTCaNhan">chuvanlong.qle@gmail.com</td>
+            <td class="TTCaNhan">096937805</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>14-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td class="TTCaNhan">Nguyễn Quang Tùng</td>
+            <td class="TTCaNhan">quangtung01122000@gmail.com</td>
+            <td class="TTCaNhan">0387785580</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>14-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td class="TTCaNhan">Nguyễn Hữu Tín</td>
+            <td class="TTCaNhan">tienhuunguyen222@gmail.com</td>
+            <td class="TTCaNhan">0389289105</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>14-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td class="TTCaNhan">Nguyễn Thành Trung</td>
+            <td class="TTCaNhan">nttorange@gmail.com</td>
+            <td class="TTCaNhan">0902136709</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>14-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td class="TTCaNhan">Dương Văn Thắng</td>
+            <td class="TTCaNhan">duongvanthang1998@gmail.com</td>
+            <td class="TTCaNhan">388480000</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>14-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td class="TTCaNhan">Hoàng Trọng Khoa</td>
+            <td class="TTCaNhan">hoangkhoa2501@gmail.com</td>
+            <td class="TTCaNhan">0961745334</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>22-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td class="TTCaNhan">Nguyễn Minh An</td>
+            <td class="TTCaNhan">minhan14102001@gmail.com</td>
+            <td class="TTCaNhan">0347705659</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>22-04-2021</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td class="TTCaNhan">Nguyễn Việt Anh</td>
+            <td class="TTCaNhan">nva0372206089@gmail.com</td>
+            <td class="TTCaNhan">0372206089</td>
+            <td class="TrangThai"><p>Đang học</p></td>
+            <td>22-04-2021</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>
