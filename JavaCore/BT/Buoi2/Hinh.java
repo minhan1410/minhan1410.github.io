@@ -59,9 +59,114 @@ public class Hinh {
         System.out.println();
     }
 
+    public static void ChuNhat(int a, int b) {
+        if (a > 3 && b < 9) {
+            for (int i = 1; i <= b; i++) {
+                DuongThang(a);
+            }
+        }
+        System.out.println();
+    }
+
+    public static void HinhVuong(int a) {
+        if (a >= 2) {
+            for (int i = 1; i <= a; i++) {
+                DuongThang(a);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void HinhVuongRong(int a) {
+        if (a >= 2) {
+            for (int i = 1; i <= a; i++) {
+                if (i == 1 || i == a) {
+                    DuongThang(a);
+                } else {
+                    DuongThangChuaKhoangTrang(a);
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void TamGiacCan(int n) {
+        if (n > 3 && n < 10) {
+            int a = 0;
+            for (int i = 1; i <= n; i++) {
+                // Khoảng trắng
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print("   ");
+                }
+                DuongThang(i + a);
+                a = i;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void TamGiacCanRong(int n) {
+        if (n > 3 && n < 10) {
+            int a = 0;
+            for (int i = 1; i <= n; i++) {
+                // Khoảng trắng
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print("   ");
+                }
+
+                if (i == 1 || i == n) {
+                    DuongThang(i + a);
+                } else {
+                    DuongThangChuaKhoangTrang(i + a);
+                }
+                a = i;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void DongHoCat(int n) {
+        if (n > 3 && n < 10) {
+            for (int i = n; i >= 1; i--) {
+                // Khoảng trắng
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print("   ");
+                }
+                DuongThang(i + i - 1);
+            }
+            TamGiacCan(n);
+        }
+    }
+
+    public static void DongHoCatRong(int n) {
+        if (n > 3 && n < 10) {
+            for (int i = n; i >= 1; i--) {
+                // Khoảng trắng
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print("   ");
+                }
+                if (i == 1 || i == n) {
+                    DuongThang(2 * i - 1);
+                } else {
+                    DuongThangChuaKhoangTrang(2 * i - 1);
+                }
+            }
+            TamGiacCanRong(n);
+        }
+    }
+
     public static void main(String[] args) {
         TamGiacDac(5);
         TamGiacRong(5);
         ChuNhatRong(7, 6);
+
+        // Tự chế thêm
+        ChuNhat(7, 6);
+        HinhVuong(5);
+        HinhVuongRong(5);
+        TamGiacCan(5);
+        TamGiacCanRong(5);
+        DongHoCat(5);
+        DongHoCatRong(5);
     }
 }
