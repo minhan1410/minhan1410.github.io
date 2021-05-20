@@ -64,9 +64,9 @@ public class Math {
 
     // Đếm số lẻ trong một mảng
     public int countOddNumber(int[] numbers) {
-        int dem=0;
-        for(int i=0; i<numbers.length; i++){
-            if(isOdd(numbers[i])){
+        int dem = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (isOdd(numbers[i])) {
                 dem++;
             }
         }
@@ -76,11 +76,11 @@ public class Math {
     // Trả về mảng chỉ gồm các số lẻ. Ví dụ đầu vào 1, 2, 4, 5, 3 thì trả về [1, 5,
     // 3]
     public int[] oddNumberArray(int[] numbers) {
-        int n[]=new int[countOddNumber(numbers)];
-        int vt=0;
-        for(int i=0; i<numbers.length; i++){
-            if(isOdd(numbers[i])){
-                n[vt++]=numbers[i];
+        int n[] = new int[countOddNumber(numbers)];
+        int vt = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (isOdd(numbers[i])) {
+                n[vt++] = numbers[i];
             }
         }
         return n;
@@ -92,14 +92,14 @@ public class Math {
      * Quá cân 30.0 Rất nguy hiểm
      */
     public String bmiRating(float height, float weight) {
-        float bmi=calculateBMI(height, weight);
-        if(bmi<18.5){
+        float bmi = calculateBMI(height, weight);
+        if (bmi < 18.5) {
             return "Nhẹ cân";
-        }else if(bmi>=18.5 && bmi<=24.9){
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
             return "Bình thường";
-        }else if(bmi>=25.0 && bmi<=29.9){
+        } else if (bmi >= 25.0 && bmi <= 29.9) {
             return "Quá cân";
-        }else if(bmi>=30){
+        } else if (bmi >= 30) {
             return "Rất nguy hiểm";
         }
         return " ";
