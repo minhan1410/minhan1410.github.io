@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "LT/Buoi2",
         "LT/Buoi1",
-        "LT/Buoi2"
+        "BT/Buoi2"
     ]
 }
