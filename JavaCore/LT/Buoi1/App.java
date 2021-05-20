@@ -24,5 +24,12 @@ public class App{
             System.out.println();
         }
         System.out.println("\n");
+
+        for(int i=0; i<=10;i++){
+            if(i%2!=0){
+                continue;
+            }
+            System.out.println(i);
+        }
     }
 }
