@@ -27,7 +27,7 @@ public class Main {
         for (int i = 0; i < dsDen.size(); i++) {
             if (str.contains(dsDen.get(i))) {
                 thayThe = dsDen.get(i);
-                thayThe = thayThe.replace(dsDen.get(i).charAt(1), '*');
+                thayThe = thayThe.replace(thayThe.charAt(1), '*');
                 str = str.replace(dsDen.get(i), thayThe);
             }
         }
