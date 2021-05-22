@@ -104,4 +104,35 @@ public class Math {
         }
         return " ";
     }
+
+    // 4. Nhập vào một số nguyên dương < 100, hãy in ra chuỗi các số nguyên tố. Số
+    // nguyên tố là số chỉ chia hết cho 1 và chính nó.
+
+    public boolean isSNT(int n){
+        if(n<2){
+            return false;
+        }
+        else{
+            for(int i=2;i<n-1;i++){
+                if(n%i==0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public String ChuoiSNT(int n){
+        int chay=2,dem=0;String str="";
+        if(n>=0 && n<=100){
+            while(dem<n){
+                if(isSNT(chay)){
+                    dem++;
+                    str+=chay+", ";
+                }
+                chay++;
+            }
+        }
+        return str;
+    }
 }

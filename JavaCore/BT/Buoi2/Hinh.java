@@ -161,12 +161,12 @@ public class Hinh {
         ChuNhatRong(7, 6);
 
         // Tự chế thêm
-        ChuNhat(7, 6);
-        HinhVuong(5);
-        HinhVuongRong(5);
-        TamGiacCan(5);
-        TamGiacCanRong(5);
-        DongHoCat(5);
-        DongHoCatRong(5);
+        // ChuNhat(7, 6);
+        // HinhVuong(5);
+        // HinhVuongRong(5);
+        // TamGiacCan(5);
+        // TamGiacCanRong(5);
+        // DongHoCat(5);
+        // DongHoCatRong(5);
     }
 }
