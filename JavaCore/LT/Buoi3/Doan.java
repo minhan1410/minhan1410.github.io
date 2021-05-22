@@ -1,9 +1,12 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Doan {
     static Scanner scanner = new Scanner(System.in);
 
     public static void DoanEmail() {
+        String EMAIL_PATTERN = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
+
         String email;
         while (true) {
             System.out.println("\tCheck email(Nhan q de thoat)");
@@ -13,8 +16,7 @@ public class Doan {
                 break;
             }
 
-            if (email.length() > "@gmail.com".length() && email.contains("@gmail.com")
-                    || email.contains("@email.com")) {
+            if (Pattern.matches(EMAIL_PATTERN, email)) {
                 System.out.println(email + " - chinh xac");
             } else {
                 System.out.println(email + " - email sai");
