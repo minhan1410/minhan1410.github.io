@@ -37,11 +37,60 @@ public class StringUtil {
 
         return flag;
 
-        // C2:
+        // C2: dung regex
         // Pattern pattern = Pattern.compile(strB);
         // Matcher matcher = pattern.matcher(strA);
         // matcher.find();
+
+        // C3: chia chuoi A ra thanh cac chuoi con
+        // String a1 = "";
+        // int lengthB = strB.length();
+        // int lengthA= strA.length();
+        // boolean flag = false;
+
+        // if (lengthA < lengthB) {
+        //     return false;
+        // }
+        // if (lengthA == 0 && lengthB == 0) {
+        //     return true;
+        // }
+
+
+        // for (int i = 0; i < lengthA; i++) {
+        //     if (strA.charAt(i) == strB.charAt(0)) {
+        //         a1 = strA.substring(i, i + lengthB);
+        //         if (a1.length() == lengthB) {
+        //             flag = a1.equals(strB);
+        //             if (!flag) {
+        //                 i += lengthB - 1;
+        //             } else {
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+        // return flag;
+
+        // C4: VietAnh
+        // final int length = strB.length();
+        // if (length == 0)
+        // return true;
+
+        // final char firstLo = Character.toLowerCase(strB.charAt(0));
+        // final char firstUp = Character.toUpperCase(strB.charAt(0));
+
+        // for (int i = strA.length() - length; i >= 0; i--) {
+        // final char ch = strA.charAt(i);
+        // if (ch != firstLo && ch != firstUp)
+        // continue;
+
+        // if (strA.regionMatches(true, i, strB, 0, length))
+        // return true;
+        // }
+
+        // return false;
     }
+
 
     /*
      * Nghịch đảo một chuỗi: Hello -> olleH
