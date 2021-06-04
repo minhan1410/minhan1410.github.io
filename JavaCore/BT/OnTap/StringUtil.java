@@ -55,7 +55,6 @@ public class StringUtil {
         //     return true;
         // }
 
-
         // for (int i = 0; i < lengthA; i++) {
         //     if (strA.charAt(i) == strB.charAt(0)) {
         //         a1 = strA.substring(i, i + lengthB);
