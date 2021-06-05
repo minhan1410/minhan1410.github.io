@@ -9,33 +9,36 @@ public class StringUtil {
      * 
      * case1: ("","") -> T case2: ("","123") -> F case3: ("1","2") -> F case4:
      * ("1110","112") -> F case5: ("111","11") -> T case6: ("111","110") -> F case7:
-     * ("00111","11") -> T case8: ("0011122","11") -> T
+     * ("00111","11") -> T case8: ("0011122","11") -> T case9: ("001121","111") -> F
      * 
      */
 
     public boolean isContain(String strA, String strB) {
-        if (strA.length() < strB.length()) {
+        int lengthA = strA.length();
+        int lengthB = strB.length();
+
+        if (lengthA < lengthB) {
             return false;
         }
 
-        boolean flag = true;
         int starA = 0;
         int starB = 0;
+        int dem = 0;
 
-        if (strA.length() >= strB.length()) {
-            while (starA < strA.length() && starB < strB.length()) {
+        if (lengthA >= lengthB) {
+            while (starA < lengthA && starB < lengthB) {
                 if (strB.charAt(starB) != strA.charAt(starA)) {
-                    flag = false;
                     starA++;
+                    dem = 0;
                 } else {
                     starB++;
                     starA++;
-                    flag = true;
+                    dem++;
                 }
             }
         }
 
-        return flag;
+        return (dem == lengthB);
 
         // C2: dung regex
         // Pattern pattern = Pattern.compile(strB);
@@ -45,8 +48,7 @@ public class StringUtil {
         // C3: chia chuoi A ra thanh cac chuoi con
         // String a1 = "";
         // int lengthB = strB.length();
-        // int lengthA= strA.length();
-        // boolean flag = false;
+        // int lengthA = strA.length();
 
         // if (lengthA < lengthB) {
         //     return false;
@@ -57,45 +59,94 @@ public class StringUtil {
 
         // for (int i = 0; i < lengthA; i++) {
         //     if (strA.charAt(i) == strB.charAt(0)) {
-        //         a1 = strA.substring(i, i + lengthB);
-        //         if (a1.length() == lengthB) {
-        //             flag = a1.equals(strB);
-        //             if (!flag) {
+        //         if (lengthA >= i + lengthB) {
+        //             a1 = strA.substring(i, i + lengthB);
+        //             if (!a1.equals(strB)) {
         //                 i += lengthB - 1;
         //             } else {
-        //                 break;
+        //                 return true;
         //             }
+        //         } else {
+        //             return false;
         //         }
         //     }
         // }
-        // return flag;
+        // return false;
 
         // C4: VietAnh
         // final int length = strB.length();
         // if (length == 0)
-        // return true;
+        //     return true;
 
         // final char firstLo = Character.toLowerCase(strB.charAt(0));
         // final char firstUp = Character.toUpperCase(strB.charAt(0));
 
         // for (int i = strA.length() - length; i >= 0; i--) {
-        // final char ch = strA.charAt(i);
-        // if (ch != firstLo && ch != firstUp)
-        // continue;
+        //     final char ch = strA.charAt(i);
+        //     if (ch != firstLo && ch != firstUp)
+        //         continue;
 
-        // if (strA.regionMatches(true, i, strB, 0, length))
-        // return true;
+        //     if (strA.regionMatches(true, i, strB, 0, length))
+        //         return true;
         // }
 
         // return false;
     }
 
+    public boolean isContain3(String strA, String strB){
+        String a1 = "";
+        int lengthB = strB.length();
+        int lengthA = strA.length();
 
+        if (lengthA < lengthB) {
+            return false;
+        }
+        if (lengthA == 0 && lengthB == 0) {
+            return true;
+        }
+
+        for (int i = 0; i < lengthA; i++) {
+            if (strA.charAt(i) == strB.charAt(0)) {
+                if (lengthA >= i + lengthB) {
+                    a1 = strA.substring(i, i + lengthB);
+                    if (!a1.equals(strB)) {
+                        i += lengthB - 1;
+                    } else {
+                        return true;
+                    }
+                } else {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isContain4(String strA, String strB) {
+        final int length = strB.length();
+        if (length == 0)
+            return true;
+
+        final char firstLo = Character.toLowerCase(strB.charAt(0));
+        final char firstUp = Character.toUpperCase(strB.charAt(0));
+
+        for (int i = strA.length() - length; i >= 0; i--) {
+            final char ch = strA.charAt(i);
+            if (ch != firstLo && ch != firstUp)
+                continue;
+
+            if (strA.regionMatches(true, i, strB, 0, length))
+                return true;
+        }
+
+        return false;
+    }
     /*
      * Nghịch đảo một chuỗi: Hello -> olleH
      */
     public String reverse(String str) {
         String str1 = "";
+
         for (int i = str.length() - 1; i >= 0; i--) {
             str1 += str.charAt(i);
         }
@@ -108,27 +159,54 @@ public class StringUtil {
      * 
      */
     public int find(String strA, String strB) {
-        if (!isContain(strA, strB)) {
+        // if (!isContain(strA, strB)) {
+        // return -1;
+        // }
+
+        // int starA = 0;
+        // while (starA < strA.length()) {
+        // if (strB.charAt(0) != strA.charAt(starA)) {
+        // starA++;
+        // } else {
+        // return starA;
+        // }
+        // }
+        // return 0;
+
+        int lengthB = strB.length();
+        int lengthA = strA.length();
+        String a1 = "";
+
+        if (lengthA < lengthB) {
             return -1;
         }
+        if (lengthA == 0 && lengthB == 0) {
+            return 0;
+        }
 
-        int starA = 0;
-
-        while (starA < strA.length()) {
-            if (strB.charAt(0) != strA.charAt(starA)) {
-                starA++;
-            } else {
-                return starA;
+        for (int i = 0; i < lengthA; i++) {
+            if (strA.charAt(i) == strB.charAt(0)) {
+                if (lengthA >= i + lengthB) {
+                    a1 = strA.substring(i, i + lengthB);
+                    if (!a1.equals(strB)) {
+                        i += lengthB - 1;
+                    } else {
+                        return i;
+                    }
+                } else {
+                    return -1;
+                }
             }
         }
-        return 0;
+        return -1;
 
         // C2:
         // try {
         // Pattern pattern = Pattern.compile(strB);
         // Matcher matcher = pattern.matcher(strA);
         // //
-        // https://stackoverflow.com/questions/22633951/java-regex-throwing-exception-for-no-match-found-when-pattern-found-in-line
+        // https: //
+        // stackoverflow.com/questions/22633951/java-regex-throwing-exception-for-no-match-found-when-pattern-found-in-line
         // matcher.find();
         // return matcher.start();
         // } catch (IllegalStateException e) {
@@ -141,6 +219,7 @@ public class StringUtil {
      */
     public String camelCase(String input) {
         String str[] = input.split(" ");
+
         for (int i = 0; i < str.length; i++) {
             if (str[i].charAt(0) >= 97 && str[i].charAt(0) <= 122) {
                 str[i] = str[i].replace(str[i].charAt(0), (char) (str[i].charAt(0) - 32));
@@ -164,7 +243,6 @@ public class StringUtil {
         int pos = 0;
         for (int i = 0; i < str.length; i++) {
             if (str[pos].length() < str[i].length()) {
-                // max = str[i].length();
                 pos = i;
             }
         }
