@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner; 
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Main {
                     } else if (chon == 2) {
                         Doan.TuVanSucKhoe();
                     } else {
-                        Math math = new Math(); // Lấy từ bài trc
+                        NewMath math = new NewMath(); // Lấy từ bài trc
                         System.out.print("\tIn SNT\nBn muon in bn so ng to: ");
                         int n = scanner.nextInt();
                         System.out.println(math.ChuoiSNT(n));

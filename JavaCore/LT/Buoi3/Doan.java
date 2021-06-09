@@ -25,7 +25,7 @@ public class Doan {
     }
 
     public static void TuVanSucKhoe() {
-        Math math = new Math(); // Lấy từ bài trc
+        NewMath math = new NewMath(); // Lấy từ bài trc
         while (true) {
             System.out.println("\tTu van suc khoe(chieu cao=q or can nang=q thi thoat)");
             System.out.print("Nhap chieu cao: ");
