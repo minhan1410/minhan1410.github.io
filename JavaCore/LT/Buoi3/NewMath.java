@@ -94,13 +94,13 @@ public class NewMath {
     public String bmiRating(float height, float weight) {
         float bmi = calculateBMI(height, weight);
         if (bmi < 18.5) {
-            return "Nhẹ cân";
+            return "Nhẹ cân cần ăn nhiều hơn";
         } else if (bmi >= 18.5 && bmi <= 24.9) {
-            return "Bình thường";
+            return "Bình thường giữ vức cân nặng này";
         } else if (bmi >= 25.0 && bmi <= 29.9) {
             return "Quá cân";
         } else if (bmi >= 30) {
-            return "Rất nguy hiểm";
+            return "Rất nguy hiểm nên giảm cân ngay";
         }
         return " ";
     }
