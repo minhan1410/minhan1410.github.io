@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Player",
+            "request": "launch",
+            "mainClass": "Player",
+            "projectName": "JavaCore_57a8400a"
+        },
+        {
+            "type": "java",
             "name": "Launch Toan",
             "request": "launch",
             "mainClass": "Toan",
