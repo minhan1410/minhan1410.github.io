@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "BT/Buoi4"
+        "BT/Buoi4",
+        "BT/Buoi7/11_ObjectRelation"
     ]
 }
