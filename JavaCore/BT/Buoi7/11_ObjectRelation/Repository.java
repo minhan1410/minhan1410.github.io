@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Optional;
+import java.util.Scanner;
 
 // lớp Repository là Generic class với thuộc tính là ArrayList có các kiểu dữ liệu được kế thừa từ Entity
 public class Repository<T extends Entity> {
@@ -36,12 +37,15 @@ public class Repository<T extends Entity> {
     collections.add(t);
   }
 
-  public void update(T t) {
+  public void update(T t,Long id) {
     // Thay thế ptu theo ptu cho trc(Nếu trong ArrayList có id trùng vs id của ptu cho trc)
     // tìm xm trong ArrayList có ptu nào có id giống vs t(ptu cần sửa) không?  -> Nếu có thì thay thế
+    
     for (int i = 0; i < collections.size(); i++) {
-      if (collections.get(i).getId().equals(t.getId())) {
+      if (collections.get(i).getId().equals(id)) {
+        // int tam=collections.indexOf(t);
         collections.set(i, t);
+        // collections.remove(tam);
       }
     }
   }
