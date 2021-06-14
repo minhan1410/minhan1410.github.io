@@ -22,7 +22,6 @@ public class Product implements Entity {
   public String getName() {
     return name;
   }
-
   public void setName(String name) {
     this.name = name;
   }
@@ -30,7 +29,6 @@ public class Product implements Entity {
   public String getManufacturer() {
     return manufacturer;
   }
-
   public void setManufacturer(String manufacturer) {
     this.manufacturer = manufacturer;
   }
@@ -38,7 +36,6 @@ public class Product implements Entity {
   public String getMadeIn() {
     return madeIn;
   }
-
   public void setMadeIn(String madeIn) {
     this.madeIn = madeIn;
   }
@@ -46,14 +43,13 @@ public class Product implements Entity {
   public String getDescription() {
     return description;
   }
-
   public void setDescription(String description) {
     this.description = description;
   }
 
   @Override
   public String toString() {
-    return "Product [description=" + description + ", id=" + id + ", madeIn=" + madeIn + ", manufacturer="
-        + manufacturer + ", name=" + name + "]\n";
+    return "Product [id=" + id + ", name=" + name + ", madeIn=" + madeIn + 
+    ", manufacturer=" + manufacturer +  ", description=" + description + "]";
   }
 }

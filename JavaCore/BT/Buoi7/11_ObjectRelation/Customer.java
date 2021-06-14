@@ -49,8 +49,8 @@ public class Customer implements Entity{
 
   @Override
   public String toString() {
-    return "Customer [address=" + address + ", customerName=" + customerName + ", email=" + email + ", id=" + id
-        + ", mobile=" + mobile + "]";
+    return "Customer [id=" + id + ", name=" + customerName + ", email=" + email +  
+    ", mobile=" + mobile + ", address=" + address +  "]";
   }
   
 }

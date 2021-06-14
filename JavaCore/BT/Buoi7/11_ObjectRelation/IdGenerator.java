@@ -3,7 +3,9 @@ import java.util.concurrent.locks.ReentrantLock;
 public class IdGenerator {
   private static Long id = 0L;
   private static ReentrantLock lock = new ReentrantLock();
+
   private IdGenerator(){}
+  
   public static Long getNewID() {
     // Hiểu đưn giản là mỗi khi gọi getNewID thì nó sẽ trả vể id+1
     Long result;
