@@ -161,6 +161,7 @@ public class Validation {
 
 ## Optional: Nó được sử dụng để kiểm tra xem một biến có giá trị tồn tại giá trị hay không 
 https://gpcoder.com/3945-optional-trong-java-8
+
 https://viblo.asia/p/toi-uu-source-code-su-dung-optional-trong-java-8-WkwGnJz3G75g
 
 ## Stream (luồng) là một đối tượng mới của Java được giới thiệu từ phiên bản Java 8,giúp cho việc thao tác trên collection và array trở nên dễ dàng và tối ưu hơn.
@@ -172,13 +173,13 @@ https://shareprogramming.net/loc-cac-phan-tu-trong-collection-voi-stream-filter/
 ## Iterator trong Java là một interface được sử dụng để thay thế Enumerations trong Java Collection Framework. 
 https://viettuts.vn/java-collection/su-dung-iterator-trong-java
 
-Bạn có thể sử dụng interator để:
-    Duyệt các phần tử từ đầu đến cuối của một collection.
-    Iterator cho phép xóa phần tử khi lặp một collection.
-Có ba phương thức trong Iterator như sau:
-    public boolean hasNext()	Nó trả về true nếu iterator còn phần tử kế tiếp phần tử đang duyệt.
-    public object next()	    Nó trả về phần tử hiện tại và di chuyển con trỏ trỏ tới phần tử tiếp theo.
-    public void remove()	    Nó loại bỏ phần tử cuối được trả về bởi Iterator. Nó hiếm khi được sử dụng.
+### Bạn có thể sử dụng interator để:
+    #### Duyệt các phần tử từ đầu đến cuối của một collection.
+    #### Iterator cho phép xóa phần tử khi lặp một collection.
+### Có ba phương thức trong Iterator như sau:
+    #### public boolean hasNext()	Nó trả về true nếu iterator còn phần tử kế tiếp phần tử đang duyệt.
+    #### public object next()	    Nó trả về phần tử hiện tại và di chuyển con trỏ trỏ tới phần tử tiếp theo.
+    #### public void remove()	    Nó loại bỏ phần tử cuối được trả về bởi Iterator. Nó hiếm khi được sử dụng.
 
 
 ## Gợi ý thực hành
