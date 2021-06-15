@@ -159,18 +159,26 @@ public class Validation {
 }
 ```
 
-## Optional: Nó được sử dụng để kiểm tra xem một biến có giá trị tồn tại giá trị hay không 
+## Optional: 
+Nó được sử dụng để kiểm tra xem một biến có giá trị tồn tại giá trị hay không 
+
 https://gpcoder.com/3945-optional-trong-java-8
 
 https://viblo.asia/p/toi-uu-source-code-su-dung-optional-trong-java-8-WkwGnJz3G75g
 
-## Stream (luồng) là một đối tượng mới của Java được giới thiệu từ phiên bản Java 8,giúp cho việc thao tác trên collection và array trở nên dễ dàng và tối ưu hơn.
+## Stream (luồng) 
+là một đối tượng mới của Java được giới thiệu từ phiên bản Java 8,giúp cho việc thao tác trên collection và array trở nên dễ dàng và tối ưu hơn.
+
 https://gpcoder.com/3923-gioi-thieu-ve-stream-api-trong-java-8/
 
-## filter() method là một intermediate operation, cho phép chúng ta lọc các phần tử thoả các điều kiện được chỉ định
+## filter() method 
+là một intermediate operation, cho phép chúng ta lọc các phần tử thoả các điều kiện được chỉ định
+
 https://shareprogramming.net/loc-cac-phan-tu-trong-collection-voi-stream-filter/
 
-## Iterator trong Java là một interface được sử dụng để thay thế Enumerations trong Java Collection Framework. 
+## Iterator trong Java 
+là một interface được sử dụng để thay thế Enumerations trong Java Collection Framework. 
+
 https://viettuts.vn/java-collection/su-dung-iterator-trong-java
 
 ### Bạn có thể sử dụng interator để:
