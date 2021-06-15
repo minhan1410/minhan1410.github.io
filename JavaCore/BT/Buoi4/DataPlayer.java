@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.List;
 
 public class DataPlayer {
     public static Team manUtd() {
