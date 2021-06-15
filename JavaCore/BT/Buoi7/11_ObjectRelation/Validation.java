@@ -36,6 +36,7 @@ public class Validation {
   }
 
   /*
+    variadic: https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/
     int... : có vẻ giống vs mảng
     VD:
       public class Main
@@ -48,10 +49,13 @@ public class Validation {
               return sum;
           }
         public static void main(String[] args) {
+            System.out.println(Sum());
+            System.out.println(Sum(1));
+            System.out.println(Sum(1,2,3,4,5));
             System.out.println(Sum(1,2,3,4,5,6,7,8,9,10));
         }
       }
-  */
+*/
 
   public static String lengthBetween(String input, int... values) {
     if (values.length < 1 || values.length > 2) {

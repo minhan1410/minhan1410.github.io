@@ -4,10 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class App {
-    public static <T extends Number> double Sum (T a,T b){
-      return a.doubleValue()+b.doubleValue();
-    } 
-
     public static void main(String[] args) {
     // Khởi tạo khách hành
     Customer tom = new Customer("Tom", "tom@gmail.com", "0123456789", "Room 1101, Empire State, New York, USA");
@@ -88,5 +84,5 @@ public class App {
 }
 /*
  * Optional: Nó được sử dụng để kiểm tra xem một biến có giá trị tồn tại giá trị
- * hay không https://gpcoder.com/3945-optional-trong-java-8/
+ * hay không https://gpcoder.com/3945-optional-trong-java-8
  */

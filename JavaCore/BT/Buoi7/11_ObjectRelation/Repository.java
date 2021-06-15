@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Optional;
 
 // lớp Repository là Generic class với thuộc tính là ArrayList có các kiểu dữ liệu được kế thừa từ Entity
+// https://viettuts.vn/java-new-features/generics-trong-java
 public class Repository<T extends Entity> {
   protected ArrayList<T> collections = new ArrayList<>();
 

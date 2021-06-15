@@ -48,12 +48,18 @@ public class Product implements Entity {
 4. Tạo Repository để thực hiện các thao tác: CRUD (Create: Thêm, Read: Đọc, Update: Sửa, Delete: Xoá)
 
 ## Lập trình Generics khác gì với abstraction?
+https://viettuts.vn/java-new-features/generics-trong-java
+
 Abstraction là trừu tượng hoá các đối tượng để chắt lọc ra một kiểu chứa các thuộc tính chung nhất.
 Generics: kiểu tổng quát
+
+//khai báo kiểu cụ thể
 swap(int a, int b)
 swap(String a, String b)
-swap(float a, float b) //khai báo kiểu cụ thể
-swap<T>(T a, T b) //khai bảo kiểu tổng quát T
+swap(float a, float b) 
+
+//khai bảo kiểu tổng quát T
+swap<T>(T a, T b) 
 
 List<Integer> sort(List<Integer>, bool isAscending)
 List<Long> sort(List<Long>, bool isAscending)
@@ -68,6 +74,13 @@ Dùng một giải thuật duy nhất, áp dụng cho nhiều kiểu dữ liệu
 Generics là một tuyệt chiêu của Java, C++, C#.
 Golang không có tính năng Generics. Lập trình rất là mệt
 
+VD: function Sum sử dụng generics
+```java
+  public static <T extends Number> double Sum (T a,T b){
+    return a.doubleValue()+b.doubleValue();
+  } 
+```
+
 Trong ví dụ cụ thể này, hãy xem Database.java, tôi chỉ cần khai báo 3 dòng lệnh là có ngay 3 class tuỳ biến cho từng kiểu Customer, Product, Oder.
 ```java
 public class Database {
@@ -78,7 +91,6 @@ public class Database {
 ```
 
 Nếu dùng theo cách cổ điển tôi phải tạo ra 3 class: ```RepositoryCustomer, RepositoryProduct, RepositoryOrder```. 3 class này vẫn phải kế thừa một class cha. Nói chung là code cực dài. Mà tôi lại ít thời gian.
-
 
 ## Lambda Expression là gì, giải quyết cái gì?
 
@@ -103,6 +115,7 @@ Tuy nhiên nếu có quá nhiều logic nhỏ nhỏ, chúng ta cũng sẽ phải
 
 
 ## implements khác gì với extends?
+https://itphutran.com/phan-biet-extends-va-implements-trong-java/
 
 extends: kế thừa và mở rộng. Bản thân nghĩa trong tiếng Anh extends có nghĩa là mở rộng rồi.
 
@@ -123,6 +136,7 @@ Khi một interface extends interface khác, nó đơn giản chỉ là bổ xun
 
 
 ## Variadic paramters là gì? Dùng khi nào?
+https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/
 
 Khi số lượng tham số cùng kiểu truyền vào phương thức không thể xác định. Có thể là 0, 1, 2 ... N. Lúc này dùng variadic parameters sẽ giúp khai báo phương thức không cần dùng kiểu ArrayList hay Array
 
@@ -144,6 +158,28 @@ public class Validation {
   public static String lengthBetween(String input, int... values) {
 }
 ```
+
+## Optional: Nó được sử dụng để kiểm tra xem một biến có giá trị tồn tại giá trị hay không 
+https://gpcoder.com/3945-optional-trong-java-8
+https://viblo.asia/p/toi-uu-source-code-su-dung-optional-trong-java-8-WkwGnJz3G75g
+
+## Stream (luồng) là một đối tượng mới của Java được giới thiệu từ phiên bản Java 8,giúp cho việc thao tác trên collection và array trở nên dễ dàng và tối ưu hơn.
+https://gpcoder.com/3923-gioi-thieu-ve-stream-api-trong-java-8/
+
+## filter() method là một intermediate operation, cho phép chúng ta lọc các phần tử thoả các điều kiện được chỉ định
+https://shareprogramming.net/loc-cac-phan-tu-trong-collection-voi-stream-filter/
+
+## Iterator trong Java là một interface được sử dụng để thay thế Enumerations trong Java Collection Framework. 
+https://viettuts.vn/java-collection/su-dung-iterator-trong-java
+
+Bạn có thể sử dụng interator để:
+    Duyệt các phần tử từ đầu đến cuối của một collection.
+    Iterator cho phép xóa phần tử khi lặp một collection.
+Có ba phương thức trong Iterator như sau:
+    public boolean hasNext()	Nó trả về true nếu iterator còn phần tử kế tiếp phần tử đang duyệt.
+    public object next()	    Nó trả về phần tử hiện tại và di chuyển con trỏ trỏ tới phần tử tiếp theo.
+    public void remove()	    Nó loại bỏ phần tử cuối được trả về bởi Iterator. Nó hiếm khi được sử dụng.
+
 
 ## Gợi ý thực hành
 
