@@ -174,12 +174,12 @@ https://shareprogramming.net/loc-cac-phan-tu-trong-collection-voi-stream-filter/
 https://viettuts.vn/java-collection/su-dung-iterator-trong-java
 
 ### Bạn có thể sử dụng interator để:
-    #### Duyệt các phần tử từ đầu đến cuối của một collection.
-    #### Iterator cho phép xóa phần tử khi lặp một collection.
+    Duyệt các phần tử từ đầu đến cuối của một collection.
+    Iterator cho phép xóa phần tử khi lặp một collection.
 ### Có ba phương thức trong Iterator như sau:
-    #### public boolean hasNext()	Nó trả về true nếu iterator còn phần tử kế tiếp phần tử đang duyệt.
-    #### public object next()	    Nó trả về phần tử hiện tại và di chuyển con trỏ trỏ tới phần tử tiếp theo.
-    #### public void remove()	    Nó loại bỏ phần tử cuối được trả về bởi Iterator. Nó hiếm khi được sử dụng.
+    public boolean hasNext()	Nó trả về true nếu iterator còn phần tử kế tiếp phần tử đang duyệt.
+    public object next()	    Nó trả về phần tử hiện tại và di chuyển con trỏ trỏ tới phần tử tiếp theo.
+    public void remove()	    Nó loại bỏ phần tử cuối được trả về bởi Iterator. Nó hiếm khi được sử dụng.
 
 
 ## Gợi ý thực hành
