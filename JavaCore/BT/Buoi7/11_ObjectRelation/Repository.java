@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Optional;
-import java.util.Scanner;
 
 // lớp Repository là Generic class với thuộc tính là ArrayList có các kiểu dữ liệu được kế thừa từ Entity
 public class Repository<T extends Entity> {
@@ -73,5 +72,19 @@ public class Repository<T extends Entity> {
         itr.remove();
       }
     }
+
+
+    // java.lang.Error: Unresolved compilation problem
+    // for (T item :collections){
+    //   if(item.getId().equals(id)){
+    //     collections.remove(item);
+    //   }
+    // }
+
+    // for(int i=0;i< collections.size(); i++){
+    //   if(collections.get(i).getId().equals(id)){
+    //     collections.remove(collections.get(i));
+    //   }
+    // }
   }
 }
