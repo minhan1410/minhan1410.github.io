@@ -8,7 +8,7 @@ public class Customer implements Entity{
   private String address;
 
   public Customer(String customerName, String email, String mobile, String address) {
-    id = IdGenerator.getNewID(); // tăng id tự động
+    id = IdGenerator.getNewCustomerID(); // tăng id tự động
     setCustomerName(customerName);
     setEmail(email);
     setMobile(mobile);

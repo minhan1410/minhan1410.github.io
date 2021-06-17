@@ -1,17 +1,44 @@
 import java.util.concurrent.locks.ReentrantLock;
 
 public class IdGenerator {
-  private static Long id = 0L;
+  private static Long CustomerId = 0L;
+  private static Long ProductId = 0L;
+  private static Long LineItemId = 0L;
+
   private static ReentrantLock lock = new ReentrantLock();
 
   private IdGenerator(){}
   
-  public static Long getNewID() {
+  public static Long getNewCustomerID() {
     // Hiểu đưn giản là mỗi khi gọi getNewID thì nó sẽ trả vể id+1
     Long result;
     lock.lock();
     try {
-      result = ++id; 
+      result = ++CustomerId; 
+    } finally {
+      lock.unlock();      
+    }
+    return result;
+  }
+
+  public static Long getNewProductId() {
+    // Hiểu đưn giản là mỗi khi gọi getNewID thì nó sẽ trả vể id+1
+    Long result;
+    lock.lock();
+    try {
+      result = ++ProductId; 
+    } finally {
+      lock.unlock();      
+    }
+    return result;
+  }
+
+  public static Long getNewLineItemId() {
+    // Hiểu đưn giản là mỗi khi gọi getNewID thì nó sẽ trả vể id+1
+    Long result;
+    lock.lock();
+    try {
+      result = ++LineItemId; 
     } finally {
       lock.unlock();      
     }

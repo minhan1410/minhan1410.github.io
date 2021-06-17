@@ -7,7 +7,7 @@ public class Product implements Entity {
   private String description; // miêu tả
 
   public Product (String name, String manufacturer, String madeIn, String description) {
-    id = IdGenerator.getNewID();// tăng id tự động
+    id = IdGenerator.getNewProductId();// tăng id tự động
     this.name = name;    
     this.manufacturer = manufacturer;
     this.madeIn = madeIn;

@@ -3,8 +3,12 @@ public class LineItem implements Entity{
   private Long id; //Unique id  
   private Integer unitPrice; //đơn giá
   private Integer quantity; // số lg
+  private Product product; //hang
+
   
-  public LineItem(Integer unitPrice, Integer quantity) {
+  public LineItem(Product product,Integer unitPrice, Integer quantity) {
+    id= IdGenerator.getNewLineItemId();
+    this.product = product;
     this.unitPrice = unitPrice;
     this.quantity = quantity;
   }
@@ -30,9 +34,13 @@ public class LineItem implements Entity{
     this.quantity = quantity;
   }
 
+  public Integer getGia(){
+    return unitPrice*quantity;
+  }
+
   @Override
   public String toString() {
-    return "LineItem [id=" + id + ", quantity=" + quantity + ", unitPrice=" + unitPrice + "]";
+    return "LineItem [id= "+id+", product=" + product + ", quantity=" + quantity + ", unitPrice=" + unitPrice +"=> gia: "+ getGia() +"]";
   }
 
   

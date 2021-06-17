@@ -13,7 +13,7 @@ public class Repository<T extends Entity> {
     return collections;
   }
 
-
+  
   /*
     Stream (luồng) là một đối tượng mới của Java được giới thiệu từ phiên bản Java 8,
     giúp cho việc thao tác trên collection và array trở nên dễ dàng và tối ưu hơn.
