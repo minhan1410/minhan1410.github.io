@@ -3,12 +3,12 @@ import java.util.List;
 
 public class PhieuThue implements Entity{
     private Long id;
-    private DocGia docGia;
+    private Readers docGia;
     private LocalDateTime ngayThue;
     private LocalDateTime ngayTra;
     private List<LineItem> items; //chi tiết từng mặt hàng trong đơn hàng
 
-    public PhieuThue(DocGia docGia, LocalDateTime ngayThue, LocalDateTime ngayTra, List<LineItem> items) {
+    public PhieuThue(Readers docGia, LocalDateTime ngayThue, LocalDateTime ngayTra, List<LineItem> items) {
         this.id= IdGenerator.getNewPhieuThueId();
         this.docGia = docGia;
         this.ngayThue = ngayThue;
@@ -21,11 +21,11 @@ public class PhieuThue implements Entity{
         return id;
     }
 
-    public DocGia getDocGia() {
+    public Readers getDocGia() {
         return docGia;
     }
 
-    public void setDocGia(DocGia docGia) {
+    public void setDocGia(Readers docGia) {
         this.docGia = docGia;
     }
 

@@ -1,7 +1,7 @@
-public class DocGia extends Person implements Entity{
+public class Readers extends Person implements Entity{
     private Long id;
 
-    public DocGia(String name, int age, String address, String email, String phone) {
+    public Readers(String name, int age, String address, String email, String phone) {
         super(name, age, address, email, phone);
         this.id = IdGenerator.getNewDocGiaID();
     }

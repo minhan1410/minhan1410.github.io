@@ -1,15 +1,15 @@
 import java.util.List;
 
-public class Sach implements Entity {
+public class Book implements Entity {
     private Long id;
     private String name;
     private List<String> theLoai;
-    private List<TacGia> tacGia;
+    private List<Author> tacGia;
     private int namSx;
     private String nhaSx;
     private int soTrang;
 
-	public Sach(String name, List<String> theLoai, List<TacGia> tacGia, int namSx, String nhaSx, int soTrang) {
+	public Book(String name, List<String> theLoai, List<Author> tacGia, int namSx, String nhaSx, int soTrang) {
         this.id = IdGenerator.getNewSachID();
         this.name = name;
         this.theLoai = theLoai;
@@ -40,11 +40,11 @@ public class Sach implements Entity {
         this.theLoai = theLoai;
     }
 
-    public List<TacGia> getTacGia() {
+    public List<Author> getTacGia() {
         return tacGia;
     }
 
-    public void setTacGia(List<TacGia> tacGia) {
+    public void setTacGia(List<Author> tacGia) {
         this.tacGia = tacGia;
     }
 

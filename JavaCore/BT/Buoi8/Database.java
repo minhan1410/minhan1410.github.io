@@ -1,7 +1,7 @@
 public class Database {
   // Lớp khởi tạo dữ liệu Repository: customer,product,order
-  public Repository<Sach> sachRepo;
-  public Repository<DocGia> docGiaRepo;
+  public Repository<Book> sachRepo;
+  public Repository<Readers> docGiaRepo;
   public Repository<PhieuThue> phieuThueRepo;
 
 

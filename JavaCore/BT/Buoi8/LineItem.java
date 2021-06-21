@@ -2,10 +2,10 @@
 public class LineItem implements Entity{
   private Long id; //Unique id  
   private Integer quantity; // số lg
-  private Sach sach; //hang
+  private Book sach; //hang
 
   
-  public LineItem(Sach sach, Integer quantity) {
+  public LineItem(Book sach, Integer quantity) {
     id= IdGenerator.getNewLineItemId();
     this.sach = sach;
     this.quantity = quantity;
@@ -24,11 +24,11 @@ public class LineItem implements Entity{
     this.quantity = quantity;
   }
 
-  public Sach getSach() {
+  public Book getSach() {
     return sach;
   }
 
-  public void setSach(Sach sach) {
+  public void setSach(Book sach) {
     this.sach = sach;
   }
 

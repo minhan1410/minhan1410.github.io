@@ -1,7 +1,7 @@
-public class TacGia extends Person implements Entity{
+public class Author extends Person implements Entity{
     private Long id;
 
-    public TacGia(String name, int age, String address, String email, String phone) {
+    public Author(String name, int age, String address, String email, String phone) {
         super(name, age, address, email, phone);
         this.id =IdGenerator.getNewTacGiaID();
     }

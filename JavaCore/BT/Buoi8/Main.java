@@ -3,10 +3,10 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        TacGia an=new TacGia("An",20,"Thường Tín","minhan14102001@gmail.com","0985240637");
-        TacGia anh=new TacGia("Anh",20,"Thường Tín","anh@gmail.com","0123456789");
-        TacGia manh=new TacGia("Mạnh",20,"Thường Tín","manh@gmail.com","0123456789");
-        TacGia quan=new TacGia("Quân",20,"Thường Tín","quan@gmail.com","0123456789");
+        Author an=new Author("An",20,"Thường Tín","minhan14102001@gmail.com","0985240637");
+        Author anh=new Author("Anh",20,"Thường Tín","anh@gmail.com","0123456789");
+        Author manh=new Author("Mạnh",20,"Thường Tín","manh@gmail.com","0123456789");
+        Author quan=new Author("Quân",20,"Thường Tín","quan@gmail.com","0123456789");
 
         // 1 sách nhiều thể loại
         ArrayList<String> theLoaiSach1 = new ArrayList<String>();
@@ -19,26 +19,54 @@ public class Main {
         theLoaiSach2.add(TheLoaiSach.VanHoc);
         
         //1 sach có nhiều tác giả,1 tác giả có nhiều quyển sách (quan hệ nhiều nhiều)
-        ArrayList<TacGia> dongTacGiaSach1 = new ArrayList<TacGia>();
+        ArrayList<Author> dongTacGiaSach1 = new ArrayList<Author>();
         dongTacGiaSach1.add(an);
         dongTacGiaSach1.add(manh);
+        dongTacGiaSach1.add(quan);
 
-        ArrayList<TacGia> dongTacGiaSach2 = new ArrayList<TacGia>();
+
+        ArrayList<Author> dongTacGiaSach2 = new ArrayList<Author>();
         dongTacGiaSach2.add(an);
         dongTacGiaSach2.add(manh);
         dongTacGiaSach2.add(anh);
         
-        Sach sach1=new Sach("Sách khoa học",theLoaiSach1,dongTacGiaSach1,2021,"Nhà sx Minh An",571);
-        Sach sach2=new Sach("Sách văn học",theLoaiSach2,dongTacGiaSach2,2021,"Nhà sx Minh An",600);
+        Book sach1=new Book("Sách khoa học",theLoaiSach1,dongTacGiaSach1,2021,"Nhà sx Minh An",571);
+        Book sach2=new Book("Sách văn học",theLoaiSach2,dongTacGiaSach2,2021,"Nhà sx Minh An",600);
 
 
-        DocGia docGiaAn= new DocGia("An",20,"Thường Tín","minhan14102001@gmail.com","0985240637");
+        Readers docGiaAn= new Readers("An",20,"Thường Tín","minhan14102001@gmail.com","0985240637");
+        Readers docGiaAnh= new Readers("Anh",20,"Thường Tín","anh@gmail.com","0123456789");
+        Readers docGiaManh= new Readers("Mạnh",20,"Thường Tín","manh@gmail.com","0123456789");
+        Readers docGiaQuan= new Readers("Quân",20,"Thường Tín","quan@gmail.com","0123456789");
+
         LocalDateTime ngayMuon=LocalDateTime.now();
-        ArrayList<LineItem> listLineItem= new ArrayList<LineItem>();
-        listLineItem.add(new LineItem(sach1,1));
-        listLineItem.add(new LineItem(sach2,5));
 
-        PhieuThue phieuthueSach1=new PhieuThue(docGiaAn,ngayMuon,ngayMuon.plusDays(7),listLineItem);
+        ArrayList<LineItem> listLineItem1= new ArrayList<LineItem>();
+        listLineItem1.add(new LineItem(sach1,4));
+        listLineItem1.add(new LineItem(sach2,3));
+
+        ArrayList<LineItem> listLineItem2= new ArrayList<LineItem>();
+        listLineItem2.add(new LineItem(sach1,2));
+        listLineItem2.add(new LineItem(sach2,5));
+
+        PhieuThue phieuthueSach1=new PhieuThue(docGiaAn,ngayMuon,ngayMuon.plusDays(7),listLineItem1);
+        PhieuThue phieuthueSach2=new PhieuThue(docGiaAn,ngayMuon,ngayMuon.plusDays(5),listLineItem2);
+
         System.out.println(phieuthueSach1);
+
+        Database db = new Database();
+        db.sachRepo.add(sach1);
+        db.sachRepo.add(sach2);
+
+        db.docGiaRepo.add(docGiaAn);
+        db.docGiaRepo.add(docGiaAnh);
+        db.docGiaRepo.add(docGiaManh);
+        db.docGiaRepo.add(docGiaQuan);
+
+        db.phieuThueRepo.add(phieuthueSach1);
+        db.phieuThueRepo.add(phieuthueSach2);
+
+
+
     }
 }
