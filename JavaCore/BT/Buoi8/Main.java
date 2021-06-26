@@ -52,7 +52,7 @@ public class Main {
         PhieuThue phieuthueSach1=new PhieuThue(docGiaAn,ngayMuon,ngayMuon.plusDays(7),listLineItem1);
         PhieuThue phieuthueSach2=new PhieuThue(docGiaAn,ngayMuon,ngayMuon.plusDays(5),listLineItem2);
 
-        System.out.println(phieuthueSach1);
+        // System.out.println(phieuthueSach1);
 
         Database db = new Database();
         db.sachRepo.add(sach1);
@@ -66,7 +66,8 @@ public class Main {
         db.phieuThueRepo.add(phieuthueSach1);
         db.phieuThueRepo.add(phieuthueSach2);
 
+        db.phieuThueRepo.getAll().forEach(i -> System.out.println(i));
 
-
+        
     }
 }

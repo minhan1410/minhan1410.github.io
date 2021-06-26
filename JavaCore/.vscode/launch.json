@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "src.App",
+            "projectName": "JavaCore_57a8400a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "src.main.java.vn.techmaster.Main",
+            "projectName": "CustomerManager"
+        },
+        {
+            "type": "java",
             "name": "Launch Player",
             "request": "launch",
             "mainClass": "Player",
