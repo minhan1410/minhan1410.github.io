@@ -5,11 +5,13 @@ import java.util.Map;
 public class Main {
     public static Map<String, Integer> CoutCountry(List<Person> list) {
         Map<String, Integer> map = new HashMap<String, Integer>();
+        String k;
         for (Person person : list) {
-            if (!map.containsKey(person.getCountry())) {
-                map.put(person.getCountry(), 1);
+            k=person.getCountry();
+            if (!map.containsKey(k)) {
+                map.put(k, 1);
             } else {
-                map.put(person.getCountry(), map.get(person.getCountry()) + 1);
+                map.put(k, map.get(k) + 1);
             }
         }
         return map;
