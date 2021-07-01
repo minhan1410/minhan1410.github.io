@@ -81,13 +81,12 @@ public class Hackathon1 {
 
     public void Bai4() {
         Scanner scanner = new Scanner(System.in);
-        User user = new User();
         String sdt, mk;
         int choose;
 
         while (true) {
             System.out.println("1: Dang ki");
-            System.out.println("2: Dang nhap"); 
+            System.out.println("2: Dang nhap");
             System.out.println("0 : Thoát");
 
             System.out.print("Chon: ");
@@ -101,7 +100,7 @@ public class Hackathon1 {
                     if (Validation.validateMobile(sdt)) {
                         System.out.print("Mat khau: ");
                         mk = scanner.next();
-                        if (user.DangKi(sdt, mk)) {
+                        if (User.DangKi(sdt, mk)) {
                             System.out.println("dang ki thanh cong");
                         } else {
                             System.out.println("dang ki that bai");
@@ -116,16 +115,16 @@ public class Hackathon1 {
                     sdt = scanner.next();
                     System.out.print("Mat khau: ");
                     mk = scanner.next();
-                    if (user.DangNhap(sdt, mk)) {
+                    if (User.DangNhap(sdt, mk)) {
                         System.out.println("Dang nhap thanh cong:");
                         System.out.println("Tao tai khoan ngan hang moi:");
                         System.out.print("Nhap so tk cua ban: ");
                         String stk = scanner.next();
-                        if(Validation.validateSTK(stk)){
+                        if (Validation.validateSTK(stk)) {
                             System.out.print("Nhap so du trong tai khoan: ");
                             double sodu = scanner.nextDouble();
                             InternetBanking internetBanking = new VPBank(stk, sodu);
-            
+
                             while (true) {
                                 menu();
                                 System.out.print("Chon: ");
@@ -151,11 +150,11 @@ public class Hackathon1 {
                                         break;
                                 }
                             }
-                        } else{
+                        } else {
                             System.out.println("So tai khoan k hop le");
                         }
-                        
-                    } else{
+
+                    } else {
                         System.out.println("Dang nhap that bai:");
                     }
                     break;
