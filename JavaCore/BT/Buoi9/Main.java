@@ -7,7 +7,7 @@ public class Main {
         Map<String, Integer> map = new HashMap<String, Integer>();
         String k;
         for (Person person : list) {
-            k=person.getCountry();
+            k = person.getCountry();
             if (!map.containsKey(k)) {
                 map.put(k, 1);
             } else {

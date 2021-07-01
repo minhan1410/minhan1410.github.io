@@ -1,5 +1,3 @@
-package src;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,7 +40,7 @@ public class ReadFile {
 
     private static void parseCustomerObject(JSONObject jsonObject){
 
-        long id = (long) jsonObject.get("id");
+        long id = (long) jsonObject.get("Id");
 
         String first_name = (String) jsonObject.get("first_name");
 
@@ -50,7 +48,7 @@ public class ReadFile {
 
         String email = (String) jsonObject.get("email");
 
-        String mobile = (String) jsonObject.get("mobile");
+        String mobile = (String) jsonObject.get("mobilez");
 
         String address = (String) jsonObject.get("address");
         

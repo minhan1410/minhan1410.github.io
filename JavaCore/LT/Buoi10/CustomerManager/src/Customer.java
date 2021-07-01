@@ -1,26 +1,24 @@
-package src;
-
 public class Customer {
-    long id;
+    long Id;
     String first_name;
     String last_name;
     String email;
-    String mobilez;
+    String mobile;
     String address;
     public Customer() {}
-    public Customer(long id, String first_name, String last_name, String email, String mobilez, String address) {
-        this.id = id;
+    public Customer(long id, String first_name, String last_name, String email, String mobile, String address) {
+        this.Id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
-        this.mobilez = mobilez;
+        this.mobile = mobile;
         this.address = address;
     }
     public long getId() {
-        return id;
+        return Id;
     }
     public void setId(long id) {
-        this.id = id;
+        this.Id = id;
     }
     public String getFirst_name() {
         return first_name;
@@ -41,10 +39,10 @@ public class Customer {
         this.email = email;
     }
     public String getMobilez() {
-        return mobilez;
+        return mobile;
     }
-    public void setMobilez(String mobilez) {
-        this.mobilez = mobilez;
+    public void setMobilez(String mobile) {
+        this.mobile = mobile;
     }
     public String getAddress() {
         return address;
@@ -55,8 +53,8 @@ public class Customer {
     
     @Override
     public String toString() {
-        return id + " - " +first_name+" - " + last_name 
-        + " - " + email + " - " + mobilez + " - " + address;
+        return Id + " - " +first_name+" - " + last_name 
+        + " - " + email + " - " + mobile + " - " + address;
     }
     
 }
