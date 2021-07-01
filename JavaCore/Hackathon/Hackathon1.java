@@ -142,8 +142,6 @@ public class Hackathon1 {
                                         internetBanking.LichSu();
                                         break;
                                     case 0:
-                                        scanner.close();
-                                        System.exit(0);
                                         break;
                                     default:
                                         System.out.println("Không có lựa chọn này");
