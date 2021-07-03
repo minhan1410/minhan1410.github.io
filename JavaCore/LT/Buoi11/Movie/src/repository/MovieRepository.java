@@ -16,12 +16,11 @@ public class MovieRepository {
         
 
         try {
-            FileReader reader = new FileReader("D:\\Techmaster\\minhan1410.github.io\\JavaCore\\LT\\Buoi11\\Movie.json");
+            FileReader reader = new FileReader("movie.json");
 
             // Chuyển từ JSON text -> object
             Type objectType = new TypeToken<List<Movie>>() {
             }.getType();
-            
             listMovies = new Gson().fromJson(reader, objectType);
             
             for (Movie movie : listMovies) {

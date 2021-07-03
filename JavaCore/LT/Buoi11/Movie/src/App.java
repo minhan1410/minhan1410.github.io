@@ -66,7 +66,7 @@ public class App {
                     movieController.countMovieByCategory(listMovies);
                     break;
     
-                case 6:
+                case 0:
                     System.exit(1);
                     break;
                 default:

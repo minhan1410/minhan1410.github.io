@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import InternetBanking.InternetBanking;
+import InternetBanking.User;
+import InternetBanking.VPBank;
+import InternetBanking.Validation;
+
 public class Hackathon1 {
     public boolean isTriangle(double a, double b, double c) {
         if (a < b + c && b < a + c && c < a + b) {
