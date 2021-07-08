@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "BT/Buoi10"
+        "BT/Buoi12"
     ],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
@@ -12,5 +12,11 @@
         "exclude": [
             "c:\\Users\\admin\\Downloads\\gson-1.4.jar"
         ]
-    }
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "files.autoSave": "afterDelay"
 }
