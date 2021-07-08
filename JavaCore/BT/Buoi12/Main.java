@@ -16,7 +16,7 @@ public class Main {
         decimalFormat.applyPattern(pattern);
 
         List<ChoThueNy> list = new ArrayList<ChoThueNy>();
-        list.add(new ChoThueNy("thao", 18, "Ha Noi", 1500000, 5));
+        list.add(new ChoThueNy("thao", 18, "Ha Noi", 15000000, 5));
         list.add(new ChoThueNy("my", 25, "Ha Noi", 1300000, 15));
         list.add(new ChoThueNy("ngoc", 21, "HCM", 2500000, 2));
         list.add(new ChoThueNy("nga", 21, "HCM", 1700000, 4));
