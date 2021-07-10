@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch App",
             "request": "launch",
+            "mainClass": "demo_stream.src.App",
+            "projectName": "JavaCore_57a8400a"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
             "mainClass": "src.App",
             "projectName": "JavaCore_57a8400a"
         },

@@ -1,7 +1,5 @@
 {
-    "java.project.sourcePaths": [
-        "BT/Buoi12"
-    ],
+    "java.project.sourcePaths": ["BT/Buoi13"],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
         "include": [
@@ -9,14 +7,14 @@
             "c:\\Users\\admin\\Downloads\\json-simple-1.1.1.jar",
             "c:\\Users\\admin\\Downloads\\gson-2.8.7.jar"
         ],
-        "exclude": [
-            "c:\\Users\\admin\\Downloads\\gson-1.4.jar"
-        ]
+        "exclude": ["c:\\Users\\admin\\Downloads\\gson-1.4.jar"]
     },
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[java]": {
         "editor.defaultFormatter": "redhat.java"
     },
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "Fira Code",
+    "editor.formatOnType": true
 }
