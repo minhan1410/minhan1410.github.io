@@ -1,5 +1,7 @@
 {
-    "java.project.sourcePaths": ["BT/Buoi13"],
+    "java.project.sourcePaths": [
+        "BT/Buoi14",
+    ],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
         "include": [
