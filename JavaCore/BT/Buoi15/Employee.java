@@ -4,9 +4,9 @@ public class Employee {
     private int age;
     private String phoneNumber;
     private String email;
-    private double salary;
+    private long salary;
 
-    public Employee(String name, int namSinh, String phoneNumber, String email, double salary) {
+    public Employee(String name, int namSinh, String phoneNumber, String email, long salary) {
         this.id= IdGenerator.getEmployee();
         this.name = name;
         this.age = java.time.LocalDate.now().getYear()-namSinh;
@@ -51,11 +51,11 @@ public class Employee {
         this.email = email;
     }
 
-    public double getSalary() {
+    public long getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(long salary) {
         this.salary = salary;
     }
 
@@ -65,4 +65,7 @@ public class Employee {
                 + phoneNumber + ", salary=" + salary + "]";
     }
 
+    public long TinhLuong(){
+        return 0;
+    }
 }

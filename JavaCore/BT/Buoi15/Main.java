@@ -16,6 +16,7 @@ public class Main {
 
         
         for (Employee nv : list) {
+            nv.TinhLuong();
             System.out.println(nv);
             try {
                 Thread.sleep(500);
