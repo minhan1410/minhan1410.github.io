@@ -1,7 +1,5 @@
 {
-    "java.project.sourcePaths": [
-        "BT/Buoi14",
-    ],
+    "java.project.sourcePaths": ["LT/Buoi14/demo-thread/src", "BT/Buoi15"],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
         "include": [
@@ -17,6 +15,5 @@
         "editor.defaultFormatter": "redhat.java"
     },
     "files.autoSave": "afterDelay",
-    "editor.fontFamily": "Fira Code",
-    "editor.formatOnType": true
+    "editor.fontFamily": "Fira Code"
 }
