@@ -21,6 +21,6 @@ public class Tester extends Employee {
 
     @Override
     public String toString() {
-        return "Employee: "+super.toString()+" Tester [countBug=" + ", Luong: "+TinhLuong()+"$ ]";
+        return "Employee: "+super.toString()+" Tester [countBug=" +countBug+ ", Luong: "+TinhLuong()+"$ ]";
     }
 }
