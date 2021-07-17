@@ -1,18 +1,16 @@
-public class Employee {
+public class Person {
     private Long id;
     private String name;
     private int age;
     private String phoneNumber;
-    private String email;
-    private long salary;
+    private String address;
 
-    public Employee(String name, int namSinh, String phoneNumber, String email, long salary) {
-        this.id = IdGenerator.getEmployee();
+    public Person(String name, int namSinh, String phoneNumber, String address) {
+        this.id=IdGenerator.getID();
         this.name = name;
         this.age = java.time.LocalDate.now().getYear() - namSinh;
         this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.salary = salary;
+        this.address = address;
     }
 
     public Long getId() {
@@ -43,29 +41,19 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getEmail() {
-        return email;
+    public String getAddress() {
+        return address;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public long getSalary() {
-        return salary;
-    }
-
-    public void setSalary(long salary) {
-        this.salary = salary;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
-        return "Employee [age=" + age + ", email=" + email + ", id=" + id + ", name=" + name + ", phoneNumber="
-                + phoneNumber + ", salary=" + salary + "]";
+        return "Peson [address=" + address + ", age=" + age + ", id=" + id + ", name=" + name + ", phoneNumber="
+                + phoneNumber + "]";
     }
 
-    public long TinhLuong() {
-        return 0;
-    }
+    
 }

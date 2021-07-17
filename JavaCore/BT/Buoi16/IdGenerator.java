@@ -8,7 +8,7 @@ public class IdGenerator {
   private IdGenerator() {
   }
 
-  public static Long getEmployee() {
+  public static Long getID() {
     // Hiểu đưn giản là mỗi khi gọi getNewID thì nó sẽ trả vể id+1
     Long result;
     lock.lock();

@@ -1,5 +1,5 @@
 {
-    "java.project.sourcePaths": ["LT/Buoi14/demo-thread/src", "BT/Buoi15"],
+    "java.project.sourcePaths": ["LT/Buoi15", "BT/Buoi16"],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
         "include": [

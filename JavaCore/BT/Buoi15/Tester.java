@@ -16,11 +16,11 @@ public class Tester extends Employee {
 
     @Override
     public long TinhLuong() {
-        return super.getSalary()+countBug*50;
+        return super.getSalary() + countBug * 50;
     }
 
     @Override
     public String toString() {
-        return "Employee: "+super.toString()+" Tester [countBug=" +countBug+ ", Luong: "+TinhLuong()+"$ ]";
+        return "Employee: " + super.toString() + " Tester [countBug=" + countBug + ", Luong: " + TinhLuong() + "$ ]";
     }
 }

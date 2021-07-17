@@ -16,12 +16,13 @@ public class Programmer extends Employee {
 
     @Override
     public long TinhLuong() {
-        return super.getSalary()+overtime*200;
+        return super.getSalary() + overtime * 200;
     }
 
     @Override
     public String toString() {
-        return "Employee: "+super.toString()+" Programmer [overtime=" + overtime + ", Luong: "+TinhLuong()+"$ ]";
+        return "Employee: " + super.toString() + " Programmer [overtime=" + overtime + ", Luong: " + TinhLuong()
+                + "$ ]";
     }
 
 }
