@@ -1,5 +1,9 @@
 {
-    "java.project.sourcePaths": ["LT/Buoi15", "BT/Buoi16"],
+    "java.project.sourcePaths": [
+        "LT/Buoi15",
+        "BT/Buoi16",
+        "Hackathon2"
+    ],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
         "include": [

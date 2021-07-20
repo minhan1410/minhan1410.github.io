@@ -7,12 +7,12 @@ public class PersonController<T extends Person> {
         list.add(person);
     }
 
-    public void show(){
+    public void show() {
         list.forEach(System.out::println);
         System.out.println();
     }
 
-    public long DanhSachSv(){
-        return list.stream().filter(sv-> sv.getClass().equals(new Student("", 0, "","" , 0).getClass())).count();
+    public long DanhSachSv() {
+        return list.stream().filter(sv -> sv.getClass().equals(new Student("", 0, "", "", 0).getClass())).count();
     }
 }
