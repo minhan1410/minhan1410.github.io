@@ -1,8 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "LT/Buoi15",
-        "BT/Buoi16",
-        "Hackathon2"
+        "BT/Buoi17"
     ],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
@@ -14,7 +12,6 @@
         "exclude": ["c:\\Users\\admin\\Downloads\\gson-1.4.jar"]
     },
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[java]": {
         "editor.defaultFormatter": "redhat.java"
     },
