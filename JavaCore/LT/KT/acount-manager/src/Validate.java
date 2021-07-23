@@ -7,7 +7,7 @@ public class Validate {
             Pattern.CASE_INSENSITIVE);
 
     public static final Pattern PasswordRegex = Pattern.compile(
-            "^([A-Z]+[.,-_;]){7,15}$", 
+            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[.,-_;])(?=\\S+$).{8,15}$", 
             Pattern.CASE_INSENSITIVE);
 
     public static String validateEmail(String email) {
