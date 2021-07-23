@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
-        "BT/Buoi17"
+        "BT/Buoi17",
+        "LT/KT/acount-manager/src"
     ],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.referencedLibraries": {
