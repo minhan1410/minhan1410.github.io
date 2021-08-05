@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01InnerClass/01InnerClass.iml" filepath="$PROJECT_DIR$/01InnerClass/01InnerClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02AnonymousInnerClass/02AnonymousInnerClass.iml" filepath="$PROJECT_DIR$/02AnonymousInnerClass/02AnonymousInnerClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03LambdaExpression/03LambdaExpression.iml" filepath="$PROJECT_DIR$/03LambdaExpression/03LambdaExpression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/19LambdaExpression.iml" filepath="$PROJECT_DIR$/.idea/19LambdaExpression.iml" />
+    </modules>
+  </component>
+</project>
