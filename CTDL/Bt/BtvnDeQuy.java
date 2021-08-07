@@ -5,12 +5,12 @@ public class BtvnDeQuy {
         System.out.println(find(2, new int[] { 1, 2, 5, 4 }, 0));
         System.out.println(find(5, new int[] { 1, 2, 5, 4 }, 0));
         System.out.println(find(4, new int[] { 1, 2, 5, 4 }, 0));
-        System.out.println(find(-4, new int[] { 1, 2, 5, 4 }, 0));
+        System.out.println(find(-4, new int[] { 1, 2, 5, 4 }, 6));
 
     }
 
     public static int find(int x, int arr[], int i) {
-        if (i == arr.length) {
+        if (i >= arr.length) {
             return -1;
         }
 
