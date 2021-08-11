@@ -119,7 +119,7 @@ public class DeQuy {
 
     // BTVN
     public static int find(int x, int arr[], int i) {
-        if (i == arr.length) {
+        if (i == arr.length || i<0) {
             return -1;
         }
 
