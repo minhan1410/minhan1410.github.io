@@ -3,7 +3,7 @@ public class BinarySearch {
         System.out.println(binarySearchRecursive(new int[] { 1, 4, 9, 12, 19, 25, 31, 46, 50, 57, 72 }, 19, 0, 10));
     }
 
-    public static int binarySearchFor(int[] arr, int key) {
+    public static int binarySearchWhile(int[] arr, int key) {
         int left = 0, right = arr.length - 1, m = 0;
 
         if (key == arr[left]) {
