@@ -39,16 +39,22 @@ Quá trình này liên tục di chuyển qua lại mảng chưa được sắp x
 
 
 # Merge Sort – Sắp xếp trộn
+* Vd1:
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
+
+* Vd2:
 
 ![alt text](https://nguyenvanhieu.vn/wp-content/uploads/2018/07/thuat-toan-sap-xep-merge-sort-minh-hoa-code-su-dung-c.png)
 
 
 
 # Thuật toán Quick Sort – Sắp xếp nhanh
+* Vd1:
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
+
+* Vd2:
 
 ![alt text](https://nguyenvanhieu.vn/wp-content/uploads/2018/07/thuat-toan-sap-xep-quick-sort-1.png)
 
@@ -98,3 +104,7 @@ Chúng ta có thể sắp xếp các phần tử của:
 -  Các đối tượng của lớp do người dùng định nghĩa (User-defined).  
 
 Tham khảo thêm tại đây: https://github.com/EriChannel/JavaCore/tree/main/JavaCore_3/Collections/Comparator%26Comparable
+
+Git cô giáo: https://github.com/EriChannel/DataStructures_Algorithms_Techmaster
+
+Cách viết file md: https://viblo.asia/helps/cach-su-dung-markdown-bxjvZYnwkJZ
