@@ -45,11 +45,11 @@ class ListNode {
         while (node != null) {
             int v = node.val;
             if (v != val) {
-                ListNode a= new ListNode(v,null);
+                ListNode a = new ListNode(v, null);
                 while (nodeP.next != null) {
                     nodeP = nodeP.next;
                 }
-                nodeP.next=a;
+                nodeP.next = a;
             }
             node = node.next;
         }
@@ -57,7 +57,36 @@ class ListNode {
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-        return null;
+        if (head == null) {
+            return null;
+        }
+        if (n == 0) {
+            return head;
+        }
+
+        ListNode node = head;
+        int count = 0;
+        while (node != null) {
+            count++;
+            node = node.next;
+        }
+
+        if (count == n) {
+            return head.next;
+        }
+        if (n < 0 || n > count) {
+            return null;
+        }
+
+        node = head;
+        while (node != null) {
+            if (count == n + 1) {
+                node.next = node.next.next;
+            }
+            count--;
+            node = node.next;
+        }
+        return head;
     }
 }
 
@@ -79,6 +108,5 @@ public class Id206_Reverse_Linked_List {
         ListNode b1 = new ListNode();
         ListNode.print(b1);
         ListNode.reverseList(ListNode.reverseList(b1));
-
     }
 }

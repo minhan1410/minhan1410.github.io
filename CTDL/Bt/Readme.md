@@ -40,11 +40,18 @@ Quá trình này liên tục di chuyển qua lại mảng chưa được sắp x
 
 # Merge Sort – Sắp xếp trộn
 
+![alt text](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
+
 ![alt text](https://nguyenvanhieu.vn/wp-content/uploads/2018/07/thuat-toan-sap-xep-merge-sort-minh-hoa-code-su-dung-c.png)
+
+
 
 # Thuật toán Quick Sort – Sắp xếp nhanh
 
+![alt text](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
+
 ![alt text](https://nguyenvanhieu.vn/wp-content/uploads/2018/07/thuat-toan-sap-xep-quick-sort-1.png)
+
 
 # Sắp xếp mảng với Arrays.sort
 `sort()` là phương thức trong class java.util.Arrays, được sử dụng để sắp xếp
