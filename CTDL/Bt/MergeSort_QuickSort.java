@@ -65,21 +65,21 @@ public class MergeSort_QuickSort {
         quickSort(nums, pivot, r);
     }
 
-    public static int partition(int[] nums, int l ,int r,int key){
-        int iR=r,iL=l;
-        while(l<r){
-            while(nums[iL]>key){
+    public static int partition(int[] a, int L, int R, int key) {
+        int iL = L;
+        int iR = R;
+        while (iL <= iR) {
+            // Voi iL, di tim phan tu >= key de doi cho
+            while (a[iL] < key)
                 iL++;
-            }
-            while(nums[iR]<key){
+            // voi iR, di tim phan tu <= key de doi cho
+            while (a[iR] > key)
                 iR--;
-            }
-
-            if(iL<=iR){
-                int temp = nums[iL];
-                nums[iL] = nums[iR];
-                nums[iR] = temp;
-
+            // doi cho 2 phan tu dang dung khong dung vi tri
+            if (iL <= iR) {
+                int temp = a[iL];
+                a[iL] = a[iR];
+                a[iR] = temp;
                 iL++;
                 iR--;
             }
