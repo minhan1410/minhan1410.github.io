@@ -1,7 +1,8 @@
 public class MergeSort_QuickSort {
     public static void main(String[] args) {
         int arr[] = new int[] { 25, 30, 45, 6, 11, 90, 15 };
-        for (int i : mergeSortArray(arr)) {
+        quickSortArray(arr);
+        for (int i : arr) {
             System.out.print(i + ", ");
         }
     }
@@ -60,6 +61,8 @@ public class MergeSort_QuickSort {
         }
 
         int pivot = partition(nums, l, r, nums[(l + r) / 2]);
+        quickSort(nums, l, pivot - 1);
+        quickSort(nums, pivot, r);
     }
 
     public static int partition(int[] nums, int l ,int r,int key){
