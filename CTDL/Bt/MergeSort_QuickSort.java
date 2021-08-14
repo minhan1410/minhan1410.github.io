@@ -11,6 +11,7 @@ public class MergeSort_QuickSort {
         return mergeSort(nums, 0, nums.length - 1);
     }
 
+    // Chia
     public static int[] mergeSort(int[] nums, int l, int r) {
         if (l == r) {
             return new int[] { nums[l] };
@@ -23,6 +24,7 @@ public class MergeSort_QuickSort {
         return merge(nums1, nums2);
     }
 
+    // Gộp
     public static int[] merge(int[] nums1, int[] nums2) {
         int nums[] = new int[nums1.length + nums2.length];
         int i = 0, i1 = 0, i2 = 0, length = nums.length, length1 = nums1.length, length2 = nums2.length;
