@@ -165,6 +165,8 @@ Chúng ta có thể sắp xếp các phần tử của:
 
 Tham khảo thêm tại đây: https://github.com/EriChannel/JavaCore/tree/main/JavaCore_3/Collections/Comparator%26Comparable
 
+Link code: 
+
 Git cô giáo: https://github.com/EriChannel/DataStructures_Algorithms_Techmaster
 
 Cách viết file md: https://viblo.asia/helps/cach-su-dung-markdown-bxjvZYnwkJZ
