@@ -47,6 +47,41 @@ public class MergeSort_QuickSort {
         }
         return nums;
     }
+
     // ------------------------------------------------------------------------------------------------
 
+    public static void quickSortArray(int[] nums) {
+        quickSort(nums, 0, nums.length - 1);
+    }
+
+    public static void quickSort(int nums[], int l, int r) {
+        if (l >= r) {
+            return;
+        }
+
+        int pivot = partition(nums, l, r, nums[(l + r) / 2]);
+    }
+
+    public static int partition(int[] nums, int l ,int r,int key){
+        int iR=r,iL=l;
+        while(l<r){
+            while(nums[iL]>key){
+                iL++;
+            }
+            while(nums[iR]<key){
+                iR--;
+            }
+
+            if(iL<=iR){
+                int temp = nums[iL];
+                nums[iL] = nums[iR];
+                nums[iR] = temp;
+
+                iL++;
+                iR--;
+            }
+        }
+
+        return iL;
+    }
 }
