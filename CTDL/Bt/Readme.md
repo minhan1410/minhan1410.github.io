@@ -165,7 +165,7 @@ Chúng ta có thể sắp xếp các phần tử của:
 
 Tham khảo thêm tại đây: https://github.com/EriChannel/JavaCore/tree/main/JavaCore_3/Collections/Comparator%26Comparable
 
-Link code: 
+Link code: https://github.com/minhan1410/minhan1410.github.io/blob/master/CTDL/Bt/Sort.java
 
 Git cô giáo: https://github.com/EriChannel/DataStructures_Algorithms_Techmaster
 
