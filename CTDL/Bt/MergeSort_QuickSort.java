@@ -1,10 +1,44 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Map;
+import java.util.TreeMap;
+
 public class MergeSort_QuickSort {
     public static void main(String[] args) {
-        int arr[] = new int[] { 25, 30, 45, 6, 11, 90, 15 };
-        quickSortArray(arr);
-        for (int i : arr) {
-            System.out.print(i + ", ");
-        }
+        NumberFormat formatter = new DecimalFormat("####,###,###");
+        Map<Long,String> map = new TreeMap<Long,String>();
+
+        long start = System.nanoTime();
+        Sort.BubbleSort(new int[] { 1, -6, 9, 10, 20, 10000, 1230, 5, 8, 2, 4, 3, 7, 5, 6, 7, 8, 2, 31, 3, 34, 143, 53,
+                321, 4546, 123 });
+        long finish = System.nanoTime();
+        map.put(finish - start,"BubbleSort");
+
+        start = System.nanoTime();
+        Sort.InserttionSort(new int[] { 1, -6, 9, 10, 20, 10000, 1230, 5, 8, 2, 4, 3, 7, 5, 6, 7, 8, 2, 31, 3, 34, 143,
+                53, 321, 4546, 123 });
+        finish = System.nanoTime();
+        map.put(finish - start, "InserttionSort");
+
+        start = System.nanoTime();
+        Sort.SelectionSort(new int[] { 1, -6, 9, 10, 20, 10000, 1230, 5, 8, 2, 4, 3, 7, 5, 6, 7, 8, 2, 31, 3, 34, 143,
+                53, 321, 4546, 123 });
+        finish = System.nanoTime();
+        map.put(finish - start, "SelectionSort");
+
+        start = System.nanoTime();
+        mergeSortArray(new int[] { 1, -6, 9, 10, 20, 10000, 1230, 5, 8, 2, 4, 3, 7, 5, 6, 7, 8, 2, 31, 3, 34, 143, 53,
+                321, 4546, 123 });
+        finish = System.nanoTime();
+        map.put(finish - start, "mergeSortArray");
+
+        start = System.nanoTime();
+        quickSortArray(new int[] { 1, -6, 9, 10, 20, 10000, 1230, 5, 8, 2, 4, 3, 7, 5, 6, 7, 8, 2, 31, 3, 34, 143, 53,
+                321, 4546, 123 });
+        finish = System.nanoTime();
+        map.put(finish - start, "quickSortArray");
+
+        map.forEach((k, v)-> System.out.println(formatter.format(k)+"s - "+v));
     }
 
     // ------------------------------------------------------------------------------------------------
@@ -78,10 +112,10 @@ public class MergeSort_QuickSort {
             // doi cho 2 phan tu dang dung khong dung vi tri
             if (iL <= iR) {
                 int temp = a[iL];
-                a[iL] = a[iR];
-                a[iR] = temp;
-                iL++;
-                iR--;
+                a[iL++] = a[iR];
+                a[iR--] = temp;
+                // iL++;
+                // iR--;
             }
         }
 
