@@ -1,3 +1,6 @@
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public class ListNode {
     int val;
     ListNode next;
@@ -109,6 +112,18 @@ public class ListNode {
         return false;
     }
 
+    public static ListNode detectCycle(ListNode head) {
+        Set<ListNode> set = new LinkedHashSet<ListNode>();
+        ListNode node = head;
+        while (node != null) {
+            if (!set.add(node)) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
     public static void print(ListNode head) {
         ListNode node = head;
         while (node != null) {
@@ -116,5 +131,10 @@ public class ListNode {
             node = node.next;
         }
         System.out.println();
+    }
+
+    @Override
+    public String toString() {
+        return "ListNode [val=" + val + ", next=" + next + "]";
     }
 }
