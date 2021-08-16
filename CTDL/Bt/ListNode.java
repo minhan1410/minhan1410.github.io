@@ -111,17 +111,47 @@ public class ListNode {
 
         return false;
     }
+    // C1:4 ms
+    // public static ListNode detectCycle(ListNode head) {
+    //     Set<ListNode> set = new LinkedHashSet<ListNode>();
+    //     ListNode node = head;
+    //     while (node != null) {
+    //         if (!set.add(node)) {
+    //             return node;
+    //         }
+    //         node = node.next;
+    //     }
+    //     return null;
+    // }
 
+    // C2: 0ms
     public static ListNode detectCycle(ListNode head) {
-        Set<ListNode> set = new LinkedHashSet<ListNode>();
-        ListNode node = head;
-        while (node != null) {
-            if (!set.add(node)) {
-                return node;
-            }
-            node = node.next;
+        if (head == null || head.next == null) {
+            return null;
         }
-        return null;
+
+        ListNode fast = head, slow = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                break;
+            }
+        }
+
+        if (fast == null || fast.next == null) {
+            return null;
+        }
+        fast = head;
+
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
     }
 
     public static void print(ListNode head) {
@@ -135,6 +165,6 @@ public class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode [val=" + val + ", next=" + next + "]";
+        return "ListNode [val=" + val+ "]";
     }
 }

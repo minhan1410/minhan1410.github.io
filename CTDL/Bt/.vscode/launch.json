@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "type": "java",
             "name": "Launch Current File",
@@ -204,6 +205,13 @@
             "name": "Launch Id977_Combinations",
             "request": "launch",
             "mainClass": "Id977_Combinations",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch ListNode",
+            "request": "launch",
+            "mainClass": "ListNode",
             "projectName": "Bt_e2e9a55f"
         },
         {
