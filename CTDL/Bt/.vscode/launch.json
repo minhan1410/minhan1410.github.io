@@ -4,7 +4,53 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "Launch Id70_Climbing_Stairs",
+            "request": "launch",
+            "mainClass": "Id70_Climbing_Stairs",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1299_Replace_Elements_with_Greatest_Element_on_Right_Side",
+            "request": "launch",
+            "mainClass": "Id1299_Replace_Elements_with_Greatest_Element_on_Right_Side",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1346_Check_If_N_and_Its_Double_Exist",
+            "request": "launch",
+            "mainClass": "Id1346_Check_If_N_and_Its_Double_Exist",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1089_Duplicate_Zeros",
+            "request": "launch",
+            "mainClass": "Id1089_Duplicate_Zeros",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id_160_Intersection_of_Two_Linked_Lists",
+            "request": "launch",
+            "mainClass": "Id_160_Intersection_of_Two_Linked_Lists",
+            "projectName": "Bt_e2e9a55f"
+        },
         {
             "type": "java",
             "name": "Launch Current File",

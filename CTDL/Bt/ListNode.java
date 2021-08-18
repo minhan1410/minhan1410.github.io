@@ -1,6 +1,3 @@
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 public class ListNode {
     int val;
     ListNode next;
@@ -85,15 +82,15 @@ public class ListNode {
 
     // C1:4 ms
     // public static boolean hasCycle(ListNode head) {
-    //     Set<ListNode> set = new LinkedHashSet<ListNode>();
-    //     ListNode node = head;
-    //     while (node != null) {
-    //         if (!set.add(node)) {
-    //             return true;
-    //         }
-    //         node = node.next;
-    //     }
-    //     return false;
+    // Set<ListNode> set = new LinkedHashSet<ListNode>();
+    // ListNode node = head;
+    // while (node != null) {
+    // if (!set.add(node)) {
+    // return true;
+    // }
+    // node = node.next;
+    // }
+    // return false;
     // }
 
     // C2: 0ms
@@ -113,15 +110,15 @@ public class ListNode {
     }
     // C1:4 ms
     // public static ListNode detectCycle(ListNode head) {
-    //     Set<ListNode> set = new LinkedHashSet<ListNode>();
-    //     ListNode node = head;
-    //     while (node != null) {
-    //         if (!set.add(node)) {
-    //             return node;
-    //         }
-    //         node = node.next;
-    //     }
-    //     return null;
+    // Set<ListNode> set = new LinkedHashSet<ListNode>();
+    // ListNode node = head;
+    // while (node != null) {
+    // if (!set.add(node)) {
+    // return node;
+    // }
+    // node = node.next;
+    // }
+    // return null;
     // }
 
     // C2: 0ms
@@ -163,8 +160,20 @@ public class ListNode {
         System.out.println();
     }
 
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode nodeA = headA, nodeB = headB;
+
+        while (nodeA != nodeB) {
+            nodeA = nodeA != null ? nodeA.next : headB;
+
+            nodeB = nodeB != null ? nodeB.next : headA;
+        }
+
+        return nodeA;
+    }
+
     @Override
     public String toString() {
-        return "ListNode [val=" + val+ "]";
+        return "ListNode [val=" + val + "]";
     }
 }
