@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id36_Valid_Sudoku",
+            "request": "launch",
+            "mainClass": "Id36_Valid_Sudoku",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id724_Find_Pivot_Index",
+            "request": "launch",
+            "mainClass": "Id724_Find_Pivot_Index",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id202_Happy_Number",
+            "request": "launch",
+            "mainClass": "Id202_Happy_Number",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1598_Crawler_Log_Folder",
+            "request": "launch",
+            "mainClass": "Id1598_Crawler_Log_Folder",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1512_Number_of_Good_Pairs",
+            "request": "launch",
+            "mainClass": "Id1512_Number_of_Good_Pairs",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id70_Climbing_Stairs",
             "request": "launch",
             "mainClass": "Id70_Climbing_Stairs",
