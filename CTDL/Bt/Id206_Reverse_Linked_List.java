@@ -10,11 +10,11 @@ public class Id206_Reverse_Linked_List {
         a3.next = a4;
         a4.next = a5;
 
-        // ListNode.print(a1);
-        // ListNode.print(ListNode.reverseList(a1));
+        ListNode.print(a1);
+        ListNode.print(ListNode.reverseList(a1));
 
         ListNode b1 = new ListNode();
+        System.out.println();
         ListNode.print(b1);
-        ListNode.reverseList(ListNode.reverseList(b1));
     }
 }

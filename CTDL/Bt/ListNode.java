@@ -21,30 +21,56 @@ public class ListNode {
             node.next = nodeNext.next;
             nodeNext.next = head;
             head = nodeNext;
+
+            System.out.print("-> ");ListNode.print(head);
         }
         return head;
     }
 
+    // public static ListNode removeElements1(ListNode head, int val) {
+    //     // 1ms 40.1 MB
+    //     if (head == null)
+    //         return head;
+
+    //     ListNode node = head;
+    //     ListNode p = new ListNode();
+    //     ListNode nodeP = p;
+
+    //     while (node != null) {
+    //         int v = node.val;
+    //         if (v != val) {
+    //             ListNode a = new ListNode(v, null);
+    //             while (nodeP.next != null) {
+    //                 nodeP = nodeP.next;
+    //             }
+    //             nodeP.next = a;
+    //         }
+    //         node = node.next;
+    //     }
+    //     return p.next;
+    // }
+
     public static ListNode removeElements(ListNode head, int val) {
-        if (head == null)
-            return head;
-
-        ListNode node = head;
-        ListNode p = new ListNode();
-        ListNode nodeP = p;
-
-        while (node != null) {
-            int v = node.val;
-            if (v != val) {
-                ListNode a = new ListNode(v, null);
-                while (nodeP.next != null) {
-                    nodeP = nodeP.next;
-                }
-                nodeP.next = a;
-            }
-            node = node.next;
+        // 1ms 39.8 MB
+        if(head == null){
+            return null;
         }
-        return p.next;
+        ListNode node = head;
+        ListNode before = null;
+        while(node != null){
+            if(node == head && node.val == val){
+                head = head.next;
+                node = head;
+            }else{
+                if(node.val == val){
+                    before.next = node.next;
+                }else{
+                    before = node;
+                }
+                node = node.next;
+            }
+        }
+        return head;
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
@@ -170,6 +196,41 @@ public class ListNode {
         }
 
         return nodeA;
+    }
+
+    public static ListNode oddEvenList(ListNode head) {
+        if(head == null || head.next == null) {
+            return head;
+        }
+
+
+        ListNode odd = new ListNode(head.val);
+        ListNode even = new ListNode(head.next.val);
+
+        ListNode node = head.next.next;
+        ListNode nodeOdd = odd;
+        ListNode nodeEven = even;
+
+        while(node != null){
+            nodeOdd.next = new ListNode(node.val);
+            nodeOdd = nodeOdd.next;
+
+            if(node.next == null){
+                break;
+            }
+
+            nodeEven.next = new ListNode(node.next.val);
+            nodeEven = nodeEven.next;
+
+            node = node.next.next;
+        }
+
+        while(nodeOdd.next != null){
+            nodeOdd = nodeOdd.next;
+        }
+        nodeOdd.next = even;
+
+        return odd;
     }
 
     @Override

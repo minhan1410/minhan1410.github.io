@@ -37,7 +37,16 @@ public class Id203_Remove_Linked_List_Elements {
         // System.out.println("Car: "+car);
         // System.out.println(Car.test(car)+" - car: "+car);
 
-        ListNode a1 = new ListNode();
-        ListNode.print(ListNode.removeElements(a1, 1));
+        ListNode a1 = new ListNode(7, new ListNode(7, new ListNode(7, new ListNode(7))));
+        ListNode.print(ListNode.removeElements(a1, 7));
+
+        a1 = new ListNode(7, new ListNode(6, new ListNode(7, new ListNode(7))));
+        ListNode.print(ListNode.removeElements(a1, 7));
+
+        a1 = new ListNode(7, new ListNode(6, new ListNode(7, new ListNode(7))));
+        ListNode.print(ListNode.removeElements(a1, 6));
+
+        a1 = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3,new ListNode(4,new ListNode(5,new ListNode(6)))))));
+        ListNode.print(ListNode.removeElements(a1, 6));
     }
 }
