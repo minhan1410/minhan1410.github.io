@@ -1,5 +1,3 @@
-
-
 public class Id202_Happy_Number {
     public static void main(String[] args) {
         System.out.println(isHappy(19));

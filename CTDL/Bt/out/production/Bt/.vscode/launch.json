@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id328_Odd_Even_Linked_List",
+            "request": "launch",
+            "mainClass": "Id328_Odd_Even_Linked_List",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id394_Decode_String",
+            "request": "launch",
+            "mainClass": "Id394_Decode_String",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id36_Valid_Sudoku",
             "request": "launch",
             "mainClass": "Id36_Valid_Sudoku",

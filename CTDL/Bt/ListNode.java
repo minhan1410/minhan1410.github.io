@@ -22,7 +22,7 @@ public class ListNode {
             nodeNext.next = head;
             head = nodeNext;
 
-            System.out.print("-> ");ListNode.print(head);
+            System.out.println("-> "+head);
         }
         return head;
     }
@@ -177,15 +177,6 @@ public class ListNode {
         return slow;
     }
 
-    public static void print(ListNode head) {
-        ListNode node = head;
-        while (node != null) {
-            System.out.print(node.val + ", ");
-            node = node.next;
-        }
-        System.out.println();
-    }
-
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode nodeA = headA, nodeB = headB;
 
@@ -233,8 +224,21 @@ public class ListNode {
         return odd;
     }
 
+    public static void print(ListNode head) {
+        ListNode node = head;
+        while (node != null) {
+            System.out.print(node.val + ", ");
+            node = node.next;
+        }
+        System.out.println();
+    }
+
     @Override
     public String toString() {
-        return "ListNode [val=" + val + "]";
+        String result = Integer.toString(val)+", ";
+        if(next!=null){
+            result = result + next.toString();
+        }
+        return result;
     }
 }
