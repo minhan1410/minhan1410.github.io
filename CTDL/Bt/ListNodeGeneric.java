@@ -1,67 +1,106 @@
-public class ListNodeGeneric<T> {
+class Node<T> {
     T val;
-    ListNodeGeneric<T> next;
+    Node<T> next;
 
-    public ListNodeGeneric() {
+    public Node() {
     }
 
-    public ListNodeGeneric(T value) {
-        this.val = value;
+    public Node(T val) {
+        this.val = val;
     }
 
-    public ListNodeGeneric(T value, ListNodeGeneric<T> next) {
-        this.val = value;
+    public Node(T val, Node<T> next) {
+        this.val = val;
         this.next = next;
-    }
-
-    public void addToHead(T value) {
-        ListNodeGeneric<T> headNext = new ListNodeGeneric<T>(val, next);
-        this.val = value;
-        this.next = headNext;
-    }
-
-    public void addToTail(T value) {
-        ListNodeGeneric<T> node = next;
-        while (node.next != null) {
-            node = node.next;
-        }
-        node.next = new ListNodeGeneric<T>(value);
-    }
-
-    public void insert(T value, int index) {
-        ListNodeGeneric<T> node = this;
-        for (int i = 0; i < index - 1; i++) {
-            node = node.next;
-        }
-
-        ListNodeGeneric<T> newNode = new ListNodeGeneric<T>(value, node.next);
-        node.next = newNode;
     }
 
     @Override
     public String toString() {
         String result = val + ", ";
         if (next != null) {
-            result = result + next.toString();
+            result += next.toString();
         }
         return result;
     }
+}
+
+public class ListNodeGeneric<T> {
+    Node<T> head;
+
+    public ListNodeGeneric(Node<T> head) {
+        this.head = head;
+    }
+
+    public void insert(T val, int index) {
+        if (index == 0) {
+            head = new Node<T>(val, head);
+        }
+
+        Node<T> node = head;
+        int i = 0;
+        for (; i < index - 1 && node.next != null; i++) {
+            node = node.next;
+        }
+        if (index <= i + 1) {
+            node.next = new Node<T>(val, node.next);
+        }
+    }
+
+    public void remove(int index) {
+        if (index == 0) {
+            head = head.next;
+        } else {
+            Node<T> node = head;
+            for (int i = 0; i < index - 2; i++) {
+                node = node.next;
+            }
+            node.next = node.next.next;
+        }
+    }
+
+    @Override
+    public String toString() {
+        if(head == null) {
+            return "";
+        }
+        return head.toString();
+    }
 
     public static void main(String[] args) {
-        ListNodeGeneric<Integer> head = new ListNodeGeneric<Integer>(2,
-                new ListNodeGeneric<>(3, new ListNodeGeneric<>(5, new ListNodeGeneric<>(9))));
-        System.out.println(head);
+        Node<Integer> head = new Node<Integer>(0, new Node<>(3, new Node<>(5, new Node<>(6))));
+        ListNodeGeneric<Integer> list = new ListNodeGeneric<Integer>(head);
 
-        head.addToHead(1);
-        System.out.println(head);
+        System.out.println(list);
 
-        head.addToTail(10);
-        System.out.println(head);
+        list.insert(1, 1);
+        System.out.println(list);
 
-        head.insert(4, 3);
-        head.insert(6, 5);
-        head.insert(7, 6);
-        head.insert(8, 7);
-        System.out.println(head);
+        list.insert(2, 2);
+        System.out.println(list);
+
+        list.insert(4, 4);
+        System.out.println(list);
+
+        list.remove(7);
+        System.out.println(list);
+
+        list.remove(0);
+        System.out.println(list);
+
+        list.remove(3);
+        System.out.println(list);
+
+        list.remove(3);
+        System.out.println(list);
+
+        list.remove(2);
+        System.out.println(list);
+
+        list.remove(1);
+        System.out.println(list);
+
+        list.remove(0);
+        System.out.println(list);
+
     }
 }
