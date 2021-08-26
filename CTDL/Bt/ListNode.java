@@ -15,6 +15,7 @@ public class ListNode {
     }
 
     public static ListNode reverseList(ListNode head) {
+        // 0 ms 39.1 MB
         ListNode node = head;
         while (node != null && node.next != null) {
             ListNode nodeNext = node.next;
@@ -22,49 +23,49 @@ public class ListNode {
             nodeNext.next = head;
             head = nodeNext;
 
-            System.out.println("-> "+head);
+            // System.out.println("-> "+head);
         }
         return head;
     }
 
     // public static ListNode removeElements1(ListNode head, int val) {
-    //     // 1ms 40.1 MB
-    //     if (head == null)
-    //         return head;
+    // // 1ms 40.1 MB
+    // if (head == null)
+    // return head;
 
-    //     ListNode node = head;
-    //     ListNode p = new ListNode();
-    //     ListNode nodeP = p;
+    // ListNode node = head;
+    // ListNode p = new ListNode();
+    // ListNode nodeP = p;
 
-    //     while (node != null) {
-    //         int v = node.val;
-    //         if (v != val) {
-    //             ListNode a = new ListNode(v, null);
-    //             while (nodeP.next != null) {
-    //                 nodeP = nodeP.next;
-    //             }
-    //             nodeP.next = a;
-    //         }
-    //         node = node.next;
-    //     }
-    //     return p.next;
+    // while (node != null) {
+    // int v = node.val;
+    // if (v != val) {
+    // ListNode a = new ListNode(v, null);
+    // while (nodeP.next != null) {
+    // nodeP = nodeP.next;
+    // }
+    // nodeP.next = a;
+    // }
+    // node = node.next;
+    // }
+    // return p.next;
     // }
 
     public static ListNode removeElements(ListNode head, int val) {
         // 1ms 39.8 MB
-        if(head == null){
+        if (head == null) {
             return null;
         }
         ListNode node = head;
         ListNode before = null;
-        while(node != null){
-            if(node == head && node.val == val){
+        while (node != null) {
+            if (node == head && node.val == val) {
                 head = head.next;
                 node = head;
-            }else{
-                if(node.val == val){
+            } else {
+                if (node.val == val) {
                     before.next = node.next;
-                }else{
+                } else {
                     before = node;
                 }
                 node = node.next;
@@ -190,10 +191,9 @@ public class ListNode {
     }
 
     public static ListNode oddEvenList(ListNode head) {
-        if(head == null || head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
-
 
         ListNode odd = new ListNode(head.val);
         ListNode even = new ListNode(head.next.val);
@@ -202,11 +202,11 @@ public class ListNode {
         ListNode nodeOdd = odd;
         ListNode nodeEven = even;
 
-        while(node != null){
+        while (node != null) {
             nodeOdd.next = new ListNode(node.val);
             nodeOdd = nodeOdd.next;
 
-            if(node.next == null){
+            if (node.next == null) {
                 break;
             }
 
@@ -216,12 +216,39 @@ public class ListNode {
             node = node.next.next;
         }
 
-        while(nodeOdd.next != null){
+        while (nodeOdd.next != null) {
             nodeOdd = nodeOdd.next;
         }
         nodeOdd.next = even;
 
         return odd;
+    }
+
+    public static boolean isPalindrome(ListNode head) {
+        // 13 ms 59.8 MB
+        StringBuilder result = new StringBuilder();
+        while (head != null) {
+            result.append(head.val);
+            head = head.next;
+        }
+        return result.toString().equals(result.reverse().toString());
+    }
+
+    public static int count(ListNode head) {
+        int count = 0;
+        while (head != null) {
+            count++;
+            head = head.next;
+        }
+        return count;
+    }
+
+    public static ListNode getIndex(ListNode head, int index) {
+        ListNode node = head;
+        for (int i = 0; i < index && node != null; i++) {
+            node = node.next;
+        }
+        return node;
     }
 
     public static void print(ListNode head) {
@@ -235,8 +262,8 @@ public class ListNode {
 
     @Override
     public String toString() {
-        String result = Integer.toString(val)+", ";
-        if(next!=null){
+        String result = Integer.toString(val) + ", ";
+        if (next != null) {
             result = result + next.toString();
         }
         return result;

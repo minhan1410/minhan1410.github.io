@@ -7,11 +7,12 @@ public class Id387_First_Unique_Character_in_a_String {
     }
 
     public static int firstUniqChar(String s) {
+        // 1 ms 39.3 MB
         // copy code
         int ans = s.length();
-        for (char i = 'a'; i <= 'z'; i++) {
-            int index = s.indexOf(i);
-            if (index != -1 && index == s.lastIndexOf(i)) {
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            int index = s.indexOf(ch);
+            if (index != -1 && index == s.lastIndexOf(ch)) {
                 // Tìm ptu xuất hiên 1 lần đầu tiên
                 ans = Math.min(ans, index);
             }
@@ -20,6 +21,7 @@ public class Id387_First_Unique_Character_in_a_String {
     }
 
     public static int firstUniqChar3(String s) {
+        // 5 ms 39.2 MB
         int[] count = new int[26];
         for (char i : s.toCharArray()) {
             count[i-'a']++;
@@ -34,6 +36,7 @@ public class Id387_First_Unique_Character_in_a_String {
     }
 
     public static int firstUniqChar2(String s) {
+        // 27 ms 39.5 MB
         Map<Character, Integer> map = new HashMap<Character, Integer>();
 
         for (int i = 0; i < s.length(); i++) {

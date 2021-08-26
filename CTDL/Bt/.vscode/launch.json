@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MyHashMap",
+            "request": "launch",
+            "mainClass": "Hasing.MyHashMap",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id933_Number_of_Recent_Calls",
+            "request": "launch",
+            "mainClass": "Id933_Number_of_Recent_Calls",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id20_Valid_Parentheses",
+            "request": "launch",
+            "mainClass": "Id20_Valid_Parentheses",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id234_Palindrome_Linked_List",
+            "request": "launch",
+            "mainClass": "Id234_Palindrome_Linked_List",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id747_Largest_Number_At_Least_Twice_of_Others",
+            "request": "launch",
+            "mainClass": "Id747_Largest_Number_At_Least_Twice_of_Others",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch ListNodeGeneric",
             "request": "launch",
             "mainClass": "ListNodeGeneric",
