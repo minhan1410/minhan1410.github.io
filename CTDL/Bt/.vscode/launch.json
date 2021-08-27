@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id232_Implement_Queue_using_Stacks",
+            "request": "launch",
+            "mainClass": "Id232_Implement_Queue_using_Stacks",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id155_Min_Stack",
+            "request": "launch",
+            "mainClass": "Id155_Min_Stack",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id622_Design_Circular_Queue",
+            "request": "launch",
+            "mainClass": "Id622_Design_Circular_Queue",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch MyHashMap",
             "request": "launch",
             "mainClass": "Hasing.MyHashMap",
