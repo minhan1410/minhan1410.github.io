@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id104_Maximum_Depth_of_Binary_Tree",
+            "request": "launch",
+            "mainClass": "Id104_Maximum_Depth_of_Binary_Tree",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id112_Path_Sum",
+            "request": "launch",
+            "mainClass": "Id112_Path_Sum",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch MyMain",
+            "request": "launch",
+            "mainClass": "Tree.MyMain",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch MyBinaryTree",
+            "request": "launch",
+            "mainClass": "Tree.MyBinaryTree",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id232_Implement_Queue_using_Stacks",
             "request": "launch",
             "mainClass": "Id232_Implement_Queue_using_Stacks",
