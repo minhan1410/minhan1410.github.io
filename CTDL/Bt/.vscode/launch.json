@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id21_Merge_Two_Sorted_Lists",
+            "request": "launch",
+            "mainClass": "Id21_Merge_Two_Sorted_Lists",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id700_Search_in_a_Binary_Search_Tree",
             "request": "launch",
             "mainClass": "Id700_Search_in_a_Binary_Search_Tree",

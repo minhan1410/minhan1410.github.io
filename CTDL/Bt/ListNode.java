@@ -251,6 +251,52 @@ public class ListNode {
         return node;
     }
 
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
+        } else if (l2 == null) {
+            return l1;
+        }
+
+        ListNode result = null;
+        ListNode node1 = l1, node2 = l2;
+
+        while (node1 != null || node2 != null) {
+            if (node1 != null && node2 != null) {
+                if (node1.val < node2.val) {
+                    result= ListNode.add(result, node1.val);
+                    node1 = node1.next;
+                } else {
+                    result= ListNode.add(result, node2.val);
+                    node2 = node2.next;
+                }
+            } else {
+                while (node1 != null) {
+                    result= ListNode.add(result, node1.val);
+                    node1 = node1.next;
+                }
+                while (node2 != null) {
+                    result= ListNode.add(result, node2.val);
+                    node2 = node2.next;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static ListNode add(ListNode head, int val) {
+        if (head == null) {
+            return new ListNode(val);
+        }
+
+        ListNode node = head;
+        while (node.next != null) {
+            node = node.next;
+        }
+        node.next = new ListNode(val);
+        return head;
+    }
+
     public static void print(ListNode head) {
         ListNode node = head;
         while (node != null) {
