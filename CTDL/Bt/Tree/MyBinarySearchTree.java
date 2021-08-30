@@ -128,5 +128,16 @@ public class MyBinarySearchTree {
             return find(root.right, val);
         }
     }
+
+    public TreeNode searchBST(TreeNode root, int val) {
+        if (root == null || root.value == val) {
+            return root;
+        }
+
+        if (root.value > val) {
+            return searchBST(root.left, val);
+        }
+        return searchBST(root.right, val);
+    }
     // ---------------------------------------------------------------------------------------------------
 }
