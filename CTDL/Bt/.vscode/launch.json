@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id700_Search_in_a_Binary_Search_Tree",
+            "request": "launch",
+            "mainClass": "Id700_Search_in_a_Binary_Search_Tree",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id225_Implement_Stack_using_Queues",
+            "request": "launch",
+            "mainClass": "Id225_Implement_Stack_using_Queues",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id104_Maximum_Depth_of_Binary_Tree",
             "request": "launch",
             "mainClass": "Id104_Maximum_Depth_of_Binary_Tree",

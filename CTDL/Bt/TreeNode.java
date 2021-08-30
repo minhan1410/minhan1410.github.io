@@ -40,6 +40,17 @@ class TreeNode {
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
+    public TreeNode searchBST(TreeNode root, int val) {
+        if(root == null || root.val == val ){
+            return root;
+        }
+
+        if(root.val > val){
+            return searchBST(root.left,val);
+        } 
+        return searchBST(root.right,val);
+    }
+
     @Override
     public String toString() {
         return "TreeNode [val=" + val + "]";
