@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id1221_Split_a_String_in_Balanced_Strings",
+            "request": "launch",
+            "mainClass": "Id1221_Split_a_String_in_Balanced_Strings",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id200_Number_of_Islands",
+            "request": "launch",
+            "mainClass": "Id200_Number_of_Islands",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id24_Swap_Nodes_in_Pairs",
+            "request": "launch",
+            "mainClass": "Id24_Swap_Nodes_in_Pairs",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Graph",
+            "request": "launch",
+            "mainClass": "Graph",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id21_Merge_Two_Sorted_Lists",
             "request": "launch",
             "mainClass": "Id21_Merge_Two_Sorted_Lists",

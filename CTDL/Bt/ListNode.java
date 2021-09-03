@@ -252,6 +252,7 @@ public class ListNode {
     }
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        // 1 ms 38.2 MB
         if (l1 == null) {
             return l2;
         } else if (l2 == null) {
@@ -295,6 +296,46 @@ public class ListNode {
         }
         node.next = new ListNode(val);
         return head;
+    }
+
+    public static ListNode swapPairs(ListNode head) {
+        // 0 ms 36.6 MB
+        if(head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode result = null;
+        ListNode node = head;
+
+        while(node != null){
+            if(node.next == null){
+                ListNode nodeResult = result;
+                while (nodeResult.next != null) {
+                    nodeResult = nodeResult.next;
+                }
+                nodeResult.next = new ListNode(node.val);
+            }else{
+                ListNode nodeNext = node.next;
+                node.next = nodeNext.next;
+                nodeNext.next = node;
+    
+                for(int i=1;i<=2; i++){
+                    if(result == null){
+                        result = new ListNode(nodeNext.val);
+                    }else{
+                        ListNode nodeResult = result;
+                        while (nodeResult.next != null) {
+                            nodeResult = nodeResult.next;
+                        }
+                        nodeResult.next = new ListNode(nodeNext.val);
+                    }
+                    nodeNext = nodeNext.next;
+                }
+            }
+
+            node = node .next;
+        }
+        return result;
     }
 
     public static void print(ListNode head) {
