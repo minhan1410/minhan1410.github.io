@@ -1,3 +1,10 @@
+# Độ phức tạp thuật toán 
+### Merge Sort: O(nlog(n))
+### Quick Sort: O(nlog(n))
+### Nổi bọt, chèn, chọn: O(n^2)
+### Tìm kiếm nhị phân: O(log n)
+### Tìm kiếm tuần tự: O(n)
+
 # Collection java
 ![alt text](https://viettuts.vn/images/java/java-collection/he-thong-cap-bac-colection-trong-java.png)
 
