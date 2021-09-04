@@ -1,3 +1,6 @@
+# Collection java
+![alt text](https://viettuts.vn/images/java/java-collection/he-thong-cap-bac-colection-trong-java.png)
+
 # Bubble Sort - Sắp xếp nổi bọt
 **Nguyên lý hoạt động**  
 Sắp xếp nổi bọt hoạt động bằng cách hoán đổi các phần tử liền kề nếu chúng không theo thứ tự mong muốn. Quá trình này lặp lại từ đầu mảng đến cuối mảng.  

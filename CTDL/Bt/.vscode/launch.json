@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id609_Find_Duplicate_File_in_System",
+            "request": "launch",
+            "mainClass": "Id609_Find_Duplicate_File_in_System",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1309_Decrypt_String_from_Alphabet_to_Integer_Mapping",
+            "request": "launch",
+            "mainClass": "Id1309_Decrypt_String_from_Alphabet_to_Integer_Mapping",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id824_Goat_Latin",
+            "request": "launch",
+            "mainClass": "Id824_Goat_Latin",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id13_Roman_to_Integer",
+            "request": "launch",
+            "mainClass": "Id13_Roman_to_Integer",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id896_Monotonic_Array",
+            "request": "launch",
+            "mainClass": "Id896_Monotonic_Array",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1816_Truncate_Sentence",
+            "request": "launch",
+            "mainClass": "Id1816_Truncate_Sentence",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id1221_Split_a_String_in_Balanced_Strings",
             "request": "launch",
             "mainClass": "Id1221_Split_a_String_in_Balanced_Strings",
