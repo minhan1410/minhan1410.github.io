@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id1365_How_Many_Numbers_Are_Smaller_Than_the_Current_Number",
+            "request": "launch",
+            "mainClass": "Id1365_How_Many_Numbers_Are_Smaller_Than_the_Current_Number",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id771_Jewels_and_Stones",
+            "request": "launch",
+            "mainClass": "Id771_Jewels_and_Stones",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id1636_Sort_Array_by_Increasing_Frequency",
+            "request": "launch",
+            "mainClass": "Id1636_Sort_Array_by_Increasing_Frequency",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id609_Find_Duplicate_File_in_System",
             "request": "launch",
             "mainClass": "Id609_Find_Duplicate_File_in_System",
