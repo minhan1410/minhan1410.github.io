@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Id28_Implement_strStr",
+            "request": "launch",
+            "mainClass": "Id28_Implement_strStr",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id14_Longest_Common_Prefix",
+            "request": "launch",
+            "mainClass": "Id14_Longest_Common_Prefix",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id9_Palindrome_Number",
+            "request": "launch",
+            "mainClass": "Id9_Palindrome_Number",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id7_Reverse_Integer",
+            "request": "launch",
+            "mainClass": "Id7_Reverse_Integer",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Id852_Peak_Index_in_a_Mountain_Array",
+            "request": "launch",
+            "mainClass": "Id852_Peak_Index_in_a_Mountain_Array",
+            "projectName": "Bt_e2e9a55f"
+        },
+        {
+            "type": "java",
             "name": "Launch Id1365_How_Many_Numbers_Are_Smaller_Than_the_Current_Number",
             "request": "launch",
             "mainClass": "Id1365_How_Many_Numbers_Are_Smaller_Than_the_Current_Number",
