@@ -2,20 +2,20 @@ import java.util.Arrays;
 
 public class Id53_Maximum_Subarray {
     public static int maxSubArray(int[] nums) {
-        int []clone = nums.clone();
-        Arrays.sort(clone);
-        int max =0,length = nums.length;
-        for (int i = 0; i < length; i++) {
-            int sum = 0;
-            if (nums[i]==clone[length-1]){
-
-            }
+        int n = nums.length;
+        int sum = nums[0];
+        int maxsum = nums[0];
+        for (int i = 1; i < n; i++) {
+            sum = Math.max(nums[i], sum + nums[i]);
+            maxsum = Math.max(maxsum, sum);
         }
+        return maxsum;
+
     }
 
     public static void main(String[] args) {
-        System.out.println(maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));//6
+        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));//6
         System.out.println(maxSubArray(new int[]{1}));//1
-        System.out.println(maxSubArray(new int[]{5,4,-1,7,8}));//23
+        System.out.println(maxSubArray(new int[]{5, 4, -1, 7, 8}));//23
     }
 }
