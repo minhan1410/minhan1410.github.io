@@ -265,19 +265,19 @@ public class ListNode {
         while (node1 != null || node2 != null) {
             if (node1 != null && node2 != null) {
                 if (node1.val < node2.val) {
-                    result= ListNode.add(result, node1.val);
+                    result = ListNode.add(result, node1.val);
                     node1 = node1.next;
                 } else {
-                    result= ListNode.add(result, node2.val);
+                    result = ListNode.add(result, node2.val);
                     node2 = node2.next;
                 }
             } else {
                 while (node1 != null) {
-                    result= ListNode.add(result, node1.val);
+                    result = ListNode.add(result, node1.val);
                     node1 = node1.next;
                 }
                 while (node2 != null) {
-                    result= ListNode.add(result, node2.val);
+                    result = ListNode.add(result, node2.val);
                     node2 = node2.next;
                 }
             }
@@ -300,29 +300,29 @@ public class ListNode {
 
     public static ListNode swapPairs(ListNode head) {
         // 0 ms 36.6 MB
-        if(head == null || head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
 
         ListNode result = null;
         ListNode node = head;
 
-        while(node != null){
-            if(node.next == null){
+        while (node != null) {
+            if (node.next == null) {
                 ListNode nodeResult = result;
                 while (nodeResult.next != null) {
                     nodeResult = nodeResult.next;
                 }
                 nodeResult.next = new ListNode(node.val);
-            }else{
+            } else {
                 ListNode nodeNext = node.next;
                 node.next = nodeNext.next;
                 nodeNext.next = node;
-    
-                for(int i=1;i<=2; i++){
-                    if(result == null){
+
+                for (int i = 1; i <= 2; i++) {
+                    if (result == null) {
                         result = new ListNode(nodeNext.val);
-                    }else{
+                    } else {
                         ListNode nodeResult = result;
                         while (nodeResult.next != null) {
                             nodeResult = nodeResult.next;
@@ -333,9 +333,24 @@ public class ListNode {
                 }
             }
 
-            node = node .next;
+            node = node.next;
         }
         return result;
+    }
+
+    public static ListNode deleteDuplicates(ListNode head) {
+//        0 ms	38.2 MB
+        if (head == null) return null;
+        ListNode node = head;
+
+        while (node != null) {
+            if (node.next != null && node.val == node.next.val) {
+                node.next = node.next.next;
+            } else {
+                node = node.next;
+            }
+        }
+        return head;
     }
 
     public static void print(ListNode head) {
