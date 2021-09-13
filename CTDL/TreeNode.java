@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 class TreeNode {
     int val;
     TreeNode left;
@@ -49,6 +53,22 @@ class TreeNode {
             return searchBST(root.left,val);
         } 
         return searchBST(root.right,val);
+    }
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode tree = root;
+        while(tree != null || !stack.isEmpty()){
+            while (tree!= null){
+                stack.push(tree);
+                tree = tree.left;
+            }
+            tree = stack.pop();
+            result.add(tree.val);
+            tree = tree.right;
+        }
+        return result;
     }
 
     @Override
