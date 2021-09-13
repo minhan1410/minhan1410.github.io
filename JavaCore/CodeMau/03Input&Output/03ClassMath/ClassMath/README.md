@@ -1,0 +1,13 @@
+## Một số phương thức, hàm toán học của thư viện Math
+- `Math.PI` : hằng số pi
+- `Math.abs()` : trả về giá trị tuyệt đối của tham số
+- `Math.ceil()` : trả về giá trị double là số làm tròn tăng bằng giá trị số nguyên gần nhất
+- `Math.floor()` : trả về giá trị double là số làm tròn giảm
+- `Math.max(số thứ nhất, số thứ hai)` : trả về số lớn nhất trong hai số
+- `Math.min(số thứ nhất, số thứ hai)` : trả về số nhỏ nhất trong hai số
+- `Math.pow(cơ số, số mũ)` : lấy lũy thừa
+- `Math.sqrt()` : Khai căn
+- `Math.sin()`, `Math.cos()` : sin và cos của đơn vị góc
+- `Math.random()` : sinh số double ngẫu nhiên ừ 0 đến 1
+- `Math.toDegrees()` : đổi đơn vị radian thành độ
+- `Math.toRadian()` : đổi đơn vị độ sang radian
