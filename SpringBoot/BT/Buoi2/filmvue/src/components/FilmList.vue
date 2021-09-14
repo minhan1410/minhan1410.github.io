@@ -1,0 +1,24 @@
+<template>
+    <ul id="array-rendering">
+        <li v-for="(film,index) in films" : key = "index" : film = "films">
+            {{film.filmName +" - "+film.directorName+" - "+film.year}}
+        </li>
+    </ul>
+</template>
+
+<script>
+export default {
+  props: {
+    books: {
+      type: Array,
+      required: true,
+    },
+  },
+};
+</script>
+
+<style>
+a {
+  color: #42b983;
+}
+</style>
