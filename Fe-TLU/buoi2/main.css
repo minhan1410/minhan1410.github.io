@@ -1,0 +1,66 @@
+body{
+    background-color: gray;
+}
+
+.Cv{
+    width: 100%;
+    background-color: gray;
+}
+
+.Root{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    margin: 50px auto;
+}
+
+.Left{
+    width: 40%;
+    background-color: rgb(207, 207, 207);
+}
+
+.Name_Img{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.FirstName{
+    margin-bottom:0px;
+}
+
+.LastName{
+    margin-top:0px;
+    margin-bottom: 5px;
+    color: rgb(54, 61, 148);
+}
+
+.Img img{
+    width: 100%;
+    height: 200px;
+    image-rendering: pixelated;
+    object-fit: cover;
+}
+
+.Contact_Language_Hobbies,.Summary_Skill_Experience_Education{
+    margin: 26px;
+}
+
+.Title{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.Content p{
+    margin-top: 0px;
+}
+
+.Right{
+    width: 60%;
+    background-color: white;
+}
+
+.Summary_Skill_Experience_Education{
+    padding: 30px;
+}
