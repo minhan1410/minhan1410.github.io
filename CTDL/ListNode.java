@@ -28,28 +28,28 @@ public class ListNode {
         return head;
     }
 
-    // public static ListNode removeElements1(ListNode head, int val) {
-    // // 1ms 40.1 MB
-    // if (head == null)
-    // return head;
+ /*   public static ListNode removeElements1(ListNode head, int val) {
+        // 1ms 40.1 MB
+        if (head == null)
+            return head;
 
-    // ListNode node = head;
-    // ListNode p = new ListNode();
-    // ListNode nodeP = p;
+        ListNode node = head;
+        ListNode p = new ListNode();
+        ListNode nodeP = p;
 
-    // while (node != null) {
-    // int v = node.val;
-    // if (v != val) {
-    // ListNode a = new ListNode(v, null);
-    // while (nodeP.next != null) {
-    // nodeP = nodeP.next;
-    // }
-    // nodeP.next = a;
-    // }
-    // node = node.next;
-    // }
-    // return p.next;
-    // }
+        while (node != null) {
+            int v = node.val;
+            if (v != val) {
+                ListNode a = new ListNode(v, null);
+                while (nodeP.next != null) {
+                    nodeP = nodeP.next;
+                }
+                nodeP.next = a;
+            }
+            node = node.next;
+        }
+        return p.next;
+    }*/
 
     public static ListNode removeElements(ListNode head, int val) {
         // 1ms 39.8 MB
@@ -108,17 +108,17 @@ public class ListNode {
     }
 
     // C1:4 ms
-    // public static boolean hasCycle(ListNode head) {
-    // Set<ListNode> set = new LinkedHashSet<ListNode>();
-    // ListNode node = head;
-    // while (node != null) {
-    // if (!set.add(node)) {
-    // return true;
-    // }
-    // node = node.next;
-    // }
-    // return false;
-    // }
+/*    public static boolean hasCycle(ListNode head) {
+        Set<ListNode> set = new LinkedHashSet<ListNode>();
+        ListNode node = head;
+        while (node != null) {
+            if (!set.add(node)) {
+                return true;
+            }
+            node = node.next;
+        }
+        return false;
+    }*/
 
     // C2: 0ms
     public static boolean hasCycle(ListNode head) {
@@ -136,17 +136,17 @@ public class ListNode {
         return false;
     }
     // C1:4 ms
-    // public static ListNode detectCycle(ListNode head) {
-    // Set<ListNode> set = new LinkedHashSet<ListNode>();
-    // ListNode node = head;
-    // while (node != null) {
-    // if (!set.add(node)) {
-    // return node;
-    // }
-    // node = node.next;
-    // }
-    // return null;
-    // }
+    /*public static ListNode detectCycle(ListNode head) {
+        Set<ListNode> set = new LinkedHashSet<ListNode>();
+        ListNode node = head;
+        while (node != null) {
+            if (!set.add(node)) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }*/
 
     // C2: 0ms
     public static ListNode detectCycle(ListNode head) {
