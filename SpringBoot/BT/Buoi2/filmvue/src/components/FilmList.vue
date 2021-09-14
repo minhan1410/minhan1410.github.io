@@ -9,7 +9,7 @@
 <script>
 export default {
   props: {
-    books: {
+    films: {
       type: Array,
       required: true,
     },

@@ -4,15 +4,15 @@
 </template>
 
 <script>
-import BookList from './components/BookList.vue'
+import FilmList from './components/FilmList.vue'
 import axios from "axios"
 export default {
   components: {
-    BookList,
+    FilmList,
   },
   data() {
     return {
-      books: [],
+      films: [],
       loading: false,
       error: null,
     }
@@ -32,7 +32,7 @@ export default {
     },
   },
   mounted() {
-    this.fetchBooks()
+    this.fetchFilms()
   },
 
 }
