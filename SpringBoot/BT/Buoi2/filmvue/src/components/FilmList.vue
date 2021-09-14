@@ -1,9 +1,9 @@
 <template>
-  <ul id="array-rendering">
-    <li v-for="(film, index) in films" :key="index" :film="film">
-      {{ film.title + " : " + film.author}}
-    </li>
-  </ul>
+    <ul id="array-rendering">
+		<li v-for="(film, index) in films" :key="index" :film="film">
+            {{film.filmName +" - "+film.directorName+" - "+film.year}}
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -13,11 +13,11 @@ export default {
       type: Array,
       required: true,
     },
-  }
-}
+  },
+};
 </script>
 
-<style scoped>
+<style>
 a {
   color: #42b983;
 }

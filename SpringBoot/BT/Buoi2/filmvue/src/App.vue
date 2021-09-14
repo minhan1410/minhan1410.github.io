@@ -1,11 +1,13 @@
 <template>
-  <h1>Book List</h1>
-  <FilmList :films="films" />
+  <div>
+    <h1>Film List</h1>
+    <FilmList :films="films" />
+  </div>
 </template>
 
 <script>
-import FilmList from './components/FilmList.vue'
-import axios from "axios"
+import FilmList from "./components/FilmList.vue";
+import axios from "axios";
 export default {
   components: {
     FilmList,
@@ -15,27 +17,26 @@ export default {
       films: [],
       loading: false,
       error: null,
-    }
+    };
   },
-  methods: {    
+  methods: {
     async fetchFilms() {
       try {
-        this.error = null
-        this.loading = true
-        const url = `http://localhost:8080/api/films`
-        const response = await axios.get(url)       
-        this.films = response.data
-      } catch (err) {       
-        console.log(err)
+        this.error = null;
+        this.loading = true;
+        const url = `http://localhost:8080/api/films`;
+        const response = await axios.get(url);
+        this.films = response.data;
+      } catch (err) {
+        console.log(err);
       }
-      this.loading = false
+      this.loading = false;
     },
   },
   mounted() {
-    this.fetchFilms()
+    this.fetchFilms();
   },
-
-}
+};
 </script>
 
 <style>
