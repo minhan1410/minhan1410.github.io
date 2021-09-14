@@ -45,22 +45,22 @@ class TreeNode {
     }
 
     public TreeNode searchBST(TreeNode root, int val) {
-        if(root == null || root.val == val ){
+        if (root == null || root.val == val) {
             return root;
         }
 
-        if(root.val > val){
-            return searchBST(root.left,val);
-        } 
-        return searchBST(root.right,val);
+        if (root.val > val) {
+            return searchBST(root.left, val);
+        }
+        return searchBST(root.right, val);
     }
 
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode tree = root;
-        while(tree != null || !stack.isEmpty()){
-            while (tree!= null){
+        while (tree != null || !stack.isEmpty()) {
+            while (tree != null) {
                 stack.push(tree);
                 tree = tree.left;
             }
@@ -69,6 +69,38 @@ class TreeNode {
             tree = tree.right;
         }
         return result;
+    }
+
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+//        1 ms	38.3 MB
+        if (p == null && q == null) {
+            return true;
+        }
+        if (p == null || q == null) {
+            return false;
+        }
+        if (p.val != q.val) {
+            return false;
+        }
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+//        0 ms	39 MB
+        return checkSymmetric(root.left, root.right);
+    }
+
+    public boolean checkSymmetric(TreeNode left, TreeNode right) {
+        if (left == null && right == null) {
+            return true;
+        }
+        if (left == null || right == null) {
+            return false;
+        }
+        if (left.val != right.val) {
+            return false;
+        }
+        return checkSymmetric(left.left, right.right) && checkSymmetric(left.right, right.left);
     }
 
     @Override
