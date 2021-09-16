@@ -103,6 +103,58 @@ class TreeNode {
         return checkSymmetric(left.left, right.right) && checkSymmetric(left.right, right.left);
     }
 
+    public TreeNode sortedArrayToBST(int[] nums) {
+//        0 ms	40.6 MB
+        if (nums.length == 0) return null;
+        return addArrayToTree(nums, 0, nums.length - 1);
+    }
+
+    public TreeNode addArrayToTree(int[] nums, int left, int right) {
+        if (left > right) return null;
+        int mid = (left + right) / 2;
+        TreeNode tree = new TreeNode(nums[mid]);
+        tree.left = addArrayToTree(nums, left, mid - 1);
+        tree.right = addArrayToTree(nums, mid + 1, right);
+
+        return tree;
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+
+        int subTree = Math.abs(height(root.left) - height(root.right));
+
+        if (subTree == 1 || subTree == 0) {
+            return isBalanced(root.left) && isBalanced(root.right);
+        }
+        return false;
+    }
+
+    public int height(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int l = height(root.left);
+        int r = height(root.right);
+
+        return 1 + Math.max(l, r);
+    }
+
+    public int minDepth(TreeNode root) {
+//        5 ms	59.8 MB
+        if (root == null) return 0;
+        if (root != null && root.left == null && root.right == null) return 1;
+
+        int left = minDepth(root.left);
+        int right = minDepth(root.right);
+
+        return (left == 0 || right == 0) ? left + right + 1 : Math.min(left, right) + 1;
+    }
+
+
     @Override
     public String toString() {
         return "TreeNode [val=" + val + "]";

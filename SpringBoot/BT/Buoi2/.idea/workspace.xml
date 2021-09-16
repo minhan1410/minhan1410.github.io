@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f487e375-2d78-406b-a7ef-4fea196e1f6b" name="Changes" comment="" />
+    <list default="true" id="f487e375-2d78-406b-a7ef-4fea196e1f6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../CTDL/Id108_Convert_Sorted_Array_to_Binary_Search_Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CTDL/Id110_Balanced_Binary_Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CTDL/Id111_Minimum_Depth_of_Binary_Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CTDL/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CTDL/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CTDL/out/production/Bt/TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CTDL/out/production/Bt/TreeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +27,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../CTDL" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -31,6 +41,8 @@
       <option name="presentableId" value="Default" />
       <updated>1631606848397</updated>
       <workItem from="1631606850848" duration="84000" />
+      <workItem from="1631710643266" duration="21000" />
+      <workItem from="1631710768190" duration="36000" />
     </task>
     <servers />
   </component>

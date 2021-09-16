@@ -1,3 +1,0 @@
-# Thymeleaf Basic
-
-![](demo.jpg)
