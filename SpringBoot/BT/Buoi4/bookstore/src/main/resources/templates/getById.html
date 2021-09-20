@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="template.html :: header('Get by id')">
+</head>
+<body>
+
+<h1>Get by id</h1>
+
+<header th:insert="template.html :: topmenu"> </header>
+
+<div class="container">
+    <p>
+        Book
+    </p>
+    
+    <form action="#" th:action="@{/getbyid}" th:object="${idRequest}"  method="post">
+        <input type="text" placeholder="Nhap id" th:field="*{id}"/><br><br>
+        <button type="submit">Get by id</button>
+    </form>
+    
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${book!=null}">
+            <td th:text="${book?.id}"></td>
+            <td th:text="${book?.title}">Otto</td>
+            <td th:text="${book?.description}">@mdo</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<header th:replace="template.html :: footer"> </header>
+</body>
+</html>

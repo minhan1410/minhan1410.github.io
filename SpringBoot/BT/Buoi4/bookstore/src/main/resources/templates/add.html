@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="template.html :: header('add')">
+</head>
+
+<body>
+    <header th:insert="template.html :: topmenu"> </header>
+
+    <div class="container">
+        <p>
+            add
+        </p>
+        
+        <form action="#" th:action="@{/add}" th:object="${newBook}" method="post">
+            <input type="text" placeholder="Nhap id" th:field="*{id}" /><br><br>
+            <input type="text" placeholder="Nhap title" th:field="*{title}" /><br><br>
+            <input type="text" placeholder="Nhap description" th:field="*{description}" /><br><br>
+            <button type="submit">Add book</button>
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book :${books}">
+                    <td th:text="${book.id}"></td>
+                    <td th:text="${book.title}">Otto</td>
+                    <td th:text="${book.description}">@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <header th:replace="template.html :: footer"> </header>
+</body>
+
+</html>

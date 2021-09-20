@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace = "template.html :: header('book')">
+</head>
+<body>
+    <header th:insert="template.html :: topmenu"> </header>
+
+    <div class="container">
+        <p>
+            Book
+        </p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book :${books}">
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.title}">Otto</td>
+                <td th:text="${book.description}">@mdo</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <header th:replace="template.html :: footer"> </header>
+</body>
+</html>
