@@ -3,6 +3,8 @@ package com.minhan.bookstore.Controller;
 import com.minhan.bookstore.Model.Book;
 import com.minhan.bookstore.Repository.BookDao;
 import com.minhan.bookstore.Request.IdRequest;
+import com.minhan.bookstore.Request.StringRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -99,5 +101,17 @@ public class BookController {
     public String delete(@ModelAttribute Book deleteBook, BindingResult bindingResult, Model model) {
         books.delete(deleteBook);
         return getAll(model);
+    }
+
+    @GetMapping("/searchTitle")
+    public String searchTitle(Model model){
+        model.addAttribute("stringRequest", new StringRequest());
+        return "searchTitle";
+    }
+
+    @PostMapping("/searchTitle")
+    public String searchTitle(@ModelAttribute StringRequest stringRequest, BindingResult bindingResult,Model model){
+        model.addAttribute("books", books.searchTitle(stringRequest.getStr()));
+        return "searchTitle";
     }
 }

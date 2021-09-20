@@ -1,5 +1,6 @@
 package com.minhan.bookstore.Repository;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -58,5 +59,15 @@ public class BookDao {
         if (!book.isPresent()) {
             books.add(t);
         }
+    }
+
+    public List<Book> searchTitle(String str) {
+        ArrayList<Book> array = new ArrayList<Book>();
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getTitle().indexOf(str) != -1) {
+                array.add(books.get(i));
+            }
+        }
+        return array;
     }
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">model</th>
+        <th scope="col">manufacturer</th>
+        <th scope="col">price</th>
+        <th scope="col">sales</th>
+        <th scope="col">photo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car :${cars}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.manufacturer}"></td>
+        <td th:text="${car.price}"></td>
+        <td th:text="${car.sales}"></td>
+        <td><img width="150px" height="150px" th:src="*{car.photo}" alt=""></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
