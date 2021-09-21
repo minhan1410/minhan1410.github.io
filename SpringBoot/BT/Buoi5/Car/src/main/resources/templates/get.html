@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace = "template.html :: header('All Car')">
+<head th:replace = "template.html :: header('Get Car')">
 </head>
 <body>
-
-
 <div class="container">
     <div class="row">
         <div th:insert = "template.html :: topmenu"></div>
@@ -22,20 +20,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="car :${cars}">
-                        <td th:text="${car.id}"></td>
-                        <td><a th:href="@{/car/{id}(id=${car.id})}"><img width="150px" height="150px" style="image-rendering: pixelated;object-fit: contain;" th:src="*{car.photo}" alt=""></a></td>
-                        <td th:text="${car.model}"></td>
-                        <td th:text="${car.manufacturer}"></td>
-                        <td th:text="${car.price}"></td>
-                        <td th:text="${car.sales}"></td>
-                        <td><a th:href="@{/car/edit/{id}(id=${car.id})}">Edit</a> / <a th:href="@{/car/delete/{id}(id=${car.id})}">Delete</a></td>
-                    </tr>
+                <tr>
+                    <td th:text="${car.id}"></td>
+                    <td><a th:href="@{/car/{id}(id=${car.id})}"><img width="150px" height="150px" style="image-rendering: pixelated;object-fit: contain;" th:src="*{car.photo}" alt=""></a></td>
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.manufacturer}"></td>
+                    <td th:text="${car.price}"></td>
+                    <td th:text="${car.sales}"></td>
+                    <td><a th:href="@{/car/edit/{id}(id=${car.id})}">Edit</a> / <a th:href="@{/car/delete/{id}(id=${car.id})}">Delete</a></td>
+                </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-
 </body>
 </html>
