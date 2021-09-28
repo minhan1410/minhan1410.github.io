@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace= "template.html :: header('Add Car')">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div th:insert = "template.html :: topmenu"></div>
+        <div class="col-12">
+            <form action="#" th:action="@{/add}" th:object="${car}" method="post">
+                <input type="text" placeholder="Nhap id" th:field="*{id}" /><br><br>
+                <p th:if="${#fields.hasErrors('id')}"  th:errors="*{id}"></p>
+                <input type="text" placeholder="Nhap model" th:field="*{model}" /><br><br>
+                <p th:if="${#fields.hasErrors('model')}"  th:errors="*{model}"></p>
+                <input type="text" placeholder="Nhap manufacturer" th:field="*{manufacturer}" /><br><br>
+                <input type="text" placeholder="Nhap price" th:field="*{price}" /><br><br>
+                <input type="text" placeholder="Nhap sales" th:field="*{sales}" /><br><br>
+                <input type="text" placeholder="Nhap photo" th:field="*{photo}" /><br><br>
+                <button type="submit">Add car</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

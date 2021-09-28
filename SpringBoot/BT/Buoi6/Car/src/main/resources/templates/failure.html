@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="template.html :: header('Error')">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div th:insert = "template.html :: topmenu"></div>
+    </div>
+    <div class="mt-5">
+        <p th:text="${errorMessage}">a file </p>
+    </div>
+</div>
+
+</body>
+</html>
