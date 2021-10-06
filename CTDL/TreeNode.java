@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -154,6 +155,34 @@ class TreeNode {
         return (left == 0 || right == 0) ? left + right + 1 : Math.min(left, right) + 1;
     }
 
+    public List<Integer> preorderTraversal(TreeNode root) {
+//        0 ms	37.3 MB
+        List<Integer> result = new ArrayList<Integer>();
+        if (root == null) return result;
+        preorder(root, result);
+        return result;
+    }
+    public void preorder(TreeNode root, List<Integer> result) {
+        if (root == null) return;
+
+        result.add(root.val);
+        preorder(root.left, result);
+        preorder(root.right, result);
+    }
+
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (root == null) return result;
+        postorder(root, result);
+        return result;
+    }
+    public void postorder(TreeNode root, List<Integer> result) {
+        if (root == null) return;
+
+        postorder(root.left, result);
+        postorder(root.right, result);
+        result.add(root.val);
+    }
 
     @Override
     public String toString() {
