@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace= "template.html :: header('Add')">
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div th:insert = "template.html :: topmenu"></div>
+    <div class="col-12">
+      <form action="#" th:action="@{/save}" th:object="${employee}" method="post" novalidate="novalidate">
+        <input type="text" placeholder="Nhap id" th:field="*{id}" /><br><br>
+        <input type="text" placeholder="Nhap firstName" th:field="*{firstName}" /><br><br>
+        <input type="text" placeholder="Nhap lastName" th:field="*{lastName}" /><br><br>
+        <input type="text" placeholder="Nhap photo" th:field="*{photo}" /><br><br>
+        <input type="text" placeholder="Nhap tiktok" th:field="*{tiktok}" /><br><br>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+<footer th:replace = "template.html :: footer"></footer>
+
+</html>
