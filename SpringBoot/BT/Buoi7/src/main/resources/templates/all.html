@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="template.html :: header('Home')">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div th:insert="template.html :: topmenu"></div>
+        <div th:fragment="table" class="col-12">
+            <table class="table table-image">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Password Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="employee :${employees}">
+                    <td><a th:href="@{/{id}(id=${employee.id})}"><strong th:text="${employee.id}"></strong></a></td>
+                    <td th:text="${employee.firstName}"></td>
+                    <td th:text="${employee.lastName}"></td>
+                    <td th:text="${employee.emailId}"></td>
+                    <td th:text="${employee.passwordNumber}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
