@@ -14,27 +14,22 @@ function max2Numbers(arr) {
         }
     });
 
-    clone.sort((a,b)=>a-b);
+    clone.sort((a, b) => a - b);
     return clone[clone.length - 2];
 }
-console.log(max2Numbers([2, 1, 3, 4]));
-console.log(max2Numbers([2, 1, 3, 4, 4,4,4,4,4,4,4,4]));
-console.log(max2Numbers([9,9,16,24,26,0,-1,-5,-10,-100]));
-console.log(max2Numbers([987456321,147852369,123,245]));
+// console.log(max2Numbers([2, 1, 3, 4]));
+// console.log(max2Numbers([2, 1, 3, 4, 4,4,4,4,4,4,4,4]));
+// console.log(max2Numbers([9,9,16,24,26,0,-1,-5,-10,-100]));
+// console.log(max2Numbers([987456321,147852369,123,245]));
 
 function findMaxLengthElement(arr) {
-    let result = [],
-        maxLength = arr.map((i) => i.length).sort((a, b) => a - b)[arr.length - 1];
-
-    arr.filter((i) => {
-        if (i.length === maxLength) {
-            result.push(i);
-        }
-    });
-    return result;
+    let maxLength = arr.map((i) => i.length).sort((a, b) => a - b)[
+        arr.length - 1
+    ];
+    return arr.filter((i) => i.length == maxLength);
 }
-// console.log(findMaxLengthElement(["aba", "aa", "ad", "c", "vcl"]));
-// console.log(findMaxLengthElement(["aba", "aa", "ad", "c", "vcl"]));
+console.log(findMaxLengthElement(["aba", "aa", "ad", "c", "vcl"]));
+console.log(findMaxLengthElement(["aba", "aa", "ad", "c", "vcl"]));
 
 function capitalizeString(str) {
     let arr = str.toLowerCase().split(" ");
@@ -50,7 +45,7 @@ function reverseString(str) {
 // console.log(reverseString("Hello"));
 
 function checkSymmetricString(str) {
-    let a = str.toLowerCase().replace(" ", "");
+    let a = str.toLowerCase().replaceAll(" ", "");
     for (let i = 0; i < a.length / 2; i++) {
         if (a.charAt(i) !== a.charAt(a.length - 1 - i)) {
             return false;

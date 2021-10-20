@@ -162,6 +162,7 @@ class TreeNode {
         preorder(root, result);
         return result;
     }
+
     public void preorder(TreeNode root, List<Integer> result) {
         if (root == null) return;
 
@@ -176,12 +177,25 @@ class TreeNode {
         postorder(root, result);
         return result;
     }
+
     public void postorder(TreeNode root, List<Integer> result) {
         if (root == null) return;
 
         postorder(root.left, result);
         postorder(root.right, result);
         result.add(root.val);
+    }
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode right = invertTree(root.right);
+        TreeNode left = invertTree(root.left);
+
+        root.right = left;
+        root.left = right;
+        return root;
     }
 
     @Override

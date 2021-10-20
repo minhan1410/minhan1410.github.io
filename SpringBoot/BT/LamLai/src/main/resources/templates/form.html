@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace= "template.html :: header('Add')">
+</head>
+<body>
+<div th:replace="template.html :: topmenu"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form action="#" th:action="@{/save}" th:object="${film}" method="post" novalidate="novalidate">
+                <input type="text" placeholder="Nhap id" th:field="*{id}" /><br><br>
+                <input type="text" placeholder="Nhap name" th:field="*{name}" /><br><br>
+                <input type="text" placeholder="Nhap title" th:field="*{title}" /><br><br>
+                <input type="text" placeholder="Nhap year" th:field="*{year}" /><br><br>
+                <input type="text" placeholder="Nhap photo" th:field="*{photo}" /><br><br>
+                <input type="text" placeholder="Nhap link" th:field="*{link}" /><br><br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:replace="template.html :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="template.html :: header('Film')"></head>
+<body>
+<div th:replace="template.html :: topmenu"></div>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a target="_blank" th:href="${film.link}"><img width="250px" height="250px"
+                                                               style="image-rendering: pixelated;object-fit: cover;"
+                                                               th:src="${film.photo}" alt=""></a></td>
+            <td th:text="${film.name}"></td>
+            <td th:text="${film.title}"></td>
+            <td th:text="${film.year}"></td>
+            <td><a th:href="@{/update/{id}(id=${film.id})}">Update</a> / <a th:href="@{/delete/{id}(id=${film.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="template.html :: footer"></div>
+</body>
+</html>
