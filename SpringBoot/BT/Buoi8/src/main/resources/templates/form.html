@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace= "template.html :: header('Add')">
+<head th:replace="template.html :: header('Add')">
 </head>
 <body>
 
 <div class="container">
-  <div class="row">
-    <div th:insert = "template.html :: topmenu"></div>
-    <div class="col-12">
-      <form action="#" th:action="@{/save}" th:object="${employee}" method="post" novalidate="novalidate">
-        <input type="text" placeholder="Nhap id" th:field="*{id}" /><br><br>
-        <input type="text" placeholder="Nhap firstName" th:field="*{firstName}" /><br><br>
-        <input type="text" placeholder="Nhap lastName" th:field="*{lastName}" /><br><br>
-        <input type="text" placeholder="Nhap photo" th:field="*{photo}" /><br><br>
-        <input type="text" placeholder="Nhap tiktok" th:field="*{tiktok}" /><br><br>
-        <button type="submit">Save</button>
-      </form>
+    <div class="row">
+        <div th:insert="template.html :: topmenu"></div>
+
+        <h1 style="text-align:center">Ứng tuyển thư ký</h1>
+
+        <form action="#" th:action="@{/save}" th:object="${employee}" method="post" novalidate="novalidate"
+              enctype="multipart/form-data">
+            <div class="form-group row">
+                <label class=" col-form-label">ID</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" autocomplete="off" placeholder="Nhập id"
+                           th:field="*{id}" readonly/><br><br>
+                </div>
+                <div class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+            </div>
+
+            <div class="form-group row">
+                <label class=" col-form-label">First Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" autocomplete="off" placeholder="Nhập First Name"
+                           th:field="*{firstName}"/><br><br>
+                </div>
+                <div class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+            </div>
+
+            <div class="form-group row">
+                <label class=" col-form-label">Last Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" autocomplete="off" placeholder="Nhập Last Name"
+                           th:field="*{lastName}"/><br><br>
+                </div>
+                <div class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <input type="file" class="form-control" th:field="*{photo}"/><br><br>
+                </div>
+                <div class="text-danger" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}"></div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label">Tiktok</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" autocomplete="off" placeholder="Nhập tiktok"
+                           th:field="*{tiktok}"/><br><br>
+                </div>
+                <div class="text-danger" th:if="${#fields.hasErrors('tiktok')}" th:errors="*{tiktok}"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-3 ">Save</button>
+        </form>
     </div>
-  </div>
 </div>
 
 </body>
-<footer th:replace = "template.html :: footer"></footer>
-
+<footer th:replace="template.html :: footer"></footer>
 </html>
+

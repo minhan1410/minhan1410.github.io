@@ -1,6 +1,5 @@
 package com.minhan.car.Controller;
 
-import com.minhan.car.Exception.ShowException;
 import com.minhan.car.Model.Car;
 import com.minhan.car.Repository.CarRepository;
 import com.minhan.car.Request.IdRequest;
@@ -102,18 +101,5 @@ public class CarController {
             return "get";
         }
         return "null";
-    }
-
-    //    Hiển thị lỗi
-    @ExceptionHandler(ShowException.class)
-    public String handleStorageFileNotFound(ShowException e, Model model) {
-        model.addAttribute("errorMessage", e.getMessage());
-        return failure(model);
-    }
-
-    @GetMapping("/failure")
-    public String failure(Model model) {
-        model.addAttribute("stringRequest", new StringRequest());
-        return "failure";
     }
 }

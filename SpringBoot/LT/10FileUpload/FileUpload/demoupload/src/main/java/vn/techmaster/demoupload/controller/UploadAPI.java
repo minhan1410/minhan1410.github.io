@@ -15,7 +15,7 @@ import vn.techmaster.demoupload.service.StorageService;
 public class UploadAPI {
   @Autowired
   private StorageService storageService;
-
+// https://newbedev.com/spring-boot-controller-upload-multipart-and-json-to-dto
   @PostMapping(value = "/upload", consumes = { "multipart/form-data" })
   public String upload(@ModelAttribute Person person,  Model model) {
     storageService.uploadFile(person.getPhoto());    

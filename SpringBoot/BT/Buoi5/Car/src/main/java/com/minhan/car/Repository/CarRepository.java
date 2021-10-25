@@ -2,7 +2,6 @@ package com.minhan.car.Repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.minhan.car.Exception.ShowException;
 import com.minhan.car.Model.Car;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
@@ -25,8 +24,7 @@ public class CarRepository {
             cars.addAll(mapper.readValue(file, new TypeReference<List<Car>>() {
             }));
         } catch (IOException e) {
-//            System.out.println(e.getMessage());
-            throw new ShowException("Loi doc file json");
+            System.out.println(e.getMessage());
         }
     }
 
@@ -38,7 +36,7 @@ public class CarRepository {
         if (!get(car.getId()).isPresent()) {
             cars.add(car);
         }else{
-            throw new ShowException("Loi id da ton tai");
+            throw new RuntimeException("Loi id da ton tai");
         }
     }
 
@@ -59,7 +57,7 @@ public class CarRepository {
         if (optionalCar.isPresent() && cars.size() >= 1) {
             cars.remove(optionalCar.get());
         }else{
-            throw new ShowException("Loi id da ton tai hoac khong con phan tu");
+            throw new RuntimeException("Loi id da ton tai hoac khong con phan tu");
         }
     }
 

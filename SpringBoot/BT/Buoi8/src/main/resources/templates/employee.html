@@ -20,7 +20,7 @@
                 <tbody>
                 <tr>
                     <td th:text="${employee.id}"></td>
-                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;" th:src="${employee.photo}" alt=""></td>
+                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;" th:src="|/photos/${employee.photo.getOriginalFilename()}|" alt=""></td>
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
                     <td><a target="blank" th:href="${employee.tiktok}"><p th:text="|${employee.firstName} ${employee.lastName}|"></p></a></td>

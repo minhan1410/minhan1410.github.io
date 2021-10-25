@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="template.html :: header('Home')">
-</head>
+<head th:replace="template.html :: header('Home')"></head>
 <body>
-
 
 <div class="container">
     <div class="row">
-        <div th:insert="template.html :: topmenu"></div>
+        <div th:replace="template.html :: topmenu"></div>
+
+        <h1 style="text-align:center">Danh sách ứng tuyển thư ký</h1>
+
         <div th:fragment="table" class="col-12">
             <table class="table table-image">
                 <thead>
@@ -21,7 +22,7 @@
                 <tbody>
                 <tr th:each="employee :${employees}">
                     <td><a th:href="@{/{id}(id=${employee.id})}"><strong th:text="${employee.id}"></strong></a></td>
-                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;" th:src="${employee.photo}" alt=""></td>
+                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;" th:src="|/photos/${employee.photo.getOriginalFilename()}|" alt=""></td>
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
                 </tr>
