@@ -22,7 +22,8 @@
                 <tbody>
                 <tr th:each="employee :${employees}">
                     <td><a th:href="@{/{id}(id=${employee.id})}"><strong th:text="${employee.id}"></strong></a></td>
-                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;" th:src="|/photos/${employee.photo.getOriginalFilename()}|" alt=""></td>
+                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;"
+                             th:src="@{/photos/{photo}(photo = ${employee.photoName})}" alt=""></td>
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
                 </tr>
@@ -34,5 +35,5 @@
 
 </body>
 
-<footer th:replace = "template.html :: footer"></footer>
+<footer th:replace="template.html :: footer"></footer>
 </html>

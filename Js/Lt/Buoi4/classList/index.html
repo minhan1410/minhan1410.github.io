@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class List</title>
+
+    <style>
+        .text-red {
+            color: red;
+        }
+        .text-big {
+            font-size: 3rem;
+        }
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading" class="text-red text-uppercase">Đây là thẻ Heading</h1>
+
+    <script>
+        const h1 = document.querySelector("#heading")
+
+        // Thao tác với classList
+        console.log(h1.classList.length);
+
+        // Add class
+        h1.classList.add("text-big", "text-center")
+
+        // remove class
+        h1.classList.remove("text-big", "text-center", "text-red")
+
+        // contains => true/false
+        console.log(h1.classList.contains("text-big"));
+        console.log(h1.classList.contains("text-uppercase"));
+
+        // toggle
+        let count = 0
+
+        // Lặp lại 1 công việc sau 1 khoảng thời gian nhất định
+        const interval = setInterval(function() {
+            count++
+            if(count == 5) {
+                clearInterval(interval)
+            }
+            // Công việc cần thực hiện
+            h1.classList.toggle("text-red")
+        }, 1000) // 2000ms = 2s
+
+        // Thực hiện công việc sau 1 khoảng thời gian nào đó
+        setTimeout(function() {
+            h1.classList.add("text-big")
+        }, 7000)
+
+    </script>
+</body>
+</html>

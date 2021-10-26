@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/")
@@ -32,14 +33,29 @@ public class Cotroller {
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("stringRequest", new StringRequest());
-        model.addAttribute("employee", new Employee(employeeDao.getLength() + 1, null, null, null, null));
+        model.addAttribute("employee", new Employee(employeeDao.getLength() + 1, null, null, null, null, null));
         return "form";
     }
 
     @PostMapping(value = "/save", consumes = {"multipart/form-data"})
     public String save(@Valid @ModelAttribute Employee employee, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
-        if (employee.getPhoto().getOriginalFilename().isEmpty()) {
-            bindingResult.addError(new FieldError("person", "photo", "Ảnh không được để trông"));
+        boolean isImgEmty = employee.getPhoto().getOriginalFilename().isEmpty();
+        boolean isUpdate = employee.getId() <= employeeDao.getLength();
+        if (!isUpdate) {
+            if (isImgEmty) {
+                bindingResult.addError(new FieldError("person", "photo", "Ảnh không được để trống"));
+            } else {
+                storageService.uploadFile(employee.getPhoto(), employee);
+                employeeDao.add(employee);
+            }
+        } else {
+            if (isImgEmty) {
+//                Không update ảnh
+                employeeDao.updateNoImg(employee);
+            } else {
+                storageService.uploadFile(employee.getPhoto(), employee);
+                employeeDao.update(employee);
+            }
         }
 
         if (bindingResult.hasErrors()) {
@@ -48,13 +64,6 @@ public class Cotroller {
             return "form";
         }
 
-        storageService.uploadFile(employee.getPhoto(), String.valueOf(employee.getId()));
-
-        if (employee.getId() <= employeeDao.getLength()) {
-            employeeDao.update(employee);
-        } else {
-            employeeDao.add(employee);
-        }
         return "redirect:/";
     }
 
@@ -70,14 +79,16 @@ public class Cotroller {
     @GetMapping("update/{id}")
     public String updateById(@PathVariable("id") int id, Model model) {
         model.addAttribute("stringRequest", new StringRequest());
-        if (employeeDao.get(id).isPresent()) {
-            model.addAttribute("employee", employeeDao.get(id).get());
+        Optional<Employee> optional = employeeDao.get(id);
+        if (optional.isPresent()) {
+            model.addAttribute("employee", optional.get());
         }
         return "form";
     }
 
     @GetMapping("delete/{id}")
     public String deleteById(@PathVariable("id") int id) {
+        storageService.deleteFile(employeeDao.get(id).get().getPhotoName());
         employeeDao.deleteById(id);
         return "redirect:/";
     }

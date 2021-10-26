@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,29 +24,24 @@ import org.springframework.mock.web.MockMultipartFile;
 public class Employee {
     @JsonIgnore  //Bỏ qua id khi nạp từ CSV
     private int id;
-    @NotBlank(message = "Không được để trống")
-    private String firstName, lastName, tiktok;
+
+    @NotBlank(message = "Không chứa khoảng trống")
+    @Size(min = 2, max = 50, message = "firstName or lastName phải từ 2 đến 50 ký tự")
+    private String firstName, lastName;
 
     private MultipartFile photo;
+    private String photoName;
+
+    @NotBlank(message = "Không chứa khoảng trống")
+    @URL(protocol = "https", message = "Link không đúng")
+    private String tiktok;
 
     public Employee(int id, String firstName, String lastName, String tiktok) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.tiktok = tiktok;
-
-        Path path = Paths.get("src/main/resources/static/photos/");
-        String name = id + ".jpg";
-        String originalFileName = id + ".jpg";
-        String contentType = "text/plain";
-        byte[] content = null;
-        try {
-            content = Files.readAllBytes(path);
-        } catch (final IOException e) {
-        }
-        this.photo = new MockMultipartFile(name,
-                originalFileName, contentType, content);
-
+        this.photoName = id + ".jpg";
     }
 
     public boolean matchWithKeyword(String keyword) {

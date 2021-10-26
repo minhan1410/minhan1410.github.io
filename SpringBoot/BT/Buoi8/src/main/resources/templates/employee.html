@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row">
-        <div th:insert = "template.html :: topmenu"></div>
+        <div th:insert="template.html :: topmenu"></div>
         <div th:fragment="table" class="col-12">
             <table class="table table-image">
                 <thead>
@@ -20,11 +20,14 @@
                 <tbody>
                 <tr>
                     <td th:text="${employee.id}"></td>
-                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;" th:src="|/photos/${employee.photo.getOriginalFilename()}|" alt=""></td>
+                    <td><img width="200px" height="250px" style="image-rendering: pixelated;object-fit: cover;"
+                             th:src="|/photos/${employee.photoName}|" alt=""></td>
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
-                    <td><a target="blank" th:href="${employee.tiktok}"><p th:text="|${employee.firstName} ${employee.lastName}|"></p></a></td>
-                    <td><a th:href="@{/update/{id}(id=${employee.id})}">Update</a> / <a th:href="@{/delete/{id}(id=${employee.id})}">Delete</a></td>
+                    <td><a target="blank" th:href="${employee.tiktok}"><p
+                            th:text="|${employee.firstName} ${employee.lastName}|"></p></a></td>
+                    <td><a th:href="@{/update/{id}(id=${employee.id})}">Update</a> / <a
+                            th:href="@{/delete/{id}(id=${employee.id})}">Delete</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -33,6 +36,6 @@
 </div>
 
 </body>
-<footer th:replace = "template.html :: footer"></footer>
+<footer th:replace="template.html :: footer"></footer>
 
 </html>
