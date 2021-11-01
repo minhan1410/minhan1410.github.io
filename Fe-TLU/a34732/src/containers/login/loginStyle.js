@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
 export const PopupLoginWrapper = styled.div`
     width: 15em;
-    background: #e6e6fa;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 0.5em;
     display: flex;
     flex-direction: column;

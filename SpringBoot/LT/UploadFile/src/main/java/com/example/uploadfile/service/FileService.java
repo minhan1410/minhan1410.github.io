@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface FileService {
-    FileEntity store(MultipartFile file,String description);
+    FileEntity store(MultipartFile file,String description) throws IOException;
     FileEntity getFile(Long id);
     List<FileResponse> getFiles();
 }

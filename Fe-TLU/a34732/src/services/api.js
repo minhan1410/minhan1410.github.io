@@ -78,12 +78,12 @@ const create = (baseUrl = null) => {
     };
 
     const login = (params) => generatePost("/login", params);
-    const getUserInfo = (id) => generateGet(`/userInfo?id=1`);
+    const getUserInfo = (id) => generateGet(`/userInfo?id=${id}`);
     const getName = () => generateGet(`/getName`);
-    // const fetchListTest = (page, perPage) =>
-    //   generateGet(`listExample?page=${page}&perpage=${perPage}`);
     const fetchListTest = (page, perPage) =>
-        generateGet(`listExample?page=1&perpage=10`);
+        generateGet(`listExample?page=${page}&perpage=${perPage}`);
+    /* const fetchListTest = (page, perPage) =>
+        generateGet(`listExample?page=1&perpage=9`); */
     return {
         login,
         getUserInfo,

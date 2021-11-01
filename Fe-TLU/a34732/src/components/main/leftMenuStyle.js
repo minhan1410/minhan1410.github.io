@@ -14,8 +14,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Avatar = styled.img`
-    width: 7em;
-    height: 7em;
+    width: 8em;
+    height: 8em;
     object-fit: cover;
     margin-top: 1em;
     border-radius: 50%;

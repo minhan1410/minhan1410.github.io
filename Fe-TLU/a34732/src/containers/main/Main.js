@@ -23,15 +23,15 @@ class Main extends Component {
         super(props);
         const data = [];
         this.state = {
-            userName: "Ny An",
-            totalPoint: 100,
-            testComplete: 12,
-            testNotComplete: 10,
+            userName: "Minh An",
+            totalPoint: 0,
+            testComplete: 0,
+            testNotComplete: 0,
 
             searchKeyword: "",
             sortFilter: Filter.All,
             currentPage: 1,
-            perPage: 12,
+            perPage: 9,
             totalPage: 10,
 
             listTest: data,
@@ -66,10 +66,19 @@ class Main extends Component {
             .fetchListTest(currentPage, perPage)
             .then((response) => {
                 console.log("data = ", response);
-                this.setState({ listTest: response.data.data }, () => {
-                    this.getVisible();
-                    this.getInfoUser();
-                });
+                console.log(response.data.total);
+                console.log(response.data.data.length);
+                this.setState(
+                    {
+                        listTest: response.data.data,
+                        totalPage: response.data.total,
+                        perPage: response.data.perPage,
+                    },
+                    () => {
+                        this.getVisible();
+                        this.getInfoUser();
+                    }
+                );
             })
             .catch((error) => {
                 const { message } = error;
@@ -84,6 +93,9 @@ class Main extends Component {
     searchKeywordOnChange(key) {
         this.setState({ searchKeyword: key });
     }
+    OnChangePage(key) {
+        this.setState({ currentPage: key });
+    }
     sortFilterOnChange(key) {
         this.setState({ sortFilter: key }, () => {
             this.getVisible();
@@ -91,7 +103,7 @@ class Main extends Component {
     }
 
     getVisible() {
-        const { searchKeyword, sortFilter, listTest } = this.state;
+        const { searchKeyword, sortFilter, listTest, currentPage } = this.state;
         const listVisible = [];
         for (let i = 0; i < listTest.length; i++) {
             if (
@@ -153,6 +165,9 @@ class Main extends Component {
                         this.sortFilterOnChange(value)
                     }
                     listItem={listVisible}
+                    OnChangePage={value =>{
+                        this.OnChangePage(value)
+                    }}
                 />
             </Wrapper>
         );

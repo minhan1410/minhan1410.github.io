@@ -11,16 +11,19 @@ class MainContent extends Component {
     }
 
     renderListItem() {
-        const { listItem } = this.props;
+        const { listItem, currentPage, perPage } = this.props;
         const items = [];
-        for (let i = 0; i < listItem.length; i++) {
+
+        const currentList= listItem.slice(currentPage * perPage - perPage, currentPage * perPage);
+
+        for (let i = 0; i < currentList.length; i++) {
             const item = (
                 <Subject
-                    name={listItem[i].name}
-                    point={listItem[i].point}
-                    time={listItem[i].time}
-                    diff={listItem[i].diff}
-                    past={listItem[i].past}
+                    name={currentList[i].name}
+                    point={currentList[i].point}
+                    time={currentList[i].time}
+                    diff={currentList[i].diff}
+                    past={currentList[i].past}
                 />
             );
             items.push(item);
@@ -39,6 +42,7 @@ class MainContent extends Component {
             searchKeywordOnChange,
             sortFilterOnChange,
             listItem,
+            OnChangePage,
         } = this.props;
         return (
             <Wrapper>
@@ -51,9 +55,13 @@ class MainContent extends Component {
                 />
                 <Blank>{this.renderListItem()}</Blank>
                 <Pagination
-                    count={10}
+                    count={totalPages / perPage}
                     variant="outlined"
                     shape="rounded"
+                    onChange={(event, value) => {
+                        console.log("Change", value);
+                        OnChangePage(value);
+                    }}
                     style={{
                         marginBottom: "1em",
                     }}

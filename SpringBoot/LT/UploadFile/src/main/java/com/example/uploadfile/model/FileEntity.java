@@ -10,11 +10,13 @@ import javax.persistence.*;
 @Table(name = "files")
 @Data
 @NoArgsConstructor
-@Builder(setterPrefix = "with",toBuilder = true) //thay @AllArgsConstructor
+@Builder(setterPrefix = "with", toBuilder = true) //thay @AllArgsConstructor
 public class FileEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "file_id")
     private Long id;
-    private String name,type,description;
+    private String name, type, description;
+    @Lob
     private byte[] content;
 }

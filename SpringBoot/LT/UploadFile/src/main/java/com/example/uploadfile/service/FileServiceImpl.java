@@ -21,15 +21,14 @@ public class FileServiceImpl implements FileService {
     private FileRepository fileRepository;
 
     @Override
-    public FileEntity store(MultipartFile file, String description) {
-        FileEntity fileEntity = null;
-        try {
-            fileEntity = FileEntity.builder().withName(StringUtils.cleanPath(file.getOriginalFilename()))
-                    .withType(file.getContentType()).withDescription(description).withContent(file.getBytes()).build();
-            return fileRepository.save(fileEntity);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public FileEntity store(MultipartFile file, String description) throws IOException {
+        FileEntity fileEntity = FileEntity.builder()
+                            .withName(StringUtils.cleanPath(file.getOriginalFilename()))
+                            .withType(file.getContentType())
+                            .withDescription(description)
+                            .withContent(file.getBytes()).build();
+        return fileRepository.save(fileEntity);
+
     }
 
     @Override
@@ -44,7 +43,7 @@ public class FileServiceImpl implements FileService {
                 .withType(fileEntity.getType())
                 .withDescription(fileEntity.getDescription())
                 .withSize(fileEntity.getContent().length)
-                .withUrl(ServletUriComponentsBuilder.fromCurrentContextPath().path("/files/").path("" + fileEntity.getId()).toString())
+                .withUrl(ServletUriComponentsBuilder.fromCurrentContextPath().path("/files/").path("" + fileEntity.getId()).toUriString())
                 .build()).collect(Collectors.toList());
     }
 }

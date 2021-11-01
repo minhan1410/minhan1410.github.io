@@ -10,6 +10,8 @@ import {
 } from "./loginStyle";
 import api from "../../services/api";
 import StorageUtils from "../../helpers/StorageUtils";
+import Images from "../../asset/images";
+
 
 class Login extends Component {
     constructor(props) {
@@ -40,7 +42,7 @@ class Login extends Component {
                 if (params.userName === "an" && params.password === "123") {
                     window.location.replace("/main");
                 } else {
-                    alert(`${params.userName} không tồn tại`);
+                    alert(`Tài khoản hoặc mật khẩu không đúng`);
                 }
             })
             .catch((error) => {
@@ -71,13 +73,17 @@ class Login extends Component {
 
     render() {
         return (
-            <Wrapper>
+            <Wrapper
+                style={{
+                    background: `url(${Images.background})`,
+                }}
+            >
                 <PopupLoginWrapper>
-                    <Text color="black" fontSize={25}>
+                    <Text color="#50c0ce" fontSize={25}>
                         LOGIN
                     </Text>
                     <Row>
-                        <Text color="black" fontSize={20}>
+                        <Text color="#50c0ce" fontSize={20}>
                             User name
                         </Text>
                         <Input
@@ -87,7 +93,7 @@ class Login extends Component {
                     </Row>
                     <Blank height={0.2} />
                     <Row>
-                        <Text color="black" fontSize={20}>
+                        <Text color="#50c0ce" fontSize={20}>
                             Password
                         </Text>
                         <Input
