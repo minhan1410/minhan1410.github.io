@@ -10,10 +10,10 @@ import {
     Star_not,
     ButtonStart,
     RowLeft,
-} from "./subjectStyle";
+} from "./testStyle";
 import Images from "../../asset/images";
 
-class Subject extends Component {
+class Test extends Component {
     constructor(props) {
         super(props);
     }
@@ -65,4 +65,4 @@ class Subject extends Component {
     }
 }
 
-export default Subject;
+export default Test;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Pagination from "@material-ui/lab/Pagination";
 import { Wrapper, Blank, Sort } from "./mainContentStyle";
 import Header from "./Header";
-import Subject from "./Subject";
+import Test from "./Test";
 
 class MainContent extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class MainContent extends Component {
 
         for (let i = 0; i < currentList.length; i++) {
             const item = (
-                <Subject
+                <Test
                     name={currentList[i].name}
                     point={currentList[i].point}
                     time={currentList[i].time}
