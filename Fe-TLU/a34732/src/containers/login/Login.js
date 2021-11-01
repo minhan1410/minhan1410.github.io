@@ -76,6 +76,7 @@ class Login extends Component {
             <Wrapper
                 style={{
                     background: `url(${Images.background})`,
+                    backgroundSize: "cover",
                 }}
             >
                 <PopupLoginWrapper>

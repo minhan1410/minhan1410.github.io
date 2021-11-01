@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Images from "../../asset/images";
 
 export const Wrapper = styled.div`
     width: 100vw;
@@ -10,7 +11,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #f0f8ff;
+    // background: url("D:\Techmaster\minhan1410.github.io\Fe-TLU\a34732\src\asset\images\background.gif") repeat scroll 0 0-y 100% 100% fixed;
 `;
 
 export const PopupLoginWrapper = styled.div`

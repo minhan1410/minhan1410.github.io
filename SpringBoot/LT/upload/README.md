@@ -1,0 +1,1 @@
+-  Có 2 design: domain-driven-design hoặc three-layers
