@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            display: block;
+            background-color: #f3f3f3;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            float: left;
+            margin: 5px;
+        }
+
+        .box:hover {
+            transform: scale(.9);
+            transition-duration: .5s;
+            opacity: .8;
+            cursor: pointer;
+        }
+
+        .box:active {
+            transform: scale(1.5);
+            transition-duration: .5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="wrap">
+            <h1> JS DOM</h1>
+            <button id="btn">More boxes</button>
+            <h4 id="score"> Total box:<span class="points"></span></h4>
+
+            <div class="boxes">
+            </div>
+        </div>
+    </body>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

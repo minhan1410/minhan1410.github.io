@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap"
+        rel="stylesheet" crossorigin="anonymous">
+    <title>Table</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            color: #696966;
+            font-family: "Roboto";
+        }
+
+        .container {
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        table,
+        td,
+        tr,
+        th {
+            border: 1px solid #ccc;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 15px 20px;
+        }
+
+        th {
+            background-color: cadetblue;
+            color: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        table tbody tr:not(last-child) {
+            border-bottom: 4px solid #ccc;
+        }
+
+        p span {
+            display: inline-block;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chi tiết thông tin học viên</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Số buổi nghỉ</th>
+                    <th>Ngày nghỉ học</th>
+                    <th>Ghi chú</th>
+                    <th>Giảng viên</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Render bảng chứa thông tin lớp học ở đây -->
+                <!-- <tr>
+                    <td rowspan="2">1</td>
+                    <td rowspan="2">Nam</td>
+                    <td rowspan="2">Nam@gmail.com</td>
+                    <td rowspan="2">12</td>
+                    <td rowspan="2">2/14</td>
+                    <td>1-9-2020</td>
+                    <td>1-9-2020</td>
+                    <td>1-9-2020</td>
+                </tr>
+                <tr>
+                    <td>1-9-2020</td>
+                    <td>1-9-2020</td>
+                    <td>1-9-2020</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <div class="class-detail">
+            <h1>Chi tiết lớp học</h1>
+            <div class="class-inner">
+                <!-- Render thông tin lớp học -->
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
