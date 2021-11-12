@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layout :: head">
+</head>
+
+<body>
+  <div class="container">
+    <menu th:replace="layout.html :: menu"> </menu>
+
+    <h1 th:text="${post.title}"></h1>
+    <em th:text="${#temporals.format(post.lastUpdate, 'dd-MMM-yyyy')}"></em>
+    <p th:text="${post.content}"></p>
+    <hr>
+    <div class="d-flex" th:classappend="${user!=null && user.id==post.user_id ? 'd-inline' : 'd-none'}">
+      <form action="#" th:action="@{/post/delete}" method="post" class="me-3">
+        <input type="hidden" name="post_id" th:field="${post.id}">
+        <button type="submit" class="btn btn-danger mr-5">Delete</button>
+      </form>
+
+      <form action="#" th:action="@{/post/edit}" method="post">
+        <input type="hidden" name="post_id" th:field="${post.id}">
+        <button type="submit" class="btn btn-primary">Edit</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
