@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Nấu cơm xg đi chơi vs ny",
+      "status": true
+    },
+    {
+      "id": 2,
+      "title": "Đá bóng",
+      "status": false
+    },
+    {
+      "id": 3,
+      "title": "Nấu cơm",
+      "status": true
+    },
+    {
+      "id": 4,
+      "title": "An",
+      "status": "200"
+    }
+  ]
+}
