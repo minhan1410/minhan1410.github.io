@@ -96,7 +96,7 @@ public class FilmRepository implements IFilmRepo {
     @Override
     //Top 5 film từ năm 1990 đến 2000 có lãi lớn nhất
     public List<Film> top5HighMarginFilmsIn1990to2000() {
-        return films.stream().filter(film -> film.getYear() >= 1990 && film.getYear() <= 2000).sorted((i, j) -> i.getYear() - j.getYear()).limit(5).toList();
+        return films.stream().filter(film -> film.getYear() >= 1990 && film.getYear() <= 2000).sorted((f1, f2) -> (f2.getRevenue() - f2.getCost()) - (f1.getRevenue() - f1.getCost())).limit(5).toList();
     }
 
     @Override
