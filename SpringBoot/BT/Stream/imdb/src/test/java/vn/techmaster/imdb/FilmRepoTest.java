@@ -11,8 +11,7 @@ import vn.techmaster.imdb.repository.FilmRepository;
 
 @SpringBootTest
 class FilmRepoTest {
-    @Autowired
-    private FilmRepository filmRepo;
+    @Autowired private FilmRepository filmRepo;
 
     @Test
     public void getAll() {
@@ -29,7 +28,7 @@ class FilmRepoTest {
         System.out.println(filmRepo.getcountryMakeMostFilms());
     }
 
-	@Test
+    @Test
     public void getYearMakeMostFilmsTest() {
         System.out.println(filmRepo.yearMakeMostFilms());
     }
@@ -41,7 +40,7 @@ class FilmRepoTest {
 
     @Test
     public void getFilmsMadeByCountryFromYearToYearTest() {
-        System.out.println(filmRepo.getFilmsMadeByCountryFromYearToYear("Brazil",1987,1999));
+        System.out.println(filmRepo.getFilmsMadeByCountryFromYearToYear("Brazil", 1987, 1999));
     }
 
     @Test
@@ -61,7 +60,7 @@ class FilmRepoTest {
 
     @Test
     public void ratioBetweenGenereTest() {
-        System.out.println(filmRepo.ratioBetweenGenere("love",""));
+        System.out.println(filmRepo.ratioBetweenGenere("love", ""));
     }
 
     @Test
