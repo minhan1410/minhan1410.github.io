@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch localhost",
+            "url": "http://127.0.0.1:5500",
+            "webRoot": "${workspaceFolder}",
+            "pathMappings": [
+                {
+                    "url": "http://127.0.0.1:5500",
+                    "path": "${workspaceFolder}"
+                }
+            ]
+        }
+
+    ]
+}
