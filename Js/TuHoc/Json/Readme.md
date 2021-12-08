@@ -43,7 +43,7 @@ Object trong Json được thể hiện bằng dấu ngoặc nhọn {}. Khái ni
 
 ## Kiểu OBJECT
 
-```json
+```js
 var nhat = {
 "firstName" : "Nhat",
 "lastName" : "Nguyen",
@@ -53,7 +53,7 @@ var nhat = {
 
 ## Kiểu OBJECT IN ARRAY
 
-```json
+```js
 var employees = [{
 "name" : "Binh",
 "age" : "38",
@@ -75,7 +75,7 @@ var employees = [{
 
 ## Kiểu NEST OBJECT
 
-```json
+```js
 var employees = {
 "hieu" : {
 "name" : "Hieu",
