@@ -127,9 +127,9 @@ Ví dụ bạn tạo tập tin `topdev_info.json` ở thư mục gốc của ser
 
 Nếu bạn mở developer console của trình duyệt lên (nhấn phím F12) bạn sẽ thấy kiểu dữ liệu của biến `response` này được JavaScript `object` với các thuộc tính như `name`, `title`, `decription`.
 
-[**Hiểu rõ về JSON là gì?**](https://topdev.vn/blog/json-la-gi/#json-la-gi)
+**[Hiểu rõ về JSON là gì?](https://topdev.vn/blog/json-la-gi/#json-la-gi)**
 
-# **`JSON.stringify()` : chuyển từ JavaScript sang JSON**
+# **JSON.stringify() : chuyển từ JavaScript sang JSON**
 
 ```js
 a = 1;
@@ -151,7 +151,7 @@ a = { name: "abc", age: 20 };
 console.log(JSON.stringify(a), " - ", typeof JSON.stringify(a)); // chuyển từ JavaScript sang Json
 ```
 
-# **`JSON.parse()` : chuyển từ JSON sang JavaScript**
+# **JSON.parse() : chuyển từ JSON sang JavaScript**
 
 ```js
 var a = "1";
@@ -173,7 +173,7 @@ a = '{"name":"abc","age":20}';
 console.log(JSON.parse(a), " - ", typeof JSON.parse(a)); // chuyển từ Json sang JavaScript
 ```
 
-# **`Sync` (Đồng bộ) vs `Async` (Bất đồng bộ)**
+# **Sync (Đồng bộ) vs Async (Bất đồng bộ)**
 
 Trong bài có sử dụng từ viết tắt: `Sync => Synchronous` và `Async => Asynchronous `
 
@@ -266,4 +266,182 @@ alert("2");
 // Kết quả sẽ xuất hiện 2 -> 1 chứ không phải là 1 - 2 như bạn đang nghĩ đâu 😃
 ```
 
-[**Synchronous và Asynchronous trong JavaScript**](https://viblo.asia/p/synchronous-va-asynchronous-trong-javascript-WAyK8LqnKxX)
+**[Synchronous và Asynchronous trong JavaScript](https://viblo.asia/p/synchronous-va-asynchronous-trong-javascript-WAyK8LqnKxX)**
+
+# **Promise**
+
+## **Định nghĩa Promise**
+
+`Promise` được đưa vào Javascript từ ES6, đây có thể coi là một kỹ thuật nâng cao `giúp xử lý vấn đề bất đồng bộ hiệu quả hơn`.
+
+Trước đây kết quả của một tác vụ đồng bộ và bất đồng bộ sẽ trả về một kiểu dữ liệu nào đó hoặc thực hiện một [Callback Function](https://niithanoi.edu.vn/hieu-don-gian-ve-ham-callback-trong-javascript.html). Với trường hợp thực hiện [Callback Function](https://niithanoi.edu.vn/hieu-don-gian-ve-ham-callback-trong-javascript.html) thì sẽ dễ xảy ra lỗi [Callback Hell](https://viblo.asia/p/callback-hell-trong-javascript-la-gi-va-cach-phong-trach-NbmvbaYKkYO), nghĩa là gọi callback quá nhiều và lồng nhau nên dẫn đến không kiểm soát được chương trình hoặc bộ nhớ không đủ để hoạt động. Và Trong bài này chúng ta sẽ tìm hiểu về `Promise`, một package được đưa vào từ ES6 giúp giải quyết vấn đề [Callback Hell](https://viblo.asia/p/callback-hell-trong-javascript-la-gi-va-cach-phong-trach-NbmvbaYKkYO) này.
+
+Vậy `promise` sinh ra để xử lý kết quả của một hành động cụ thể, kết quả của mỗi hành động sẽ là thành công hoặc thất bại và `Promise` sẽ giúp chúng ta giải quyết câu hỏi "Nếu thành công thì làm gì? Nếu thất bại thì làm gì?". Cả hai câu hỏi này ta gọi là một hành động gọi lại (callback action).
+
+Khi một Promise được khởi tạo thì nó có một trong ba trạng thái sau:
+
+-   **Fulfilled** Hành động xử lý xong và thành công
+-   **Rejected** Hành động xử lý xong và thất bại
+-   **Pending** Hành động đang chờ xử lý hoặc bị từ chối
+
+Trong đó hai trạng thái **Reject** và **Fulfilled** ta gọi là **Settled**, tức là đã xử lý xong.
+
+![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-javascript-status.jpg)
+
+## **Tạo một Promise**
+
+Để tạo một Promise bạn sử dụng cú pháp sau:
+
+```js
+var promise = new Promise(callback);
+```
+
+Trong đó **callback** là một function có hai tham số truyền vào như sau:
+
+```js
+var promise = new Promise(function (resolve, reject) {});
+```
+
+```
+Trong đó:
+    resolve là một hàm callback xử lý cho hành động thành công.
+    reject là một hàm callback xử lý cho hành động thất bại.
+```
+
+## **Thenable trong Promise**
+
+Thenable không có gì to tác mà nó `là một phương thức ghi nhận kết quả của trạng thái (thành công hoặc thất bại)` mà ta khai báo ở **Reject** và **Resolve**. Nó có hai tham số truyền vào là 2 callback function. Tham số thứ nhất xử lý cho Resolve và tham số thứ 2 xử lý cho **Reject**.
+
+```js
+var promise = new Promise(function (resolve, reject) {
+    resolve("Success");
+    // OR
+    reject("Error");
+});
+
+promise.then(
+    function (success) {
+        // Success
+    },
+    function (error) {
+        // Error
+    }
+);
+```
+
+Ví dụ: Demo thao tác **Resolve**
+
+```js
+var promise = new Promise(function (resolve, reject) {
+    resolve("Success!");
+});
+
+promise.then(function (success) {
+    console.log(success);
+});
+```
+
+_Với đoạn code này chạy lên bạn sẽ nhận giá trị là Success!_
+
+![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-1.png)
+
+Ví dụ: Demo thao tác **Reject**
+
+```js
+var promise = new Promise(function (resolve, reject) {
+    reject("Error!");
+});
+
+promise.then(
+    function (success) {
+        console.log(success);
+    },
+    function (error) {
+        console.log(error);
+    }
+);
+```
+
+_Chạy đoạn code này lên sẽ nhận giá trị là Error!_
+
+![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+
+Vậy hai hàm callback trong then chỉ xảy ra một trong hai mà thôi, điều này tương ứng ở Promise sẽ khai báo một là Resolve và hai là Reject, nếu khai báo cả hai thì nó chỉ có tác dụng với khai báo đầu tiên.
+
+```js
+var promise = new Promise(function (resolve, reject) {
+    reject("Error!");
+    resolve("Success!");
+});
+
+promise.then(
+    function (success) {
+        console.log(success);
+    },
+    function (error) {
+        console.log(error);
+    }
+);
+```
+
+_Chạy lên nó cũng chỉ nhận đúng một giá trị là Error! => callback error đã hoạt động._
+
+![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+
+## **Catch trong Promise**
+
+`then` có hai tham số callbacks đó là `success` và `error`. Tuy nhiên bạn cũng có thể sử dụng phương thức `catch` để bắt lỗi.
+
+```js
+promise.then().catch();
+```
+
+Ví dụ:
+
+```js
+var promise = new Promise(function (resolve, reject) {
+    reject("Error!");
+});
+
+promise
+    .then(function (message) {
+        console.log(message);
+    })
+    .catch(function (message) {
+        console.log(message);
+    });
+```
+
+_Chạy lên kết quả sẽ là Error!._
+
+![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+
+```
+Câu hỏi bây giờ đặt ra là nếu ta vừa truyền callback error và vừa sử dụng catch thì thế nào?
+- Nó sẽ chạy hàm callback error và catch sẽ không chạy.
+```
+
+```js
+var promise = new Promise(function (resolve, reject) {
+    reject("Error!");
+});
+
+promise
+    .then(
+        function (message) {
+            console.log(message);
+        },
+        function (message) {
+            console.log("Callback Error!");
+            console.log(message);
+        }
+    )
+    .catch(function (message) {
+        console.log("Catch!");
+        console.log(message);
+    });
+```
+
+![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-then-and-error-callback.png)
+
+**[Tìm hiểu Promise trong Javascript - ES6](https://freetuts.net/tim-hieu-promise-trong-javascript-es6-620.html)**
