@@ -286,7 +286,7 @@ Khi một Promise được khởi tạo thì nó có một trong ba trạng thá
 
 Trong đó hai trạng thái **Reject** và **Fulfilled** ta gọi là **Settled**, tức là đã xử lý xong.
 
-![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-javascript-status.jpg)
+![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-javascript-status.jpg)
 
 ## **Tạo một Promise**
 
@@ -343,7 +343,7 @@ promise.then(function (success) {
 
 _Với đoạn code này chạy lên bạn sẽ nhận giá trị là Success!_
 
-![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-1.png)
+![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-1.png)
 
 Ví dụ: Demo thao tác **Reject**
 
@@ -364,7 +364,7 @@ promise.then(
 
 _Chạy đoạn code này lên sẽ nhận giá trị là Error!_
 
-![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
 
 Vậy hai hàm callback trong then chỉ xảy ra một trong hai mà thôi, điều này tương ứng ở Promise sẽ khai báo một là Resolve và hai là Reject, nếu khai báo cả hai thì nó chỉ có tác dụng với khai báo đầu tiên.
 
@@ -386,7 +386,7 @@ promise.then(
 
 _Chạy lên nó cũng chỉ nhận đúng một giá trị là Error! => callback error đã hoạt động._
 
-![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
 
 ## **Catch trong Promise**
 
@@ -414,7 +414,7 @@ promise
 
 _Chạy lên kết quả sẽ là Error!._
 
-![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
 
 ```
 Câu hỏi bây giờ đặt ra là nếu ta vừa truyền callback error và vừa sử dụng catch thì thế nào?
@@ -442,6 +442,6 @@ promise
     });
 ```
 
-![alt](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-then-and-error-callback.png)
+![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-then-and-error-callback.png)
 
 **[Tìm hiểu Promise trong Javascript - ES6](https://freetuts.net/tim-hieu-promise-trong-javascript-es6-620.html)**
