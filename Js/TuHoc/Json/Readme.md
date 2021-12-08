@@ -444,4 +444,6 @@ promise
 
 ![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-then-and-error-callback.png)
 
+<img src="https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-then-and-error-callback.png">
+
 **[Tìm hiểu Promise trong Javascript - ES6](https://freetuts.net/tim-hieu-promise-trong-javascript-es6-620.html)**
