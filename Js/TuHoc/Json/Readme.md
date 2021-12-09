@@ -343,7 +343,9 @@ promise.then(function (success) {
 
 _Với đoạn code này chạy lên bạn sẽ nhận giá trị là Success!_
 
-![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-1.png)
+```
+Success!
+```
 
 Ví dụ: Demo thao tác **Reject**
 
@@ -364,7 +366,9 @@ promise.then(
 
 _Chạy đoạn code này lên sẽ nhận giá trị là Error!_
 
-![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+```
+Error!
+```
 
 Vậy hai hàm callback trong then chỉ xảy ra một trong hai mà thôi, điều này tương ứng ở Promise sẽ khai báo một là Resolve và hai là Reject, nếu khai báo cả hai thì nó chỉ có tác dụng với khai báo đầu tiên.
 
@@ -386,7 +390,9 @@ promise.then(
 
 _Chạy lên nó cũng chỉ nhận đúng một giá trị là Error! => callback error đã hoạt động._
 
-![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+```
+Error!
+```
 
 ## **Catch trong Promise**
 
@@ -414,7 +420,9 @@ promise
 
 _Chạy lên kết quả sẽ là Error!._
 
-![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-trong-javascript-2.png)
+```
+Error!
+```
 
 ```
 Câu hỏi bây giờ đặt ra là nếu ta vừa truyền callback error và vừa sử dụng catch thì thế nào?
@@ -442,7 +450,10 @@ promise
     });
 ```
 
-![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-then-and-error-callback.png)
+```
+Callback Error!
+Error!
+```
 
 Hãy đoán kết quả của đoạn code dưới đây:
 
