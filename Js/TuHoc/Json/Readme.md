@@ -205,7 +205,7 @@ Nếu một chương trình đòi hỏi phải có quy trình thì bạn không 
 
 ## Ajax Asynchronous
 
-Theo khái niệm của Ajax là gì thì `Ajax được viết tắt của các từ Asynchronous JavaScript` and XML, rõ ràng từ Asynchronous đã nói lên Ajax là một kỹ thuật xử lý bất đồng bộ. Nhiều bạn lập trình viên khi viết ứng dụng Ajax mà quên mất rằng đây là một chương trình bất đồng bộ, tức là thao tác gửi Ajax và các đoạn code bên dưới sẽ được chạy song song.
+Theo khái niệm của Ajax là gì thì `Ajax được viết tắt của các từ Asynchronous JavaScript` and XML, rõ ràng từ Asynchronous đã nói lên `Ajax là một kỹ thuật xử lý bất đồng bộ`. Nhiều bạn lập trình viên khi viết ứng dụng Ajax mà quên mất rằng đây là một chương trình bất đồng bộ, tức là thao tác gửi Ajax và các đoạn code bên dưới sẽ được chạy song song.
 
 ```js
 // ĐOẠN 1
@@ -587,3 +587,214 @@ all2  Error😅
 ```
 
 **[Tìm hiểu Promise trong Javascript - ES6](https://freetuts.net/tim-hieu-promise-trong-javascript-es6-620.html)**
+
+# **Sử dụng Fetch API để tạo một HTTP Request trong Javascript**
+
+Làm việc với dữ liệu từ Server là một phần không thể thiếu đối với bất kỳ một Frontend Developer nào. Để tương tác với Server API, hầu hết mọi người sẽ chọn `Axios` bởi nó quá phổ biến và dễ sử dụng.
+
+Tuy nhiên, cũng có nhiều thắc mắc rằng: "Nếu chỉ sử dụng Javascript thuần thì có thể tương tác được với Server API không?". Câu trả lời là có và đó chính là `Fecth API`.
+
+## **Fecth API là gì?**
+
+Đây là một khái niệm rất hay trong Javascript, nó là một giải pháp tốt giúp tạo HTTP Request cho ứng dụng Frontend, `fetch()` cho phép tạo một network request tương tự như XMLHttpRequest(XHR). Sự khác nhau chủ yếu là `Fetch hoạt động theo Promises`, cho phép viết gọn ràng, dễ nhớ hơn là XHR
+
+Tham số đầu tiên của phương thức fetch() là API URL, phương này trả về một Promise, chúng ta cần xử lý nó để lấy kết quả trả về theo mong muốn.
+
+```js
+fetch("https://jsonplaceholder.typicode.com/posts").then((res) => {
+    console.log(res);
+});
+```
+
+Đây là kết quả của **request** trên
+
+![img](https://suntech.edu.vn/storage/wink/images/dn2Z4AeVJul2uvRjFJQwbzZ0DYMbQA6Tdr47fSPv.png)
+
+Bạn có thể access thông tin trong các thuộc tính headers và status bằng cách sau
+
+```js
+fetch("https://jsonplaceholder.typicode.com/posts").then((res) => {
+    const headers = res.headers;
+    const status = res.status; // returns http status like 200, 404 etc.
+    const isStatusOk = res.ok; // returns true if status is between 200 and 299.
+
+    console.log(headers, " - ", status, " - ", isStatusOk);
+});
+```
+
+```
+Headers {}[[Prototype]]: Headers ' - ' 200 ' - ' true
+```
+
+Để chuyển dữ liệu của Body Response sang dạng Json bạn có thể sử dụng phương thức json(). Phương thức này trả về một Promise
+
+```js
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data);
+    });
+```
+
+![img](https://suntech.edu.vn/storage/wink/images/mHCKPtMfVTOq0EgbyfCTGaaLaazq4mVfTZ7GJuFe.png)
+
+Trong Response Object có một vài phương thức giúp chúng ta format kiểu dữ liệu theo mong muốn như: json, text, blob, formData, hay arrayBuffer
+
+-   json() - Phương thức này trả về kiểu json
+-   text() - Phương thức này trả về dữ liệu kiểu text
+-   blob() - Phương thức này trả về Blob format
+-   formData() - Trả về kiểu FormData
+-   arrayBuffer() - Trả về kiểu ArrayBuffer
+
+Ví dụ như để get dữ liệu với kiểu text format chúng ta làm như sau
+
+```js
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+```
+
+```json
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  ..............
+]
+```
+
+## **Sử dụng HTTP post request**
+
+`Phương thức request mặc định được sử dụng trong fetch() là GET`. Như ở ví dụ trên chúng ta đang sử dụng GET method hay nói cách khác: Khi chỉ truyền một tham số vào fetch() method thì nó sẽ nhận mặc định là phương thức request **GET**. Vậy nếu muốn sử dụng request post thì chúng ta làm như thế nào?
+
+Để sử dụng POST request bạn chỉ cần truyền vào tham số thứ 2 của `fetch()` method như sau
+
+```js
+const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title: "new", post: "new post" }),
+};
+
+fetch("https://jsonplaceholder.typicode.com/posts", options)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+```
+
+```json
+{ "title": "new", "post": "new post", "id": 101 }
+```
+
+`Content-Type` của headers mặc định là `text/plain`. Để gửi dữ liệu là Json thì bạn set nó về `application/json` và tương tự cho các kiểu dữ liệu khác
+
+## **Handling Errors**
+
+`fecth()` cung cấp cho chúng ta một phương thức để bắt lỗi của server đó là `catch()`. Nhưng nó không bắt được tất cả các trường hợp lỗi, nó chỉ care được những case như network error hay invalid host address etc. Nếu có bất kỳ lỗi với một response và bad http status .
+
+Ví dụ về handle error
+
+```js
+fetch("https://invalid-host-address/posts")
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log("Error:", error));
+```
+
+```
+Error: TypeError: Failed to fetch
+```
+
+Trường hợp lỗi invalid URL (404)
+
+```js
+fetch("https://jsonplaceholder.typicode.com/no-such-page")
+    .then((res) => {
+        console.log(res.status); // 404
+        return res.json();
+    })
+    .then((data) => console.log("Success:", data))
+    .catch((error) => console.log("Error:", error));
+
+// Kết quả vẫn là success
+```
+
+```
+404
+Success: {}
+```
+
+Nếu muốn Handle được những lỗi mà catch() không bắt được thì bạn cần xử lý thêm.
+
+```js
+fetch("https://jsonplaceholder.typicode.com/no-such-page")
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error("An Error Occured");
+        }
+        return res.json();
+    })
+    .then((data) => console.log("Success:", data))
+    .catch((error) => console.log("Failed:", error));
+```
+
+```
+Failed: Error: An Error Occured
+```
+
+## **Sử dụng Async và Await**
+
+Để đơn giản hóa và làm cho code trở nên mạch lạch hơn bạn có thể sử dụng phương thức fetch() kết hợp với **async/await** như bên dưới. Để hiểu hơn về **async/await** bạn đọc thêm ở bài viết này
+
+```js
+async function fetchHandler() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let posts = await response.json();
+    console.log(posts);
+}
+
+fetchHandler();
+```
+
+Trong đoạn code này ngắn gọn hơn rất nhiều phải không nào, các bạn không cần phải sử dụng `.then()` nữa
+
+## **Handling error trong async/await**
+
+Với cách viết async/await làm code ngắn gọn mạch lạc hơn, tuy nhiêu điều quan trọng nhất là bạn vẫn phải **debug** được lỗi khi cần. Để làm được điều đó chúng ta sử dụng `try ... catch` như sau
+
+```js
+async function fethHandler() {
+    try {
+        let response = await fetch(
+            "https://jsonplaceholder.typicode.com/posts"
+        );
+
+        let posts = await response.json();
+
+        if (!response.ok) {
+            const error = new Error("An Error Occured");
+            error.details = posts;
+            throw error;
+        }
+
+        console.log(posts);
+    } catch (e) {
+        console.log(e.message); // An Error Occurred
+        console.log(e.details); // prints response got from server
+    }
+}
+
+fethHandler();
+```
+
+**[Sử dụng Fetch API để tạo một HTTP Request trong Javascript](https://suntech.edu.vn/http-request-trong-javascript-voi-fetch-api.sunpost.html)**
+
+**[Giới thiệu fetch() của javascript](https://topdev.vn/blog/gioi-thieu-fetch-cua-javascript/#mt-cu-request-network-bng-code-classlanguage-textfetchcode)**
