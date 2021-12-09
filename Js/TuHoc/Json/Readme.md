@@ -278,11 +278,11 @@ Trước đây kết quả của một tác vụ đồng bộ và bất đồng 
 
 Vậy `promise` sinh ra để xử lý kết quả của một hành động cụ thể, kết quả của mỗi hành động sẽ là thành công hoặc thất bại và `Promise` sẽ giúp chúng ta giải quyết câu hỏi "Nếu thành công thì làm gì? Nếu thất bại thì làm gì?". Cả hai câu hỏi này ta gọi là một hành động gọi lại (callback action).
 
-Khi một Promise được khởi tạo thì nó có một trong ba trạng thái sau:
+Khi một Promise được khởi tạo thì nó có một trong `ba trạng thái` sau:
 
--   **Fulfilled** Hành động xử lý xong và thành công
--   **Rejected** Hành động xử lý xong và thất bại
--   **Pending** Hành động đang chờ xử lý hoặc bị từ chối
+-   **Fulfilled** Hành động **xử lý xong và thành công**
+-   **Rejected** Hành động **xử lý xong và thất bại**
+-   **Pending** Hành động **đang chờ xử lý hoặc bị từ chối**
 
 Trong đó hai trạng thái **Reject** và **Fulfilled** ta gọi là **Settled**, tức là đã xử lý xong.
 
@@ -443,5 +443,116 @@ promise
 ```
 
 ![img](https://freetuts.net/upload/tut_post/images/2016/03/12/620/promise-then-and-error-callback.png)
+
+Hãy đoán kết quả của đoạn code dưới đây:
+
+```js
+var promise = new Promise(function (resolve, reject) {
+    /*
+        resolve: thành công
+        reject: thât bại
+    */
+    resolve("thành công");
+});
+
+promise
+    .then(() => {
+        return "Success";
+    })
+    .then((message) => {
+        setTimeout(() => {
+            console.log(message);
+        }, 1000);
+        return message + "❤❤";
+    })
+    .then((message) => {
+        setTimeout(() => {
+            console.log(message);
+        }, 3000);
+        return new Promise((resolve, reject) => {
+            resolve(message + "🥰");
+        });
+    })
+    .then((message) => {
+        console.log(message);
+    })
+    .then(() => {
+        return new Promise((resolve, reject) => {
+            reject("Error😥😥");
+        });
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+```
+
+```
+Kết quả:
+    Success❤❤🥰
+    Error😥😥
+    Success
+    Success❤❤
+```
+
+## **Promise.resolve()**
+
+```js
+var resolve = Promise.resolve("Promise.resolve()");
+resolve.then((message) => {
+    console.log(message);
+});
+```
+
+```
+Promise.resolve()
+```
+
+## **Promise.reject()**
+
+```js
+var reject = Promise.reject("Promise.reject()");
+reject.catch((err) => {
+    console.error(err);
+});
+```
+
+```
+Promise.reject()
+```
+
+## **Promise.all()**
+
+```js
+var all = Promise.all([
+    Promise.resolve([1, 2, 3]),
+    Promise.resolve([4, 5, 6]),
+    Promise.resolve([7, 8, 9]),
+]);
+all.then(([mess1, mess2, mess3]) => {
+    console.log("all ", mess1.concat(mess2).concat(mess3));
+});
+```
+
+```
+all [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+```js
+var all2 = Promise.all([
+    Promise.resolve([1, 2, 3]),
+    Promise.resolve([4, 5, 6]),
+    Promise.resolve([7, 8, 9]),
+    Promise.reject("Error😅"),
+]);
+all2.then(([mess1, mess2, mess3]) => {
+    console.log("all2 ", mess1.concat(mess2).concat(mess3));
+}).catch((err) => {
+    console.log("all2 ", err);
+});
+```
+
+```
+all2  Error😅
+```
 
 **[Tìm hiểu Promise trong Javascript - ES6](https://freetuts.net/tim-hieu-promise-trong-javascript-es6-620.html)**
