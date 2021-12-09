@@ -534,6 +534,26 @@ Promise.reject()
 ## **Promise.all()**
 
 ```js
+// Ôn lại mảng:
+
+// Gộp mảng
+var a = 1,
+    b = 2,
+    c = 3;
+console.log([a, b, c], " - ", typeof [a, b, c]);
+
+// Duỗi mảng
+var arr = [a, b, c];
+console.log(...arr);
+```
+
+```
+Kết quả:
+    [1, 2, 3] ' - ' 'object'
+    1 2 3
+```
+
+```js
 var all = Promise.all([
     Promise.resolve([1, 2, 3]),
     Promise.resolve([4, 5, 6]),

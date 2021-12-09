@@ -54,13 +54,23 @@ reject.catch((err) => {
     console.error(err);
 });
 
+/* 
+// Gộp mảng
+var a= 1,b=2,c=3
+console.log([a,b,c],' - ',typeof [a,b,c]);
+
+// Duỗi mảng
+var arr= [a,b,c]
+console.log(...arr) 
+*/
+
 var all = Promise.all([
     Promise.resolve([1, 2, 3]),
     Promise.resolve([4, 5, 6]),
     Promise.resolve([7, 8, 9]),
 ]);
 all.then(([mess1, mess2, mess3]) => {
-    console.log("all ",mess1.concat(mess2).concat(mess3));
+    console.log("all ", mess1.concat(mess2).concat(mess3));
 });
 
 var all2 = Promise.all([
@@ -70,7 +80,7 @@ var all2 = Promise.all([
     Promise.reject("Error😅"),
 ]);
 all2.then(([mess1, mess2, mess3]) => {
-    console.log("all2 ",mess1.concat(mess2).concat(mess3));
+    console.log("all2 ", mess1.concat(mess2).concat(mess3));
 }).catch((err) => {
-    console.log("all2 ",err);
+    console.log("all2 ", err);
 });
