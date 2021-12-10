@@ -626,7 +626,7 @@ fetch("https://jsonplaceholder.typicode.com/posts").then((res) => {
 Headers {}[[Prototype]]: Headers ' - ' 200 ' - ' true
 ```
 
-Để chuyển dữ liệu của Body Response sang dạng Json bạn có thể sử dụng phương thức json(). Phương thức này trả về một Promise
+`Để chuyển dữ liệu của Body Response sang dạng Json bạn có thể sử dụng phương thức json() phương thức này trả về một Promise. Vì response của fetch() là một đối tượng Stream, nghĩa là khi chúng ta gọi phương thức json(), một Promise được trả về, vì quá trình đọc stream sẽ diễn ra bất đồng bộ.`
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts")
@@ -656,18 +656,18 @@ fetch("https://jsonplaceholder.typicode.com/posts")
 
 ```json
 [
-  {
-    "userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  },
-  {
-    "userId": 1,
-    "id": 2,
-    "title": "qui est esse",
-    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
-  }
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    },
+    {
+        "userId": 1,
+        "id": 2,
+        "title": "qui est esse",
+        "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+    }
 ]
 ```
 
