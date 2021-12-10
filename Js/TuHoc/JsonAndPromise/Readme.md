@@ -4,7 +4,7 @@ JSON là viết tắt của JavaScript Object Notation, `là một kiểu địn
 
 ![alt](https://topdev.vn/blog/wp-content/uploads/2019/04/json-vs-xml.png)
 
-# **Định nghĩa**
+## **Định nghĩa**
 
 Định dạng JSON sử dụng các cặp `key` – `value` để dữ liệu sử dụng. Nó hỗ trợ các cấu trúc dữ liệu như đối tượng và mảng. Ví dụ một tập tin có tên `topdev_info.json` với nội dung như ở dưới đây sử dụng format kiểu JSON để lưu trữ thông tin:
 
@@ -29,9 +29,9 @@ File json có thể được lưu với bất kỳ phần mở rộng nào, tuy 
 
 `Giá trị key trong JSON có thể là chuỗi (string), số (numner), rỗng (null), mảng (array), hoặc đối tượng (object).`
 
-# **Cấu trúc chuỗi JSON**
+## **Cấu trúc chuỗi JSON**
 
-## **Object là gì?**
+### **Object là gì?**
 
 Object trong Json được thể hiện bằng dấu ngoặc nhọn {}. Khái niệm Object trong Json cũng khá tương đồng với Object trong Javascript. Tuy nhiên, Object trong Json vẫn có những giới hạn như:
 
@@ -39,7 +39,7 @@ Object trong Json được thể hiện bằng dấu ngoặc nhọn {}. Khái ni
 -   `value`: Chỉ cho phép các kiểu dữ liệu cơ bản: numbers, String, Booleans, arrays, objects, null. Không cho phép function, date, undefined.
 -   Không cho phép dấy phẩy cuối cùng như Object trong Javascript.
 
-## **Kiểu OBJECT**
+### **Kiểu OBJECT**
 
 ```js
 var nhat = {
@@ -49,7 +49,7 @@ var nhat = {
 };
 ```
 
-## **Kiểu OBJECT IN ARRAY**
+### **Kiểu OBJECT IN ARRAY**
 
 ```js
 var employees = [
@@ -71,7 +71,7 @@ var employees = [
 ];
 ```
 
-## **Kiểu NEST OBJECT**
+### **Kiểu NEST OBJECT**
 
 ```js
 var employees = {
@@ -95,7 +95,7 @@ var employees = {
 };
 ```
 
-# **Nên sử dụng JSON khi nào**
+## **Nên sử dụng JSON khi nào**
 
 Đó là khi bạn muốn lưu trữ dữ liệu đơn thuần dưới dạng metadata ở phía server. Chuỗi JSON sẽ được lưu vào database và sau đó khi cần dữ liệu thì sẽ được giải mã. Ví dụ với PHP, nó cung cấp các hàm liên quan đến JSON để mã hóa hoặc giải mã là `json_encode và json_decode`.
 
@@ -129,7 +129,7 @@ Nếu bạn mở developer console của trình duyệt lên (nhấn phím F12) 
 
 **[Hiểu rõ về JSON là gì?](https://topdev.vn/blog/json-la-gi/#json-la-gi)**
 
-# **JSON.stringify() : chuyển từ JavaScript sang JSON**
+## **JSON.stringify() : chuyển từ JavaScript sang JSON**
 
 ```js
 a = 1;
@@ -151,7 +151,7 @@ a = { name: "abc", age: 20 };
 console.log(JSON.stringify(a), " - ", typeof JSON.stringify(a)); // chuyển từ JavaScript sang Json
 ```
 
-# **JSON.parse() : chuyển từ JSON sang JavaScript**
+## **JSON.parse() : chuyển từ JSON sang JavaScript**
 
 ```js
 var a = "1";
@@ -588,7 +588,7 @@ all2  Error😅
 
 **[Tìm hiểu Promise trong Javascript - ES6](https://freetuts.net/tim-hieu-promise-trong-javascript-es6-620.html)**
 
-# **Sử dụng Fetch API để tạo một HTTP Request trong Javascript**
+## **Sử dụng Fetch API để tạo một HTTP Request trong Javascript**
 
 Làm việc với dữ liệu từ Server là một phần không thể thiếu đối với bất kỳ một Frontend Developer nào. Để tương tác với Server API, hầu hết mọi người sẽ chọn `Axios` bởi nó quá phổ biến và dễ sử dụng.
 
