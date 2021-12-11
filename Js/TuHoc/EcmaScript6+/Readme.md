@@ -1,4 +1,4 @@
-# **Tìm Hiểu cơ bản về ES6**
+# **Tìm hiểu cơ bản về ES6**
 
 ## ECMAScript ES6 là gì?
 
@@ -19,6 +19,8 @@ ES6 ra đời vào năm 2015 nên cái tên ES2015 được lấy làm tên chí
 -   **Rest Parameters**: Bạn có thể khai báo một hàm với số lượng tham số không xác định.
 
 -   **Template String**: Tạo templaet HTML cực kì đơn giản.
+
+-   **Tagged Template Literals**: Kiểm soát nhiều hơn đối với thao tác và trả về chuỗi động.
 
 -   **Weak, Set**: Các kiểu dữ liệu phức tạp mới.
 
@@ -274,6 +276,33 @@ console.log(`${surname} ${middleName} ${name}`);
 ```
 Nguyễn Minh An
 ```
+
+### **Tagged Template Literals**
+
+Tính năng nâng cao của Template Literals là sử dụng Tagged Template Literals, đôi khi được gọi là templae tags (thẻ mẫu).
+
+Template tags bắt đầu bằng chức năng phân tích cú pháp template, cho phép bạn kiểm soát nhiều hơn đối với thao tác và trả về chuỗi động.
+
+Vd:
+
+```js
+function highlight([arr1, ...arrs], ...values) {
+    return values
+        .reduce((a, b) => [...a, `<span>${b}</span>`, arrs.shift()], [arr1])
+        .join("");
+}
+
+var a = "ES6";
+var b = "JavaScript";
+const html = highlight`Tìm hiểu cơ bản về ${a} trong ${b} 😄😄`;
+console.log(html);
+```
+
+```
+Tìm hiểu cơ bản về <span>ES6</span> trong <span>JavaScript</span> 😄😄
+```
+
+**[Tagged Template Literals](https://viblo.asia/p/tim-hieu-ve-template-literals-trong-javascript-XL6lA9MDlek#_5-tagged-template-literals-4)**
 
 ### **Weak, Set**
 

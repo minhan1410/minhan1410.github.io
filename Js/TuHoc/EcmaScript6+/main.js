@@ -53,3 +53,53 @@ console.log(sum(1, 2, 3, 4, 5)); */
 message(undefined, "An đã ở đây");
 message("error", "An đã ở đây"); */
 
+// ----------------------------------------------------------------
+
+/* let arr = ["tôm", "cua", "cá"];
+
+let [a, b, c] = arr;
+console.log(a, " ", b, " ", c);
+
+let [a1,...arr2] = arr;
+console.log(a1," ",arr2); */
+
+/* let obj = { name: "An", age: 21, gender: "Male" };
+
+let { name, age, a1 = 'Khong co'} = obj;
+console.log(name, age, a1);
+
+let { name: name2, ...obj2 } = obj;
+console.log(name2, obj2); */
+
+// ----------------------------------------------------------------
+
+/* let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6, 7, 8];
+
+console.log([...arr1, ...arr2], [...arr2, ...arr1]);
+ */
+
+/* let obj1 = { name: "An", age: 21 };
+let obj2 = {
+    wear: "black",
+    brand: "kappa",
+    name: "222 Banda Balima T-Shirt - Black White",
+};
+
+// Nếu key trùng thì lấy obj cuối
+
+console.log({ ...obj1, ...obj2 }, "\n", { ...obj2, ...obj1 });
+ */
+
+// ----------------------------------------------------------------
+
+function highlight([arr1, ...arrs], ...values) {
+    return values
+        .reduce((a, b) => [...a, `<span>${b}</span>`, arrs.shift()], [arr1])
+        .join("");
+}
+
+var a = "ES6";
+var b = "JavaScript";
+const html = highlight`Tìm hiểu cơ bản về ${a} trong ${b} 😄😄`;
+console.log(html);
