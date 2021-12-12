@@ -114,3 +114,6 @@ let highLight = ([a, ...a1], ...b) => {
 
 let text = highLight`Họ và tên: ${"Nguyễn Minh An"}, tuổi: ${21}, địa chỉ: Xã ${"Tự Nhiên"} - Huyện ${"Thường Tín"} - TP: ${"Hà Nội"}"}!`;
 console.log(text);
+
+// ----------------------------------------------------------------
+
