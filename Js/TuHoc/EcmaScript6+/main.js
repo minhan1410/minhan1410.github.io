@@ -93,13 +93,24 @@ console.log({ ...obj1, ...obj2 }, "\n", { ...obj2, ...obj1 });
 
 // ----------------------------------------------------------------
 
-function highlight([arr1, ...arrs], ...values) {
+/* function highlight([a1, ...arrs], ...values) {
     return values
-        .reduce((a, b) => [...a, `<span>${b}</span>`, arrs.shift()], [arr1])
+        .reduce((a, b) => [...a, `<span>${b}</span>`, arrs.shift()], [a1])
         .join("");
 }
 
 var a = "ES6";
 var b = "JavaScript";
 const html = highlight`Tìm hiểu cơ bản về ${a} trong ${b} 😄😄`;
-console.log(html);
+console.log(html); */
+
+let highLight = ([a, ...a1], ...b) => {
+    console.log("a = ", a);
+    console.log("a1 = ", a1);
+    console.log("b= ", b);
+
+    return b.reduce((c, d) => `${c}<span>${d}</span>${a1.shift()}`, a);
+};
+
+let text = highLight`Họ và tên: ${"Nguyễn Minh An"}, tuổi: ${21}, địa chỉ: Xã ${"Tự Nhiên"} - Huyện ${"Thường Tín"} - TP: ${"Hà Nội"}"}!`;
+console.log(text);
