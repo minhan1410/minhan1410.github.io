@@ -6,7 +6,7 @@ Ví dụ: nếu cơ sở dữ liệu MySQL nằm trên đường dẫn lớp c�
 
 Với mục đích này, bạn cần phải thêm `@EnableAutoConfiguration` chú thích hoặc `@SpringBootApplication` chú thích để file class chính của bạn. Sau đó, ứng dụng Spring Boot của bạn sẽ được tự động cấu hình.
 
-Hãy quan sát đoạn mã sau để hiểu rõ hơn:
+*Hãy quan sát đoạn mã sau để hiểu rõ hơn:*
 
 ```java
 import org.springframework.boot.SpringApplication;
@@ -26,7 +26,7 @@ public class DemoApplication {
 
 Nếu bạn thêm annotation `@SpringBootApplication` thì sẽ không cần thêm các annotations như `@EnableAutoConfiguration`, `@ComponentScan` và `@SpringBootConfiguration` vì nó đã bao gồm tất cả các annotations đấy.
 
-Hãy quan sát đoạn mã sau để hiểu rõ hơn:
+*Hãy quan sát đoạn mã sau để hiểu rõ hơn:*
 
 ```java
 import org.springframework.boot.SpringApplication;
@@ -44,7 +44,7 @@ public class DemoApplication {
 
 Spring Boot application sẽ quét tất cả các `bean` và khai báo các `packages` khi khởi chạy. Bạn cần thên annotation `@ComponentScan` cho class của mình để Spring Boot quét tất cả các components và thêm vào project của bạn.
 
-Hãy quan sát đoạn mã sau để hiểu rõ hơn:
+*Hãy quan sát đoạn mã sau để hiểu rõ hơn:*
 
 ```java
 import org.springframework.boot.SpringApplication;

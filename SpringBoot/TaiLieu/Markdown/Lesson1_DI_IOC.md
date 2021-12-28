@@ -6,7 +6,7 @@
 
 Các **Object** nên phục thuộc vào các **Abstract Class** và thể hiện chi tiết của nó sẽ được **Inject** vào lúc runtime chương trình.
 
-## VD
+_VD_
 
 ```java
 public class Girl{
@@ -21,11 +21,11 @@ Trước hết, qua đoạn code này, bạn sẽ thấy là khi bạn tạo ra 
 
 Khi khởi tạo thuộc tính như này, bạn vô tình tạo ra một điểm thắt nút trong chương trình của mình. Giả sử `Girl` muốn mặc một bộ Váy + Áo thun hở rốn hay không mặc gì thì sao? Hay nguy hiểm hơn, bộ đồ `Bikini` bị hỏng? (code lớp `Bikini` không hoạt động?) nó sẽ ảnh hưởng trực tiếp tới `Girl`.
 
-Vấn đề là ở đó, nguyên tắc là:
+_Vấn đề là ở đó, nguyên tắc là:_
 
     Các Class không nên phụ thuộc vào các kế thừa cấp thấp, mà nên phụ thuộc vào Abstraction (lớp trừu tượng).
 
-Nghe hơi khó hiểu. Bây giờ mình thay đoạn code như này:
+_Nghe hơi khó hiểu. Bây giờ mình thay đoạn code như này:_
 
 ```java
 // Một interface cho việc ăn mặc
@@ -51,7 +51,7 @@ public class Girl{
 
 Tới đây, chúng ta mới chỉ `Abtract` hóa thuộc tính của `Girl` mà thôi, còn thực tế, `Girl` vẫn đang bị gắn với một bộ `Bikini` duy nhất. Vậy muốn thay đồ cho cô gái, bạn phải làm như nào?
 
-Phải sửa code thêm chút nữa:
+_Phải sửa code thêm chút nữa:_
 
 ```java
 public class Girl{
@@ -72,7 +72,7 @@ public class Main {
 
 Chúng ta đã gần như tách được `Bikini` ra hoàn toàn khỏi `Girl`, điều này làm giảm sự phụ thuộc giữa `Girl` và `Bikini` làm tăng tính tùy biến, linh hoạt cho code. Bây giờ `Girl` sẽ hoạt động với `Outfit` và `Outfit` ở đâu ra? Chúng ta tạo ra và đưa nó vào (Inject) cô gái `Girl`
 
-Khái niệm `Dependency Injection` từ đây mà ra:
+_Khái niệm `Dependency Injection` từ đây mà ra:_
 
     Dependency Injection là việc các Object nên phụ thuộc vào các Abstract Class và thể hiện chi tiết của nó sẽ được Inject vào đối tượng lúc runtime.
 
@@ -88,7 +88,7 @@ Bây giờ muốn `Girl` mặc gì khác, bạn chỉ cần tạo một Class k�
 
 **`Inversion of Control (IoC) `thay vì phải `khởi tạo` và `quản lý bộ nhớ cho các Object` như cách thông thường thì ta `đảo ngược chiều điều khiển để Spring` `tạo` và `quản lý` bộ nhớ cho các Object thay việc của chúng ta**
 
-## VD
+_VD_
 
 ```java
 public static void main(String[] args) {

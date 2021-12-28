@@ -79,4 +79,17 @@ public class ProductionConfiguration {
   // ...
 }
 ```
-**[Tham khảo thêm](https://stackjava.com/spring/spring-boot-la-gi-gioi-thieu-spring-boot-framework.html)**
+
+_Đọc thêm các bài viết sau:_
+
+**[Giới thiệu Spring Boot Framework](https://stackjava.com/spring/spring-boot-la-gi-gioi-thieu-spring-boot-framework.html)**
+
+**[Giới thiệu các Annotation cơ bản trong Spring Boot](https://viblo.asia/p/gioi-thieu-cac-annotation-co-ban-trong-spring-boot-gGJ597e1ZX2#_componentscan-5)**
+
+**[Nhật kí Spring Boot](https://viblo.asia/s/nhat-ki-spring-boot-Je5EjWx0KnL)**
+
+**[Loda](https://loda.me/courses/spring-boot)**
+
+**[Tutorialspoint](https://www.tutorialspoint.com/spring_boot/index.htm)**
+
+**[Baeldung](https://www.baeldung.com/spring-boot-start)**
