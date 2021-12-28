@@ -197,7 +197,7 @@ _Bạn chắc đã để ý điều này từ các Output ở phía trên?_
 
 Tất cả những `Bean` được quản lý trong `ApplicationContext` đều **chỉ được tạo ra một lần duy nhất** và khi có **Class** yêu cầu `@Autowired` thì nó sẽ lấy **đối tượng** có sẵn trong `ApplicationContext` để **inject** vào.
 
-\*Trong trường hợp bạn muốn mỗi lần sử dụng là một **instance hoàn toàn mới\***. Thì hãy đánh dấu `@Component` đó bằng `@Scope("prototype")`
+_Trong trường hợp bạn muốn mỗi lần sử dụng là một **instance hoàn toàn mới**_. Thì hãy đánh dấu `@Component` đó bằng `@Scope("prototype")`
 
 ```java
 @Component
