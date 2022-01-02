@@ -1,4 +1,4 @@
-# **`@Autowired`**
+# **@Autowired**
 
 ## **Cách inject Bean của Spring**
 
@@ -50,7 +50,7 @@ public class Girl {
 }
 ```
 
-## **Vấn đề của `@Autowired`**
+## **Vấn đề của @Autowired**
 
 Khi `Spring Boot` có chứa **2 Bean** cùng loại trong **Context** thì `Spring` sẽ bối rối và không biết sử dụng **Bean** nào để **inject** vào đối tượng.
 
@@ -125,7 +125,7 @@ Consider marking one of the beans as @Primary, updating the consumer to accept m
 
 Đại khái là, trong quá trình cài đặt, nó tìm thấy 2 đối tượng thoả mãn `Outfit`. Giờ nó không biết sử dụng cái nào để **inject** vào trong `Girl`
 
-# **`@Primary`**
+# **@Primary**
 
 `@Primary` là **annotation** đánh dấu trên một **Bean**, giúp nó luôn được ưu tiên lựa chọn trong trường hợp có nhiều **Bean** cùng loại trong **Context**.
 
@@ -177,7 +177,7 @@ Girl Outfit: com.example.code.Bikini@58783f6c
 Mặc bikini
 ```
 
-# **`@Qualifier`**
+# **@Qualifier**
 
 `@Qualifier `xác định tên của một **Bean** mà bạn muốn chỉ định **inject**.
 
