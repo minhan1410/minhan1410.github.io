@@ -45,7 +45,7 @@ _Hình ảnh minh họa ApplicationContext vs Bean:_
 
 _VD:_
 
-![img](https://super-static-assets.s3.amazonaws.com/8a72ee8e-d4aa-4a06-985f-e92802c5bc44/images/12f5a5b9-a6ec-4a5e-8bc4-965f31e01a06.jpg?w=1500&f=webp)
+![alt text](demo.jpg "Ảnh phân bố thư mục")
 
 _Đầu tiên chúng ta có một **interface** `Outfit`_
 
@@ -97,7 +97,7 @@ public class App {
 _Output:_
 
 ```
-[1] Instance: me.loda.spring.helloworld.Bikini@1e1f6d9d
+[1] Instance: com.example.demo.Bikini@23566a21 Mặc bikini
 [2] Mặc bikini
 ```
 
@@ -172,10 +172,10 @@ public class App {
 _Output:_
 
 ```
-[1] Output Instance: me.loda.spring.helloworld.Bikini@2e16f13a
+[1] Output Instance: com.example.demo.Bikini@1e9fc480
 [2] Mặc bikini
-[3] Girl Instance: me.loda.spring.helloworld.Girl@353cb1cb
-[4] Girl Outfit: me.loda.spring.helloworld.Bikini@2e16f13a
+[3] Girl Instance: com.example.demo.Girl@314f88cc
+[4] Girl Outfit: com.example.demo.Bikini@1e9fc480
 [5] Mặc bikini
 ```
 
@@ -188,9 +188,9 @@ _Output:_
 _Bạn chắc đã để ý điều này từ các Output ở phía trên?_
 
 ```
-[1] Output Instance: me.loda.spring.helloworld.Bikini@2e16f13a
+[1] Output Instance: com.example.demo.Bikini@1e9fc480
 
-[4] Girl Outfit: me.loda.spring.helloworld.Bikini@2e16f13a
+[4] Girl Outfit: com.example.demo.Bikini@1e9fc480
 ```
 
 `Outfit` ở **2 đối tượng** trên là **một**.
