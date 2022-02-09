@@ -10,7 +10,7 @@ _VD_
 
 ```java
 public class Girl{
-    private Bikini outfit; // mỗi cô gái sẽ có một bộ bikini khi ra ngoài
+    private Bikini outfit; // mỗi cô gái sẽ có một bộ outfit khi ra ngoài
     public Girl(){
       outfit = new Bikini(); // Khi bạn tạo ra 1 cô gái, bạn cho cô ta mặc Bikini chẳng hạn
     }
