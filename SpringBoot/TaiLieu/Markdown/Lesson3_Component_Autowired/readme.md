@@ -17,7 +17,7 @@ public class App {
 }
 ```
 
-Đọc bài [Giải thích Dependency Injection (DI) và IoC](Lesson1_DI_IOC.md). Bạn sẽ hiểu, **một trong những nhiệm vụ chính của `Spring` là tạo ra một cái `Container` chứa các `Dependency` cho chúng ta**.
+Đọc bài [Giải thích Dependency Injection (DI) và IoC](../Lesson1_DI_IOC.md). Bạn sẽ hiểu, **một trong những nhiệm vụ chính của `Spring` là tạo ra một cái `Container` chứa các `Dependency` cho chúng ta**.
 
 `SpringApplication.run(App.class, args);` chính là câu lệnh để tạo ra **container**. Sau đó nó tìm toàn bộ các **dependency** trong project của bạn và đưa vào đó.
 
