@@ -20,6 +20,7 @@ Kiến trúc **Controller** - **Service** - **Repository** chia project thành 3
 **@Repository**: Đánh dấu một Class Là tầng **Repository**, `phục vụ truy xuất dữ liệu`.
 
 Cấu trúc thư mục:
+
 ![img](packages.jpg)
 
 # **Code**
