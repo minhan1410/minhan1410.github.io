@@ -149,10 +149,10 @@ phải
 
 # Terminal tích hợp
 
-`Ctrl + ` ` : Hiển thị terminal tích hợp
+``Ctrl + ` `` : Hiển thị terminal tích hợp
 
-`Ctrl + Shift + ` ` : Tạo phiên bản terminal mới
+``Ctrl + Shift + ` `` : Tạo phiên bản terminal mới
 
-`Ctrl + Mũi tên lên/xuống ` : Cuộn lên/xuống
+``Ctrl + Mũi tên lên/xuống `` : Cuộn lên/xuống
 
-`Ctrl + Home/End ` : Cuộn lên trên cùng/xuống dưới cùng
+``Ctrl + Home/End `` : Cuộn lên trên cùng/xuống dưới cùng
