@@ -90,6 +90,8 @@ _Đọc thêm các bài viết sau:_
 
 **[Loda](https://loda.me/courses/spring-boot)**
 
+**[Deft Blog](https://shareprogramming.net/tag/spring-boot/)**
+
 **[Tutorialspoint](https://www.tutorialspoint.com/spring_boot/index.htm)**
 
 **[Baeldung](https://www.baeldung.com/spring-boot-start)**
