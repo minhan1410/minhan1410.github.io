@@ -88,9 +88,11 @@ Về bản chất, `@Configuration cũng là @Component`. Nó chỉ khác ở ý
 
 ## **`@Configuration` và `@Bean` sẽ có ý nghĩa gì khi chúng ta đã có `@Component` sao không đánh dấu SimpleBean là `@Component` cho nhanh?**
 
-Việc sử dụng `@Component` cũng hoàn toàn ổn, thông thường thì các **class** được đánh dấu `@Component` đều có thể `tạo tự động và inject tự động` được. 
+Việc sử dụng `@Component` cũng hoàn toàn ổn, thông thường thì các **class** được đánh dấu `@Component` đều có thể `tạo tự động và inject tự động được`.
 
 Tuy nhiên trong thực tế, nếu một **Bean** có quá nhiều logic để khởi tạo và cấu hình, thì chúng ta sẽ sử dụng `@Configuration` và `@Bean` để tự tay tạo ra **Bean**. Việc tự tay tạo ra Bean như này có thể hiểu phần nào là chúng ta đang **config** cho chương trình.
+
+\*`@Bean` được sử dụng cho các **hàm** thay vì **class** như `@Component`, **hàm** này sẽ trả về một **object** sẽ được đăng ký và quản lý bởi **Spring IoC container\***.
 
 ### **VD: Chúng ta sẽ ví dụ với việc cấu hình kết nối tới Database. Đây vẫn là một ví dụ hết sức đơn giản**
 
@@ -173,9 +175,9 @@ public class AppConfig {
     }
 
     @Bean("mysqlConnector2")
-    DatabaseConnector mysqlConfigure(SimpleBean simpleBean /* SimpleBean được tự động inject vào */) { 
+    DatabaseConnector mysqlConfigure(SimpleBean simpleBean /* SimpleBean được tự động inject vào */) {
 
-        /* 
+        /*
             Nếu method được đánh dấu bởi @Bean, có tham số truyền vào thì Spring Boot sẽ tự inject các Bean đã có trong Context vào làm tham số.
         */
 
@@ -241,4 +243,44 @@ Simple Bean Example: This is a simple bean, name: MinhAn
 Đã kết nối tới Mysql: jdbc:mysql://host1:33060/MinhAn @Bean có tham số
 Đã kết nối tới Mongodb: mongodb://mongodb0.example.com:27017/minhan
 Đã kết nối tới Postgresql: postgresql://localhost/minhan
+```
+
+# **Thực tế**
+
+Trong thực tế, việc sử dụng `@Configuration` là hết sức cần thiết, và nó đóng vai trò là nơi cấu hình cho toàn bộ ứng dụng của bạn. Một Ứng dụng sẽ có nhiều **class** chứa `@Configuration` và mỗi **class** sẽ đảm nhận cấu hình một bộ phận gì đó trong ứng dụng.
+
+Ví dụ đây là một đoạn code cấu hình cho Spring Security
+
+```java
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .antMatchers("/", "/home").permitAll()
+                .anyRequest().authenticated()
+                .and()
+            .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and()
+            .logout()
+                .permitAll();
+    }
+
+    @Bean
+    @Override
+    public UserDetailsService userDetailsService() {
+        UserDetails user =
+             User.withDefaultPasswordEncoder()
+                .username("user")
+                .password("password")
+                .roles("USER")
+                .build();
+
+        return new InMemoryUserDetailsManager(user);
+    }
+}
 ```

@@ -20,7 +20,7 @@ public class DemoApplication {
 }
 ```
 
-# **Spring Boot Application**
+# **@Spring Boot Application**
 
 Điểm đầu vào của Spring Boot Application là lớp chứa annotation `@SpringBootApplication`. Lớp này phải có phương thức chính để chạy Spring Boot Application.
 
@@ -40,7 +40,11 @@ public class DemoApplication {
 }
 ```
 
-# Component Scan
+`@SpringBootApplication` bản thân nó là **sự kết hợp các tính năng của `@Configuration`, `@EnableAutoConfiguration` và `@ComponentScan`**. 
+
+Ngoài việc giúp **Spring Boot** tự động cấu hình và khởi chạy ứng dụng thì `@ComponentScan` được dùng để chỉ định những nơi mà **Spring** nên tìm kiếm các **bean** để khởi tạo và đăng ký với **IoC**. 
+
+# **@Component Scan**
 
 Spring Boot application sẽ quét tất cả các `bean` và khai báo các `packages` khi khởi chạy. Bạn cần thên annotation `@ComponentScan` cho class của mình để Spring Boot quét tất cả các components và thêm vào project của bạn.
 

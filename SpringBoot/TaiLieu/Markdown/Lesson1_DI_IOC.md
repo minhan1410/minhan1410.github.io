@@ -2,7 +2,7 @@
 
 ## Khái niệm
 
-**Dependency Injection (DI)** Là một design pattern, **một cách code nhằm `giảm sự phụ thuộc giữa` các Object để `tiện cho việc thay đổi hay mở rộng code sau này`**.
+**Dependency Injection (DI)** Là một design pattern, **một cách code nhằm `giảm sự phụ thuộc giữa các` Object` để tiện cho việc thay đổi hay mở rộng code sau này`**.
 
 Các **Object** nên phục thuộc vào các **Abstract Class** và thể hiện chi tiết của nó sẽ được **Inject** vào lúc runtime chương trình.
 
