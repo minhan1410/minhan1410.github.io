@@ -6,7 +6,7 @@
 
 `@Bean` sẽ nằm trong các **class** có đánh dấu `@Configuration`
 
-## **VD**
+# **VD**
 
 **SimpleBean.java**
 
@@ -70,7 +70,7 @@ public class DemoApplication {
 Simple Bean Example: This is a simple bean, name: MinhAn
 ```
 
-### **Giải thích cách chạy**
+## **Giải thích cách chạy**
 
 Đằng sau chương trình, **Spring Boot** lần đầu khởi chạy, ngoài việc đi tìm các `@Component` thì nó còn làm một nhiệm vụ nữa là tìm các **class `@Configuration`**
 
@@ -82,17 +82,17 @@ Simple Bean Example: This is a simple bean, name: MinhAn
 
 4. Thực hiện gọi các **method** có đánh dấu `@Bean` để lấy ra các **Bean** và đưa vào `Context`.
 
-### **Tại sao SimpleBean là một object được quản lý trong Context của Spring Boot, mặc dù trong bài này, chúng ta không hề sử dụng tới các khái niệm `@Component`?**
+## **Tại sao SimpleBean là một object được quản lý trong Context của Spring Boot, mặc dù trong bài này, chúng ta không hề sử dụng tới các khái niệm `@Component`?**
 
 Về bản chất, `@Configuration cũng là @Component`. Nó chỉ khác ở ý nghĩa sử dụng(Giống với việc **class** được đánh dấu `@Service` chỉ nên phục vụ logic vậy).
 
-### **`@Configuration` và `@Bean` sẽ có ý nghĩa gì khi chúng ta đã có `@Component` sao không đánh dấu SimpleBean là `@Component` cho nhanh?**
+## **`@Configuration` và `@Bean` sẽ có ý nghĩa gì khi chúng ta đã có `@Component` sao không đánh dấu SimpleBean là `@Component` cho nhanh?**
 
 Việc sử dụng `@Component` cũng hoàn toàn ổn, thông thường thì các **class** được đánh dấu `@Component` đều có thể `tạo tự động và inject tự động` được. 
 
 Tuy nhiên trong thực tế, nếu một **Bean** có quá nhiều logic để khởi tạo và cấu hình, thì chúng ta sẽ sử dụng `@Configuration` và `@Bean` để tự tay tạo ra **Bean**. Việc tự tay tạo ra Bean như này có thể hiểu phần nào là chúng ta đang **config** cho chương trình.
 
-#### **VD: Chúng ta sẽ ví dụ với việc cấu hình kết nối tới Database. Đây vẫn là một ví dụ hết sức đơn giản**
+### **VD: Chúng ta sẽ ví dụ với việc cấu hình kết nối tới Database. Đây vẫn là một ví dụ hết sức đơn giản**
 
 Tạo ra một **Abstract Class DatabaseConnector** chịu trách nhiệm kết nối tới **Database**.
 
