@@ -92,7 +92,7 @@ Việc sử dụng `@Component` cũng hoàn toàn ổn, thông thường thì c�
 
 Tuy nhiên trong thực tế, nếu một **Bean** có quá nhiều logic để khởi tạo và cấu hình, thì chúng ta sẽ sử dụng `@Configuration` và `@Bean` để tự tay tạo ra **Bean**. Việc tự tay tạo ra Bean như này có thể hiểu phần nào là chúng ta đang **config** cho chương trình.
 
-\*`@Bean` được sử dụng cho các **hàm** thay vì **class** như `@Component`, **hàm** này sẽ trả về một **object** sẽ được đăng ký và quản lý bởi **Spring IoC container\***.
+*`@Bean` được sử dụng cho các **hàm** thay vì **class** như `@Component`, **hàm** này sẽ trả về một **object** sẽ được đăng ký và quản lý bởi **Spring IoC container***
 
 ### **VD: Chúng ta sẽ ví dụ với việc cấu hình kết nối tới Database. Đây vẫn là một ví dụ hết sức đơn giản**
 
