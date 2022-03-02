@@ -2,8 +2,10 @@ package com.minhan.todolist
 
 import android.app.TimePickerDialog
 import android.app.TimePickerDialog.OnTimeSetListener
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -20,6 +22,7 @@ class EventEditActivity : AppCompatActivity() {
     private var eventDateTV: TextView? = null
     private var eventTimeTV: TextView? = null
     private var timeButton: Button? = null
+    private var saveEventAction: Button? = null
     private var hour = 0
     private var minute = 0
 
@@ -31,8 +34,37 @@ class EventEditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_edit)
         initWidgets()
-        eventDateTV!!.text = "Date Create: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate!!)
-        eventTimeTV!!.text = "Time Create: " + CalendarUtils.formattedTime(time)
+
+        val intent = intent
+        var event = intent.getParcelableExtra<Event>("Event")
+        println("\n${event?.name}\n")
+        if(event != null){
+            eventNameET?.setText(event.name)
+            eventContentET?.setText(event.content)
+            eventDateTV?.text = "Date: " + event.date.toString()
+            eventTimeTV?.text = "Time: " + event.time.toString()
+            saveEventAction!!.text = "Update"
+        }else{
+            eventDateTV!!.text = "Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate!!)
+            eventTimeTV!!.text = "Time: " + CalendarUtils.formattedTime(time)
+        }
+
+        saveEventAction?.setOnClickListener {
+            val eventName = eventNameET!!.text.toString()
+            val eventContent = eventContentET!!.text.toString()
+            val done = false
+
+            if(event == null){
+                val newEvent = Event(eventName,eventContent,done, CalendarUtils.selectedDate!!, time)
+                Event.eventsList.add(newEvent)
+                finish()
+            }else{
+                var pos = intent.getIntExtra("Position",-1)
+                println("\npos: ${pos}\n")
+                Event.eventsList[pos] = Event(eventName,eventContent,done, event.date, event.time)
+                finish()
+            }
+        }
     }
 
     private fun initWidgets() {
@@ -41,17 +73,18 @@ class EventEditActivity : AppCompatActivity() {
         eventDateTV = findViewById(R.id.eventDateTV)
         eventTimeTV = findViewById(R.id.eventTimeTV)
         timeButton = findViewById(R.id.timeButton)
+        saveEventAction = findViewById(R.id.saveEventAction)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun saveEventAction(view: View?) {
-        val eventName = eventNameET!!.text.toString()
-        val eventContent = eventContentET!!.text.toString()
-        val done = false
-        val newEvent = Event(eventName,eventContent,done, CalendarUtils.selectedDate!!, time)
-        Event.eventsList.add(newEvent)
-        finish()
-    }
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    fun saveEventAction(view: View?) {
+//        val eventName = eventNameET!!.text.toString()
+//        val eventContent = eventContentET!!.text.toString()
+//        val done = false
+//        val newEvent = Event(eventName,eventContent,done, CalendarUtils.selectedDate!!, time)
+//        Event.eventsList.add(newEvent)
+//        finish()
+//    }
 
     fun popTimePicker(view: View?) {
         val onTimeSetListener =

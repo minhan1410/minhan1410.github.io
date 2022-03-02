@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
         }
     }
 
-    fun weeklyAction(view: View?) {
-        startActivity(Intent(this, WeekViewActivity::class.java))
-    }
+//    fun weeklyAction(view: View?) {
+//        startActivity(Intent(this, WeekViewActivity::class.java))
+//    }
 }

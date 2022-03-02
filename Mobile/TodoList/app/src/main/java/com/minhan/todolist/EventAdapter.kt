@@ -1,8 +1,9 @@
 package com.minhan.todolist
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
-import android.service.autofill.FillEventHistory
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,6 @@ class EventAdapter(context: Context, events: List<Event?>?) :
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var convertView = convertView
         val event = getItem(position)
-        val eventsList = Event.eventsList
 
         if (convertView == null) convertView =
             LayoutInflater.from(context).inflate(R.layout.event_cell, parent, false)
@@ -37,6 +37,15 @@ class EventAdapter(context: Context, events: List<Event?>?) :
             Event.eventsList.remove(event)
         }
 
+        val btnEdit = convertView.findViewById<ImageButton>(R.id.btnEdit)
+        btnEdit.setOnClickListener{
+            var intent = Intent(this.context.applicationContext, EventEditActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.putExtra("Event",event)
+            intent.putExtra("Position",position)
+            this.context.startActivity(intent)
+        }
+
 
         val checkBoxDone = convertView.findViewById<CheckBox>(R.id.checkBoxDone)
         checkBoxDone.setOnClickListener { view ->
@@ -54,3 +63,4 @@ class EventAdapter(context: Context, events: List<Event?>?) :
         return convertView
     }
 }
+

@@ -1,10 +1,13 @@
 package com.minhan.todolist
 
+import android.os.Parcelable
 import java.time.LocalDate
 import java.time.LocalTime
+import kotlinx.parcelize.Parcelize
 
-
-class Event(var name: String,var content: String,var done:Boolean, var date: LocalDate, var time: LocalTime) {
+@Parcelize
+class Event(var name: String,var content: String,var done:Boolean, var date: LocalDate, var time: LocalTime) :
+    Parcelable {
 
     companion object {
         var eventsList: ArrayList<Event> = ArrayList<Event>();
